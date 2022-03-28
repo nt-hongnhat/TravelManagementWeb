@@ -1,0 +1,3 @@
+com\lth\controllers\HomeController.class
+com\lth\configs\DispatcherServletInitializer.class
+com\lth\configs\WebApplicationContextConfig.class
