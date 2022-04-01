@@ -1,5 +1,0 @@
-com\lth\configs\HibernateConfig.class
-com\lth\configs\DispatcherServletInitializer.class
-com\lth\controllers\HomeController.class
-com\lth\configs\TillesConfig.class
-com\lth\configs\WebApplicationContextConfig.class
