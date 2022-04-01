@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseMigrationSettings">
+    <database-infos>
+      <database-info>
+        <dbms-id>mysql</dbms-id>
+        <mapping-types>
+          <mapping-type sql-type-parameter="Nothing">
+            <java-class>java.util.Date</java-class>
+            <sql-type>datetime</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Length">
+            <java-class>java.lang.Boolean</java-class>
+            <sql-type>bit</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Nothing">
+            <java-class>java.math.BigDecimal</java-class>
+            <sql-type>decimal</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Nothing">
+            <java-class>java.lang.Integer</java-class>
+            <sql-type>int</sql-type>
+          </mapping-type>
+          <mapping-type sql-type-parameter="Length">
+            <java-class>java.lang.String</java-class>
+            <sql-type>nvarchar</sql-type>
+          </mapping-type>
+        </mapping-types>
+      </database-info>
+    </database-infos>
+  </component>
+  <component name="JpaPluginProjectSettings">
+    <option name="entityNameTemplate" />
+    <option name="generateJpaOnGetter" value="true" />
+    <option name="generateTypeOnEntity" value="true" />
+    <option name="useLazyOnToOneAssociations" value="true" />
+    <option name="scaffoldingLanguage" />
+  </component>
+</project>
