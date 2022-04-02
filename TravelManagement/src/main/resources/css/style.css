@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-page {
+    height: 100vh;
+    background-image: url(images/bg-main-page.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    font-family: 'Lexend Deca', sans-serif;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar {
+    padding: 0rem;
+    margin: 0 2rem;
+    box-sizing: border-box;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.navbar-brand:hover{
+    color: white;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.nav-link {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    padding: 2rem 2rem;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.fas {
+    color: white;
+}
+
+.nav-button {
+    margin: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: 3px solid white;
+}
