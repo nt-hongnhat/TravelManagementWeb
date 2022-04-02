@@ -1,10 +1,10 @@
 package com.lth.pojos;
 
-public enum UserRoleType {
-    ADMIN("Quản trị viên"), EMPLOYEE("Nhân viên"), CUSTOMER("Khách hàng");
+public enum StatusType {
+    AVAILABLE("Đang sẵn dùng"), REPAIRING("Đang sửa chữa"), USING("Đang sử dụng");
     private String name;
 
-    private UserRoleType(String name) {
+    private StatusType(String name) {
         this.name = name;
     }
 

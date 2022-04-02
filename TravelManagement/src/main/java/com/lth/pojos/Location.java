@@ -3,23 +3,23 @@ package com.lth.pojos;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "schedule")
-public class Schedule {
+@Table(name = "location")
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tour_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
-    @MapsId
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tour_id")
-    private Tour tour;
 
-    public Tour getTour() {
-        return tour;
+    private District district;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "district_id")
+    public District getDistrict() {
+        return district;
     }
 
-    public void setTour(Tour tour) {
-        this.tour = tour;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
     public Integer getId() {

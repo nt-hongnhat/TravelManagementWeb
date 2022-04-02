@@ -1,9 +1,14 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "customer", indexes = {
+        @Index(name = "fk_customer_location_idx", columnList = "location_id"),
+        @Index(name = "fk_customer_user_idx", columnList = "user_id")
+})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +23,22 @@ public class Customer {
 
     private Integer phone;
 
-    private Address address;
+    private Location location;
+
+    private String address;
 
     private User user;
+
+    private Set<TourBooking> tourBookings = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "customer")
+    public Set<TourBooking> getTourBookings() {
+        return tourBookings;
+    }
+
+    public void setTourBookings(Set<TourBooking> tourBookings) {
+        this.tourBookings = tourBookings;
+    }
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -32,14 +50,23 @@ public class Customer {
         this.user = user;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    public Address getAddress() {
+    @Column(name = "address", length = 45)
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id")
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Column(name = "phone", nullable = false)
