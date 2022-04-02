@@ -6,28 +6,31 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "tour")
+@Table(name = "tour", indexes = {
+        @Index(name = "fk_tour_schedule_idx", columnList = "duration_id"),
+        @Index(name = "fk_tour_trip_idx", columnList = "trip_id")
+})
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    private String tourName;
-
-    private String destination;
+    private String name;
 
     private BigDecimal price;
 
     private String description;
 
-    private Set<Place> places = new LinkedHashSet<>();
+    private Trip trip;
+
+    private Duration duration;
+
+    private Set<TourDetail> tourDetails = new LinkedHashSet<>();
 
     private Set<Transport> transports = new LinkedHashSet<>();
 
-    private Set<Departure> departures = new LinkedHashSet<>();
-
-    private Schedule schedule;
+    private Set<TourBooking> tourBookings = new LinkedHashSet<>();
 
     private Set<Feedback> feedbacks = new LinkedHashSet<>();
 
@@ -40,28 +43,16 @@ public class Tour {
         this.feedbacks = feedbacks;
     }
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "tour")
-    public Schedule getSchedule() {
-        return schedule;
+    @OneToMany(mappedBy = "tour")
+    public Set<TourBooking> getTourBookings() {
+        return tourBookings;
     }
 
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
+    public void setTourBookings(Set<TourBooking> tourBookings) {
+        this.tourBookings = tourBookings;
     }
 
     @OneToMany(mappedBy = "tour")
-    public Set<Departure> getDepartures() {
-        return departures;
-    }
-
-    public void setDepartures(Set<Departure> departures) {
-        this.departures = departures;
-    }
-
-    @ManyToMany
-    @JoinTable(name = "transportation",
-            joinColumns = @JoinColumn(name = "tour_id"),
-            inverseJoinColumns = @JoinColumn(name = "transport_id"))
     public Set<Transport> getTransports() {
         return transports;
     }
@@ -70,19 +61,35 @@ public class Tour {
         this.transports = transports;
     }
 
-    @ManyToMany
-    @JoinTable(name = "tour_detail",
-            joinColumns = @JoinColumn(name = "tour_id"),
-            inverseJoinColumns = @JoinColumn(name = "place_id"))
-    public Set<Place> getPlaces() {
-        return places;
+    @OneToMany(mappedBy = "tour")
+    public Set<TourDetail> getTourDetails() {
+        return tourDetails;
     }
 
-    public void setPlaces(Set<Place> places) {
-        this.places = places;
+    public void setTourDetails(Set<TourDetail> tourDetails) {
+        this.tourDetails = tourDetails;
     }
 
-    @Lob
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "duration_id")
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id")
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
+    }
+
     @Column(name = "description")
     public String getDescription() {
         return description;
@@ -92,7 +99,7 @@ public class Tour {
         this.description = description;
     }
 
-    @Column(name = "price", precision = 10)
+    @Column(name = "price", nullable = false, precision = 12)
     public BigDecimal getPrice() {
         return price;
     }
@@ -101,22 +108,13 @@ public class Tour {
         this.price = price;
     }
 
-    @Column(name = "destination", length = 45)
-    public String getDestination() {
-        return destination;
+    @Column(name = "name", nullable = false, length = 45)
+    public String getName() {
+        return name;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    @Column(name = "tour_name", nullable = false, length = 45)
-    public String getTourName() {
-        return tourName;
-    }
-
-    public void setTourName(String tourName) {
-        this.tourName = tourName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getId() {

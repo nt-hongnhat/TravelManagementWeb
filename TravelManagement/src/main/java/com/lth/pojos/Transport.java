@@ -9,6 +9,29 @@ public class Transport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tour_id")
+    private Tour tour;
+
+    private Mean means;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "means_id")
+    public Mean getMeans() {
+        return means;
+    }
+
+    public void setMeans(Mean means) {
+        this.means = means;
+    }
+
+    public Tour getTour() {
+        return tour;
+    }
+
+    public void setTour(Tour tour) {
+        this.tour = tour;
+    }
 
     public Integer getId() {
         return id;

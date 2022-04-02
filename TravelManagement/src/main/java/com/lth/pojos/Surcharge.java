@@ -1,10 +1,13 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "surcharge")
+@Table(name = "surcharge", indexes = {
+        @Index(name = "name_UNIQUE", columnList = "name", unique = true)
+})
 public class Surcharge {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,18 +16,29 @@ public class Surcharge {
 
     private String name;
 
-    private BigDecimal rate;
+    private Double percentage;
 
-    @Column(name = "rate", nullable = false, precision = 10)
-    public BigDecimal getRate() {
-        return rate;
+    private Set<TourTicket> tourTickets = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "surcharge")
+    public Set<TourTicket> getTourTickets() {
+        return tourTickets;
     }
 
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
+    public void setTourTickets(Set<TourTicket> tourTickets) {
+        this.tourTickets = tourTickets;
     }
 
-    @Column(name = "name", nullable = false, length = 50)
+    @Column(name = "percentage", nullable = false)
+    public Double getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(Double percentage) {
+        this.percentage = percentage;
+    }
+
+    @Column(name = "name", nullable = false, length = 45)
     public String getName() {
         return name;
     }

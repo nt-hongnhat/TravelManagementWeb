@@ -3,20 +3,20 @@ package com.lth.pojos;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tour_detail", indexes = {
-        @Index(name = "fk_tour_detail_place_idx", columnList = "place_id")
-})
+@Table(name = "tour_detail")
 public class TourDetail {
-    @EmbeddedId
-    private TourDetailId id;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tour_id")
     private Tour tour;
 
     private Place place;
 
-    @MapsId("placeId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "place_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "place_id")
     public Place getPlace() {
         return place;
     }
@@ -25,9 +25,6 @@ public class TourDetail {
         this.place = place;
     }
 
-    @MapsId("tourId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "tour_id", nullable = false)
     public Tour getTour() {
         return tour;
     }
@@ -36,11 +33,13 @@ public class TourDetail {
         this.tour = tour;
     }
 
-    public TourDetailId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(TourDetailId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
+
+    //TODO Reverse Engineering! Migrate other columns to the entity
 }
