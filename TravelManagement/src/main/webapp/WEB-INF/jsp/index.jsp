@@ -4,14 +4,17 @@
     Author     : PC
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Trang chu</title>
-    </head>
-    <body>
-        <h1>Welcome to our website</h1>
-    </body>
-</html>
+<div>
+    <c:forEach var="tour" items="${tours}">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${tour.name}</h5>
+              <p class="card-text">${tour.price}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </c:forEach>
+</div>
