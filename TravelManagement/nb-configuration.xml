@@ -24,6 +24,10 @@ Any value defined here will override the pom.xml file value but is only applicab
         <config-file-groups/>
     </spring-data>
     <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+        <word>jdbc</word>
+        <word>mysql</word>
+        <word>MySQLDialect</word>
         <word>tinhyeulathe</word>
+        <word>traveldb</word>
     </spellchecker-wordlist>
 </project-shared-configuration>

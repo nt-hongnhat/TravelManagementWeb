@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.lth_TravelManagement_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.lth.pojos.Province</class>
+    <class>com.lth.pojos.Picture</class>
+    <class>com.lth.pojos.Ward</class>
+    <class>com.lth.pojos.Place</class>
+    <class>com.lth.pojos.Catalog</class>
+    <class>com.lth.pojos.TourTicket</class>
+    <class>com.lth.pojos.Tour</class>
+    <class>com.lth.pojos.Feedback</class>
+    <class>com.lth.pojos.Means</class>
+    <class>com.lth.pojos.Hotel</class>
+    <class>com.lth.pojos.Surcharge</class>
+    <class>com.lth.pojos.TourDetail</class>
+    <class>com.lth.pojos.Duration</class>
+    <class>com.lth.pojos.Trip</class>
+    <class>com.lth.pojos.District</class>
+    <class>com.lth.pojos.News</class>
+    <class>com.lth.pojos.Transport</class>
+    <class>com.lth.pojos.User</class>
+    <class>com.lth.pojos.Reaction</class>
+    <class>com.lth.pojos.Customer</class>
+    <class>com.lth.pojos.Location</class>
+    <class>com.lth.pojos.Employee</class>
+    <class>com.lth.pojos.TourBooking</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/traveldb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="tinhyeulathe1"/>
+    </properties>
+  </persistence-unit>
+</persistence>

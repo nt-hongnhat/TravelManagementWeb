@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JpaBuddyIdeaProjectConfig">
-    <option name="defaultUnitInitialized" value="true" />
+  <component name="JpaBuddyIdeaProjectConfig" migrateIndexesAndConstraints="true">
+    <option name="reverseEngineeringLastDbConnectionId" value="d5ad314c-d516-4699-8a53-6cec8d305db1" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/lth/pojos" />
+    <option name="newEntityIdStrategy" />
   </component>
 </project>

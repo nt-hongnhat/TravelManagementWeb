@@ -25,7 +25,11 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.lth.controllers")
+@ComponentScan(basePackages = {
+    "com.lth.controllers",
+    "com.lth.repository",
+    "com.lth.service"
+})
 public class WebApplicationContextConfig implements WebMvcConfigurer {
     @Override
     public void configureDefaultServletHandling(

@@ -5,7 +5,10 @@
  */
 package com.lth.controllers;
 
+import com.lth.service.TourService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -14,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
+    @Autowired
+    private TourService tourService;
+    
     @RequestMapping("/")
-    public String index() {
-        return "baseLayout";
+    public String index(Model model) {
+        model.addAttribute("tours", this.tourService.getTours(""));
+        return "index";
     }
 }
