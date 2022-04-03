@@ -23,8 +23,13 @@ public class TourServiceImpl implements TourService{
     private TourRepository tourRepository;
     
     @Override
-    public List<Tour> getTours(String keyword) {
-        return this.tourRepository.getTours(keyword);
+    public List<Tour> getTours(String keyword,int page) {
+        return this.tourRepository.getTours(keyword, page);
+    }
+
+    @Override
+    public long countTour() {
+        return this.tourRepository.countTour();
     }
     
 }

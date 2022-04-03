@@ -15,6 +15,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,12 +26,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
+@PropertySource("classpath:pagination.properties")
 public class TourRepositoryImpl implements TourRepository{
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
     
     @Override
-    public List<Tour> getTours(String keyword) {
+    public List<Tour> getTours(String keyword, int page) {
+        int maxSizePage = 6;
         Session session = this.sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Tour> query = builder.createQuery(Tour.class);
@@ -44,7 +47,18 @@ public class TourRepositoryImpl implements TourRepository{
         }
         
         Query q = session.createQuery(query);
+        q.setMaxResults(maxSizePage);
+        q.setFirstResult((page-1) * maxSizePage);
+        
         return q.getResultList();
+    }
+
+    @Override
+    public long countTour() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Query query = session.createQuery("SELECT Count(*) FROM Tour");
+        
+        return Long.parseLong(query.getSingleResult().toString());
     }
     
 }
