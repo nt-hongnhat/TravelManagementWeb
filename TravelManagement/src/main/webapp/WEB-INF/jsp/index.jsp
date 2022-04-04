@@ -7,6 +7,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div>
+    <ul class="pagination">
+        <c:forEach begin="1" end="${Math.ceil(numberOfTourPaginationItem)}" var="i">
+            <li class="page-item"><a class="page-link" href="<c:url value="/" />?page=${i}">${i}</a></li>
+        </c:forEach>
+    </ul>
+</div>
+
+<div>
     <c:forEach var="tour" items="${tours}">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="" alt="Card image cap">

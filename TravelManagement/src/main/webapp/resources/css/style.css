@@ -38,7 +38,7 @@ li {
 
 .main-page {
     height: 100vh;
-    background-image: url(images/bg-main-page.jpg);
+    background-image: url(../images/bg-main-page.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -55,7 +55,7 @@ nav {
 }
 
 .navbar-brand {
-    color: black;
+    color: white;
     font-weight: 700;
     font-size: 2rem;
 }
@@ -69,7 +69,7 @@ nav {
 }
 
 .nav-link {
-    color: black;
+    color: white;
     text-transform: uppercase;
     text-align: center;
     font-size: 1rem;

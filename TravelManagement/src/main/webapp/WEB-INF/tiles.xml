@@ -22,4 +22,9 @@ and open the template in the editor.
         <put-attribute name="title" value="Trang chu"/>
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
+
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Đăng nhập"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
+    </definition>
 </tiles-definitions>

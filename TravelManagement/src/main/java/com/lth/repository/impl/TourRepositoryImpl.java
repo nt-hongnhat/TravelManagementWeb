@@ -16,6 +16,7 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,28 +30,30 @@ import org.springframework.transaction.annotation.Transactional;
 @PropertySource("classpath:pagination.properties")
 public class TourRepositoryImpl implements TourRepository{
     @Autowired
+    private Environment env;
+    @Autowired
     private LocalSessionFactoryBean sessionFactory;
-    
+
     @Override
     public List<Tour> getTours(String keyword, int page) {
-        int maxSizePage = 6;
+        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         Session session = this.sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Tour> query = builder.createQuery(Tour.class);
-        Root root = query.from(Tour.class);
-        query.select(root);
+        CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
+        Root<Tour> root = criteriaQuery.from(Tour.class);
+        criteriaQuery = criteriaQuery.select(root);
         
-        if (keyword.isEmpty() && keyword != null) {
+        if (keyword.isEmpty()) {
             Predicate predicate = builder.like(root.get("name").as(String.class),
                     String.format("%%%s%%", keyword));
-            query.where(predicate);
+            criteriaQuery.where(predicate);
         }
+
+        Query query = session.createQuery(criteriaQuery);
+        query.setMaxResults(pageNumberOfTour);
+        query.setFirstResult((page-1) * pageNumberOfTour);
         
-        Query q = session.createQuery(query);
-        q.setMaxResults(maxSizePage);
-        q.setFirstResult((page-1) * maxSizePage);
-        
-        return q.getResultList();
+        return query.getResultList();
     }
 
     @Override

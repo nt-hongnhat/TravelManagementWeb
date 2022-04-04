@@ -1,4 +1,5 @@
-<%-- 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
     Document   : header
     Created on : Mar 31, 2022, 8:59:00 PM
     Author     : PC
@@ -26,6 +27,16 @@
                     </li>
                 </ul>
 
-                <a class="nav-link nav-button" href="">Đăng nhập</a>
+                <c:if test="${pageContext.request.userPrincipal.name == null}">
+                    <a class="nav-link nav-button" href="<c:url value="/login" />">Đăng nhập</a>
+                </c:if>
+                <c:if test="${pageContext.request.userPrincipal.name != null}">
+                    <a class="nav-link nav-button" href="<c:url value="/" />">
+                            ${pageContext.request.userPrincipal.name}
+                    </a>
+                    <a class="nav-link nav-button" href="<c:url value="/logout" />">
+                        Đăng xuất
+                    </a>
+                </c:if>
             </div>
 </nav>

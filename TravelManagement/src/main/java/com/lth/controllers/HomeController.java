@@ -8,6 +8,8 @@ package com.lth.controllers;
 import com.lth.service.TourService;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author PC
  */
 @Controller
+@PropertySource("classpath:pagination.properties")
 public class HomeController {
+    @Autowired
+    private Environment env;
     @Autowired
     private TourService tourService;
     
@@ -30,8 +35,8 @@ public class HomeController {
         
         model.addAttribute("tours", 
                 this.tourService.getTours(keyword, page));
-        model.addAttribute("numberOfTour", 
-                this.tourService.countTour());
+        model.addAttribute("numberOfTourPaginationItem",
+                this.tourService.countTour() / Integer.parseInt(env.getProperty("pagination.numberOfTour")));
         return "index";
     }
 }
