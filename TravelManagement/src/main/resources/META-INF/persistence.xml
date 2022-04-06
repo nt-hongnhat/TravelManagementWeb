@@ -25,6 +25,7 @@
     <class>com.lth.pojos.Location</class>
     <class>com.lth.pojos.Employee</class>
     <class>com.lth.pojos.TourBooking</class>
+    <class>com.lth.pojos.UserInfo</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/traveldb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

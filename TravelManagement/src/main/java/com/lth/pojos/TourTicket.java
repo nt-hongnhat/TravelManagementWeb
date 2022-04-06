@@ -60,15 +60,15 @@ public class TourTicket implements Serializable {
     @NotNull
     @Column(name = "total")
     private long total;
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
-    @ManyToOne
-    private Employee employeeId;
     @JoinColumn(name = "surcharge_id", referencedColumnName = "id")
     @ManyToOne
     private Surcharge surchargeId;
     @JoinColumn(name = "tour_booking_id", referencedColumnName = "id")
     @ManyToOne
     private TourBooking tourBookingId;
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @ManyToOne
+    private User employeeId;
 
     public TourTicket() {
     }
@@ -125,14 +125,6 @@ public class TourTicket implements Serializable {
         this.total = total;
     }
 
-    public Employee getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Employee employeeId) {
-        this.employeeId = employeeId;
-    }
-
     public Surcharge getSurchargeId() {
         return surchargeId;
     }
@@ -147,6 +139,14 @@ public class TourTicket implements Serializable {
 
     public void setTourBookingId(TourBooking tourBookingId) {
         this.tourBookingId = tourBookingId;
+    }
+
+    public User getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(User employeeId) {
+        this.employeeId = employeeId;
     }
 
     @Override

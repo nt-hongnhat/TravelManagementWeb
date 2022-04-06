@@ -29,6 +29,7 @@
 
                 <c:if test="${pageContext.request.userPrincipal.name == null}">
                     <a class="nav-link nav-button" href="<c:url value="/login" />">Đăng nhập</a>
+                    <a class="nav-link nav-button" href="<c:url value="/register" />">Dăng ký</a>
                 </c:if>
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                     <a class="nav-link nav-button" href="<c:url value="/" />">

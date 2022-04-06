@@ -2,6 +2,7 @@ package com.lth.repository.impl;
 
 import com.lth.pojos.User;
 import com.lth.repository.UserRepository;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -23,6 +24,13 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public boolean registerUser(User user) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            session.save(user);
+            return true;
+        } catch (HibernateException ex) {
+            System.err.println(ex.getMessage());
+        }
         return false;
     }
 

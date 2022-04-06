@@ -5,28 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660fc632-be22-4bb7-9265-ac5b1703abb3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/configs/SecurityWebApplicationInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/configs/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/configs/DispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/configs/DispatcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pagination.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pagination.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/configs/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/configs/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/base.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,7 @@
         <option value="Enum" />
         <option value="com.haulmont.jpb.JpaEntity" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -135,7 +134,11 @@
       <option name="presentableId" value="Default" />
       <updated>1648794653881</updated>
       <workItem from="1648977036877" duration="2736000" />
-      <workItem from="1649074233891" duration="8835000" />
+      <workItem from="1649074233891" duration="9312000" />
+      <workItem from="1649133192001" duration="3441000" />
+      <workItem from="1649157814938" duration="3168000" />
+      <workItem from="1649212271448" duration="2091000" />
+      <workItem from="1649248121974" duration="6647000" />
     </task>
     <servers />
   </component>

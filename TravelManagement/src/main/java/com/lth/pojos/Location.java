@@ -40,10 +40,10 @@ public class Location implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "locationId")
-    private Collection<Employee> employeeCollection;
     @OneToMany(mappedBy = "departureLocationId")
     private Collection<TourBooking> tourBookingCollection;
+    @OneToMany(mappedBy = "locationId")
+    private Collection<UserInfo> userInfoCollection;
     @OneToMany(mappedBy = "locationId")
     private Collection<Hotel> hotelCollection;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
@@ -57,8 +57,6 @@ public class Location implements Serializable {
     private Ward wardId;
     @OneToMany(mappedBy = "locationId")
     private Collection<Place> placeCollection;
-    @OneToMany(mappedBy = "locationId")
-    private Collection<Customer> customerCollection;
 
     public Location() {
     }
@@ -76,21 +74,21 @@ public class Location implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Employee> getEmployeeCollection() {
-        return employeeCollection;
-    }
-
-    public void setEmployeeCollection(Collection<Employee> employeeCollection) {
-        this.employeeCollection = employeeCollection;
-    }
-
-    @XmlTransient
     public Collection<TourBooking> getTourBookingCollection() {
         return tourBookingCollection;
     }
 
     public void setTourBookingCollection(Collection<TourBooking> tourBookingCollection) {
         this.tourBookingCollection = tourBookingCollection;
+    }
+
+    @XmlTransient
+    public Collection<UserInfo> getUserInfoCollection() {
+        return userInfoCollection;
+    }
+
+    public void setUserInfoCollection(Collection<UserInfo> userInfoCollection) {
+        this.userInfoCollection = userInfoCollection;
     }
 
     @XmlTransient
@@ -133,15 +131,6 @@ public class Location implements Serializable {
 
     public void setPlaceCollection(Collection<Place> placeCollection) {
         this.placeCollection = placeCollection;
-    }
-
-    @XmlTransient
-    public Collection<Customer> getCustomerCollection() {
-        return customerCollection;
-    }
-
-    public void setCustomerCollection(Collection<Customer> customerCollection) {
-        this.customerCollection = customerCollection;
     }
 
     @Override

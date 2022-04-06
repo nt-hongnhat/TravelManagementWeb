@@ -8,18 +8,7 @@ package com.lth.pojos;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -42,7 +31,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "User.findByCreatedDate", query = "SELECT u FROM User u WHERE u.createdDate = :createdDate"),
     @NamedQuery(name = "User.findByUpdatedDate", query = "SELECT u FROM User u WHERE u.updatedDate = :updatedDate"),
     @NamedQuery(name = "User.findByIsActive", query = "SELECT u FROM User u WHERE u.isActive = :isActive"),
-    @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole")})
+    @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole"),
+    @NamedQuery(name = "User.findByFirstName", query = "SELECT u FROM User u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "User.findByLastName", query = "SELECT u FROM User u WHERE u.lastName = :lastName")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -87,14 +78,26 @@ public class User implements Serializable {
     @Size(min = 1, max = 8)
     @Column(name = "user_role")
     private String userRole;
+    @Size(max = 45)
+    @Column(name = "first_name")
+    private String firstName;
+    @Size(max = 45)
+    @Column(name = "last_name")
+    private String lastName;
     @OneToMany(mappedBy = "userId")
     private Collection<News> newsCollection;
     @OneToMany(mappedBy = "userId")
     private Collection<Reaction> reactionCollection;
+    @OneToMany(mappedBy = "employeeId")
+    private Collection<TourTicket> tourTicketCollection;
     @OneToMany(mappedBy = "userId")
     private Collection<Feedback> feedbackCollection;
-    @OneToMany(mappedBy = "userId")
-    private Collection<Customer> customerCollection;
+    @JoinColumn(name = "user_info_id", referencedColumnName = "id")
+    @OneToOne
+    private UserInfo userInfoId;
+
+    @Transient
+    private String confirmPassword;
 
     public User() {
     }
@@ -185,6 +188,22 @@ public class User implements Serializable {
         this.userRole = userRole;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     @XmlTransient
     public Collection<News> getNewsCollection() {
         return newsCollection;
@@ -204,6 +223,15 @@ public class User implements Serializable {
     }
 
     @XmlTransient
+    public Collection<TourTicket> getTourTicketCollection() {
+        return tourTicketCollection;
+    }
+
+    public void setTourTicketCollection(Collection<TourTicket> tourTicketCollection) {
+        this.tourTicketCollection = tourTicketCollection;
+    }
+
+    @XmlTransient
     public Collection<Feedback> getFeedbackCollection() {
         return feedbackCollection;
     }
@@ -212,13 +240,12 @@ public class User implements Serializable {
         this.feedbackCollection = feedbackCollection;
     }
 
-    @XmlTransient
-    public Collection<Customer> getCustomerCollection() {
-        return customerCollection;
+    public UserInfo getUserInfoId() {
+        return userInfoId;
     }
 
-    public void setCustomerCollection(Collection<Customer> customerCollection) {
-        this.customerCollection = customerCollection;
+    public void setUserInfoId(UserInfo userInfoId) {
+        this.userInfoId = userInfoId;
     }
 
     @Override
@@ -245,5 +272,12 @@ public class User implements Serializable {
     public String toString() {
         return "com.lth.pojos.User[ id=" + id + " ]";
     }
-    
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
 }

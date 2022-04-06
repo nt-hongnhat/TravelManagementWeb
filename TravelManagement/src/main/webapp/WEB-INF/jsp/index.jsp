@@ -6,6 +6,14 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="ser" uri="http://www.springframework.org/security/tags" %>
+
+<ser:authorize access="hasRole('CUSTOMER')">
+    <div>
+        <h2>Đây là tài khoản</h2>
+    </div>
+</ser:authorize>
+
 <div>
     <ul class="pagination">
         <c:forEach begin="1" end="${Math.ceil(numberOfTourPaginationItem)}" var="i">

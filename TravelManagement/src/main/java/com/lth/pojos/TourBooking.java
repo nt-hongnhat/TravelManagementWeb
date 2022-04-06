@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "TourBooking.findAll", query = "SELECT t FROM TourBooking t"),
     @NamedQuery(name = "TourBooking.findById", query = "SELECT t FROM TourBooking t WHERE t.id = :id"),
+    @NamedQuery(name = "TourBooking.findByCustomerId", query = "SELECT t FROM TourBooking t WHERE t.customerId = :customerId"),
     @NamedQuery(name = "TourBooking.findByBookingDate", query = "SELECT t FROM TourBooking t WHERE t.bookingDate = :bookingDate"),
     @NamedQuery(name = "TourBooking.findByDepartureDate", query = "SELECT t FROM TourBooking t WHERE t.departureDate = :departureDate"),
     @NamedQuery(name = "TourBooking.findByDepartureAddress", query = "SELECT t FROM TourBooking t WHERE t.departureAddress = :departureAddress"),
@@ -50,6 +51,8 @@ public class TourBooking implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @Column(name = "customer_id")
+    private Integer customerId;
     @Basic(optional = false)
     @NotNull
     @Column(name = "booking_date")
@@ -73,9 +76,6 @@ public class TourBooking implements Serializable {
     private int quantityChildren;
     @OneToMany(mappedBy = "tourBookingId")
     private Collection<TourTicket> tourTicketCollection;
-    @JoinColumn(name = "customer_id", referencedColumnName = "id")
-    @ManyToOne
-    private Customer customerId;
     @JoinColumn(name = "departure_location_id", referencedColumnName = "id")
     @ManyToOne
     private Location departureLocationId;
@@ -104,6 +104,14 @@ public class TourBooking implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public Date getBookingDate() {
@@ -153,14 +161,6 @@ public class TourBooking implements Serializable {
 
     public void setTourTicketCollection(Collection<TourTicket> tourTicketCollection) {
         this.tourTicketCollection = tourTicketCollection;
-    }
-
-    public Customer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Customer customerId) {
-        this.customerId = customerId;
     }
 
     public Location getDepartureLocationId() {

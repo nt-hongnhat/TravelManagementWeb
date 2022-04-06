@@ -6,7 +6,6 @@
 package com.lth.pojos;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -18,32 +17,30 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author PC
  */
 @Entity
-@Table(name = "employee")
+@Table(name = "user_info")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Employee.findAll", query = "SELECT e FROM Employee e"),
-    @NamedQuery(name = "Employee.findById", query = "SELECT e FROM Employee e WHERE e.id = :id"),
-    @NamedQuery(name = "Employee.findByName", query = "SELECT e FROM Employee e WHERE e.name = :name"),
-    @NamedQuery(name = "Employee.findByGender", query = "SELECT e FROM Employee e WHERE e.gender = :gender"),
-    @NamedQuery(name = "Employee.findByBirthday", query = "SELECT e FROM Employee e WHERE e.birthday = :birthday"),
-    @NamedQuery(name = "Employee.findByCitizenship", query = "SELECT e FROM Employee e WHERE e.citizenship = :citizenship"),
-    @NamedQuery(name = "Employee.findByPhone", query = "SELECT e FROM Employee e WHERE e.phone = :phone"),
-    @NamedQuery(name = "Employee.findByAddress", query = "SELECT e FROM Employee e WHERE e.address = :address")})
-public class Employee implements Serializable {
+    @NamedQuery(name = "UserInfo.findAll", query = "SELECT u FROM UserInfo u"),
+    @NamedQuery(name = "UserInfo.findById", query = "SELECT u FROM UserInfo u WHERE u.id = :id"),
+    @NamedQuery(name = "UserInfo.findByGender", query = "SELECT u FROM UserInfo u WHERE u.gender = :gender"),
+    @NamedQuery(name = "UserInfo.findByDayOfBirth", query = "SELECT u FROM UserInfo u WHERE u.dayOfBirth = :dayOfBirth"),
+    @NamedQuery(name = "UserInfo.findByCitizenship", query = "SELECT u FROM UserInfo u WHERE u.citizenship = :citizenship"),
+    @NamedQuery(name = "UserInfo.findByPhone", query = "SELECT u FROM UserInfo u WHERE u.phone = :phone"),
+    @NamedQuery(name = "UserInfo.findByAddress", query = "SELECT u FROM UserInfo u WHERE u.address = :address")})
+public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -53,47 +50,38 @@ public class Employee implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
-    @Column(name = "name")
-    private String name;
-    @Basic(optional = false)
-    @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "gender")
     private String gender;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "birthday")
+    @Column(name = "day_of_birth")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date birthday;
-    @Basic(optional = false)
-    @NotNull
+    private Date dayOfBirth;
+    @Size(max = 30)
     @Column(name = "citizenship")
-    private int citizenship;
+    private String citizenship;
+    // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
+    @Size(max = 15)
     @Column(name = "phone")
-    private Integer phone;
+    private String phone;
     @Size(max = 45)
     @Column(name = "address")
     private String address;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
     private Location locationId;
-    @OneToMany(mappedBy = "employeeId")
-    private Collection<TourTicket> tourTicketCollection;
+    @OneToOne(mappedBy = "userInfoId")
+    private User user;
 
-    public Employee() {
+    public UserInfo() {
     }
 
-    public Employee(Integer id) {
+    public UserInfo(Integer id) {
         this.id = id;
     }
 
-    public Employee(Integer id, String name, String gender, Date birthday, int citizenship) {
+    public UserInfo(Integer id, String gender) {
         this.id = id;
-        this.name = name;
         this.gender = gender;
-        this.birthday = birthday;
-        this.citizenship = citizenship;
     }
 
     public Integer getId() {
@@ -104,14 +92,6 @@ public class Employee implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -120,27 +100,27 @@ public class Employee implements Serializable {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Date getDayOfBirth() {
+        return dayOfBirth;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setDayOfBirth(Date dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
     }
 
-    public int getCitizenship() {
+    public String getCitizenship() {
         return citizenship;
     }
 
-    public void setCitizenship(int citizenship) {
+    public void setCitizenship(String citizenship) {
         this.citizenship = citizenship;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -160,13 +140,12 @@ public class Employee implements Serializable {
         this.locationId = locationId;
     }
 
-    @XmlTransient
-    public Collection<TourTicket> getTourTicketCollection() {
-        return tourTicketCollection;
+    public User getUser() {
+        return user;
     }
 
-    public void setTourTicketCollection(Collection<TourTicket> tourTicketCollection) {
-        this.tourTicketCollection = tourTicketCollection;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
@@ -179,10 +158,10 @@ public class Employee implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Employee)) {
+        if (!(object instanceof UserInfo)) {
             return false;
         }
-        Employee other = (Employee) object;
+        UserInfo other = (UserInfo) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -191,7 +170,7 @@ public class Employee implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Employee[ id=" + id + " ]";
+        return "com.lth.pojos.UserInfo[ id=" + id + " ]";
     }
     
 }

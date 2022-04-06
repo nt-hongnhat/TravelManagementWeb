@@ -91,5 +91,8 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.3.13.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.3.13.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.3.13.RELEASE" level="project" />
   </component>
 </module>

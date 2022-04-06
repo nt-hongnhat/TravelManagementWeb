@@ -12,12 +12,12 @@ and open the template in the editor.
     <definition name="baseLayout"
                 template="/WEB-INF/layout/base.jsp">
             <put-attribute name="title" value=""/>
-        <put-attribute name="header" 
+        <put-attribute name="header"
                        value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
-    
+
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="Trang chu"/>
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
@@ -26,5 +26,10 @@ and open the template in the editor.
     <definition name="login" extends="baseLayout">
         <put-attribute name="title" value="Đăng nhập"/>
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
+    </definition>
+
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Đăng ký"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/register.jsp"/>
     </definition>
 </tiles-definitions>

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: traveldb
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,40 +45,6 @@ LOCK TABLES `catalog` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `customer`
---
-
-DROP TABLE IF EXISTS `customer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customer` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `gender` enum('MALE','FEMALE','OTHER') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'MALE',
-  `citizenship` int NOT NULL,
-  `phone` int NOT NULL,
-  `location_id` int DEFAULT NULL,
-  `address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_customer_location_idx` (`location_id`),
-  KEY `fk_customer_user_idx` (`user_id`),
-  CONSTRAINT `fk_customer_location` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `fk_customer_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Khách hàng: tên, giới tính, CCCD/CMND, số điện thoại, địa chỉ, tài khoản người dùng (nếu có)';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `customer`
---
-
-LOCK TABLES `customer` WRITE;
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `district`
 --
 
@@ -87,8 +53,8 @@ DROP TABLE IF EXISTS `district`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `district` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prefix` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prefix` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `province_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -133,38 +99,6 @@ LOCK TABLES `duration` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `employee`
---
-
-DROP TABLE IF EXISTS `employee`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `employee` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `gender` enum('MALE','FEMALE','OTHER') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'MALE',
-  `birthday` datetime NOT NULL,
-  `citizenship` int NOT NULL,
-  `phone` int DEFAULT NULL,
-  `location_id` int DEFAULT NULL,
-  `address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_employee_location_idx` (`location_id`),
-  CONSTRAINT `fk_employee_location` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Nhân viên';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `employee`
---
-
-LOCK TABLES `employee` WRITE;
-/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `feedback`
 --
 
@@ -172,7 +106,7 @@ DROP TABLE IF EXISTS `feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `feedback` (
-  `id` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tour_id` int DEFAULT NULL,
   `user_id` int DEFAULT NULL,
   `rating` decimal(1,0) NOT NULL,
@@ -209,7 +143,7 @@ CREATE TABLE `hotel` (
   `name` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `phone` int NOT NULL,
   `location_id` int DEFAULT NULL,
-  `address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_hotel_location_idx` (`location_id`),
@@ -327,8 +261,8 @@ DROP TABLE IF EXISTS `picture`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `picture` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `path` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `caption` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `caption` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `path_UNIQUE` (`path`)
@@ -355,7 +289,7 @@ CREATE TABLE `place` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `location_id` int DEFAULT NULL,
-  `address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -382,7 +316,7 @@ DROP TABLE IF EXISTS `province`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `province` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`),
   UNIQUE KEY `id_UNIQUE` (`id`)
@@ -407,7 +341,7 @@ DROP TABLE IF EXISTS `reaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reaction` (
-  `id` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` int DEFAULT NULL,
   `news_id` int DEFAULT NULL,
   `is_like` bit(1) NOT NULL DEFAULT b'0',
@@ -441,7 +375,7 @@ DROP TABLE IF EXISTS `surcharge`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `surcharge` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `percentage` float NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -478,7 +412,7 @@ CREATE TABLE `tour` (
   KEY `fk_tour_schedule_idx` (`duration_id`),
   CONSTRAINT `fk_tour_duration` FOREIGN KEY (`duration_id`) REFERENCES `duration` (`id`),
   CONSTRAINT `fk_tour_trip` FOREIGN KEY (`trip_id`) REFERENCES `trip` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tour du lịch: tên tour, giá tour, mô tả tour, chuyến đi, thời gian đi';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tour du lịch: tên tour, giá tour, mô tả tour, chuyến đi, thời gian đi';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -487,6 +421,7 @@ CREATE TABLE `tour` (
 
 LOCK TABLES `tour` WRITE;
 /*!40000 ALTER TABLE `tour` DISABLE KEYS */;
+INSERT INTO `tour` VALUES (1,'Tour Đà Nẵng 1N: Suối Khoáng Thần Tài',490,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tour` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,15 +439,13 @@ CREATE TABLE `tour_booking` (
   `booking_date` datetime NOT NULL,
   `departure_date` datetime NOT NULL,
   `departure_location_id` int DEFAULT NULL,
-  `departure_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `departure_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `quantity_adults` int NOT NULL DEFAULT '1',
   `quantity_children` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_tour_booking_location_idx` (`departure_location_id`),
-  KEY `fk_tour_booking_customer_idx` (`customer_id`),
   KEY `fk_tour_booking_tour_idx` (`tour_id`),
-  CONSTRAINT `fk_tour_booking_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_tour_booking_location` FOREIGN KEY (`departure_location_id`) REFERENCES `location` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_tour_booking_tour` FOREIGN KEY (`tour_id`) REFERENCES `tour` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Thông tin đặt tour: khách hàng, tour du lịch,  ngày đặt, ngày khởi hành, nơi đón khách, số người lớn, số trẻ em';
@@ -575,11 +508,11 @@ CREATE TABLE `tour_ticket` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_tour_ticket_surcharge_idx` (`surcharge_id`),
-  KEY `fk_tour_ticket_employee_idx` (`employee_id`),
   KEY `fk_tour_ticket_tour_booking_idx` (`tour_booking_id`),
-  CONSTRAINT `fk_tour_ticket_employee` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  KEY `fk_tour_ticket_user_employee_idx` (`employee_id`),
   CONSTRAINT `fk_tour_ticket_surcharge` FOREIGN KEY (`surcharge_id`) REFERENCES `surcharge` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  CONSTRAINT `fk_tour_ticket_tour_booking` FOREIGN KEY (`tour_booking_id`) REFERENCES `tour_booking` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  CONSTRAINT `fk_tour_ticket_tour_booking` FOREIGN KEY (`tour_booking_id`) REFERENCES `tour_booking` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_tour_ticket_user_employee` FOREIGN KEY (`employee_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Vé tour:  loại vé (người lớn/trẻ em), giá vé, phụ thu (nếu có), thanh toán (true/false), thông tin đặt tour, nhân viên bán vé.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -659,18 +592,23 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_date` datetime NOT NULL,
-  `updated_date` datetime NOT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_active` bit(1) DEFAULT b'1',
   `user_role` enum('ADMIN','EMPLOYEE','CUSTOMER') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'CUSTOMER',
+  `user_info_id` int DEFAULT NULL,
+  `first_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Người dùng: tên đăng nhập, mật khẩu, email, hình đại diện, ngày tạo, ngày cập nhật, trạng thái hoạt động (true/false), phân quyền người dùng (quản trị viên, nhân viên, khách hàng)';
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  UNIQUE KEY `user_info_id_UNIQUE` (`user_info_id`),
+  CONSTRAINT `fk_user_userinfo_id` FOREIGN KEY (`user_info_id`) REFERENCES `user_info` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Người dùng: tên đăng nhập, mật khẩu, email, hình đại diện, ngày tạo, ngày cập nhật, trạng thái hoạt động (true/false), phân quyền người dùng (quản trị viên, nhân viên, khách hàng)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,7 +617,38 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'admin','$2a$10$h4vQPQWOXAh0RE3dLpru2uDLrw/PqEa9Ns5Y3FwCwrSqu7.Ubbr96','admin@gmail.com',NULL,'2022-04-06 21:06:14','2022-04-06 21:06:14',NULL,'CUSTOMER',NULL,'Hieu','La');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_info`
+--
+
+DROP TABLE IF EXISTS `user_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_info` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `gender` enum('MALE','FEMALE','OTHER') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'MALE',
+  `day_of_birth` datetime DEFAULT NULL,
+  `citizenship` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location_id` int DEFAULT NULL,
+  `address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_info_location_idx` (`location_id`),
+  CONSTRAINT `fk_info_location` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_info`
+--
+
+LOCK TABLES `user_info` WRITE;
+/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -691,8 +660,8 @@ DROP TABLE IF EXISTS `ward`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ward` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prefix` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prefix` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `province_id` int DEFAULT NULL,
   `district_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -722,4 +691,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-02 17:22:12
+-- Dump completed on 2022-04-06 21:39:58
