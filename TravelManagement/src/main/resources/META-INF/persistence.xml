@@ -21,17 +21,16 @@
     <class>com.lth.pojos.Transport</class>
     <class>com.lth.pojos.User</class>
     <class>com.lth.pojos.Reaction</class>
-    <class>com.lth.pojos.Customer</class>
     <class>com.lth.pojos.Location</class>
-    <class>com.lth.pojos.Employee</class>
     <class>com.lth.pojos.TourBooking</class>
     <class>com.lth.pojos.UserInfo</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+	  <class>com.lth.pojos.Category</class>
+	  <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/traveldb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="tinhyeulathe1"/>
+      <property name="javax.persistence.jdbc.password" value="12345678"/>
     </properties>
   </persistence-unit>
 </persistence>
