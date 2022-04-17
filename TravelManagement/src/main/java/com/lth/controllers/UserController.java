@@ -1,6 +1,7 @@
 package com.lth.controllers;
 
 import com.lth.pojos.User;
+import com.lth.service.CategoryService;
 import com.lth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
     @Autowired
     private UserService userDetailsService;
+    @Autowired
+    private CategoryService categoryService;
 
     @GetMapping("/login")
     public String loginView() {
@@ -39,5 +42,7 @@ public class UserController {
 
         model.addAttribute("errorMessage", errorMessage);
         return "register";
+
+
     }
 }
