@@ -25,7 +25,7 @@
 <div>
     <c:forEach var="tour" items="${tours}">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="" alt="Card image cap">
+            <img class="card-img-top" src="${pageContext.request.contextPath}/resources/images/bg-main-page.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${tour.name}123</h5>
               <p class="card-text">${tour.price}</p>
