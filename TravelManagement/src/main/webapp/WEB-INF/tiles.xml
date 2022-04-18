@@ -5,31 +5,43 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<!DOCTYPE tiles-definitions PUBLIC 
-"-//ApacheSoftware Foundation//DTD Tiles Configuration 3.0//EN" 
-"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//ApacheSoftware Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+    <!--BASE LAYOUT-->
     <definition name="baseLayout"
                 template="/WEB-INF/layout/base.jsp">
-            <put-attribute name="title" value=""/>
-        <put-attribute name="header"
-                       value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="title" value=""/>
+        <put-attribute name="navbar" value="/WEB-INF/layout/navbar.jsp"/>
+        <put-attribute name="header" value=""/>
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
 
+    <!--HOME PAGE-->
     <definition name="index" extends="baseLayout">
-        <put-attribute name="title" value="Trang chu"/>
+        <put-attribute name="title" value="TravelMore - Trang chủ"/>
+        <put-attribute name="navbar" value="/WEB-INF/layout/navbar.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
     </definition>
 
+    <!--LOGIN-->
     <definition name="login" extends="baseLayout">
         <put-attribute name="title" value="Đăng nhập"/>
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"/>
     </definition>
 
+    <!--LOGON-->
     <definition name="register" extends="baseLayout">
         <put-attribute name="title" value="Đăng ký"/>
         <put-attribute name="content" value="/WEB-INF/jsp/register.jsp"/>
+    </definition>
+
+    <!--ADMIN PAGE-->
+    <definition name="admin" extends="baseLayout">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp"/>
     </definition>
 </tiles-definitions>

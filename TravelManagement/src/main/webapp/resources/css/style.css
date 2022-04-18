@@ -1,93 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width : 992px) {
+
+    .carousel-inner img {
+        height : 90vh;
+    }
+}
+
+@media screen and (max-width : 992px) {
     html {
-        font-size: 14px;
+        font-size : 14px;
     }
-    
+
+    .carousel-inner img {
+        height : 75vh;
+    }
 }
 
-@media screen and (max-width: 768px) {
-    
+@media screen and (max-width : 768px) {
     .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color : rgba(0, 0, 0, 0.5);
+    }
+
+
+    .carousel-inner img {
+        height : 50vh;
     }
 }
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width : 600px) {
+    .carousel-inner img {
+        height : 25vh;
+    }
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
+a:not(.btn, .nav-link, .navbar-brand, .dropdown-item) {
+    text-decoration : underline;
 }
 
 li {
-    list-style-type: none;
+    list-style-type : none;
 }
 
-.main-page {
-    height: 100vh;
-    background-image: url(../images/bg-main-page.jpg);
-    background-size: cover;
-    background-position: center;
+html {
+    width  : 100%;
+    height : 100%;
+}
+
+body, div.collapse, div.collapse ul, li.nav-item, a.nav-link {
+    height : 100%;
+}
+
+a {
+    display : inline-block;
 }
 
 nav {
-    font-family: 'Lexend Deca', sans-serif;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    font-family   : 'Lexend Deca', sans-serif;
+    border-bottom : 3px solid rgba(255, 255, 255, 0.5);
+    height        : fit-content;
 }
 
-.navbar {
-    padding: 0rem;
-    margin: 0 2rem;
-    box-sizing: border-box;
+* {
+    font-family : 'Lexend Deca', sans-serif;
 }
 
-.navbar-brand {
-    color: white;
-    font-weight: 700;
-    font-size: 2rem;
+nav.navbar {
+    padding : 0 5vw;
 }
 
-.navbar-brand:hover{
-    color: white;
+a.navbar-brand {
+    font-size : 2rem;
+    color     : black;
 }
 
-.navbar-nav {
-    margin: auto;
+
+a.navbar-brand:hover span {
+    color : red;
 }
 
-.nav-link {
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1rem;
-    padding: 2rem 2rem;
+nav.navbar {
+    background-color : rgba(52, 58, 64, 1);
 }
 
-.nav-link:hover {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.5);
+nav.navbar-shrink {
+    background-color : rgba(52, 58, 64, 0.5);
 }
 
-.fas {
-    color: white;
+
+a.nav-link {
+    margin : 0 0.5vw;
 }
 
-.nav-button {
-    margin: 1rem;
-    padding: .5rem 1rem;
-    border-radius: 2rem;
-    border: 3px solid white;
+
+li.nav-item {
+    padding : 10pt 0;
 }
+
+li.nav-item:hover {
+    background-color : darkgrey;
+}
+
+a#btnLogin.btn.btn-success {
+    height  : fit-content;
+    margin  : auto 1vw;
+    padding : 0.5vw;
+}
+
+li.nav-item:hover a.nav-link > span {
+    color : black;
+}
+
+header.container-fluid {
+    padding : 0;!important;
+}
+
+/* Make the image fully responsive */
+.carousel-inner img {
+    width      : 100%;
+    object-fit : cover;
+}
+
+footer {
+    width    : 100%;
+    height   : 10vh;
+    top      : 100%;
+    position : sticky;
+}
+
+div.dropdown-menu {
+    background-color : rgba(52, 58, 64, 0.5);
+    margin           : 0;
+    padding          : 0.5vh;
+}
+
+section.container-fluid {
+    background-color : #343a40;
+    background-image : url("http://localhost:8080/TravelManagement/resources/images/bg-main-page.jpg");
+    background-size  : cover;
+    height: inherit;
+}
+
+div.col-lg-5 div.card {
+    margin : 5vh auto;
+}
+
