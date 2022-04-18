@@ -43,11 +43,13 @@ public class TourRepositoryImpl implements TourRepository{
         Root<Tour> root = criteriaQuery.from(Tour.class);
         criteriaQuery = criteriaQuery.select(root);
         
-        if (keyword.isEmpty()) {
+        if (!keyword.isEmpty()) {
             Predicate predicate = builder.like(root.get("name").as(String.class),
                     String.format("%%%s%%", keyword));
             criteriaQuery.where(predicate);
         }
+
+
 
         Query query = session.createQuery(criteriaQuery);
         query.setMaxResults(pageNumberOfTour);
@@ -63,5 +65,44 @@ public class TourRepositoryImpl implements TourRepository{
         
         return Long.parseLong(query.getSingleResult().toString());
     }
-    
+
+    @Override
+    public boolean addTour(Tour tour) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            session.save(tour);
+            return true;
+        } catch (Exception ex) {
+            System.err.println("ADD TOUR ERROR!" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public boolean updateTour(Tour tour) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            session.update(tour);
+            return true;
+        } catch (Exception ex) {
+            System.err.println("UPDATE TOUR ERROR!" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public boolean deleteTour(Tour tour) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            session.delete(tour);
+            return true;
+        } catch (Exception ex) {
+            System.err.println("DELETE TOUR ERROR!" + ex.getMessage());
+            ex.printStackTrace();
+        }
+
+        return false;
+    }
 }

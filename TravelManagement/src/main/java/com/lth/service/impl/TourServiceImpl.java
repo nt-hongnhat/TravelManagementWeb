@@ -8,6 +8,8 @@ package com.lth.service.impl;
 import com.lth.pojos.Tour;
 import com.lth.repository.TourRepository;
 import com.lth.service.TourService;
+
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,20 @@ public class TourServiceImpl implements TourService{
     public long countTour() {
         return this.tourRepository.countTour();
     }
-    
+
+    @Override
+    public boolean addTour(Tour tour) {
+        return this.tourRepository.addTour(tour);
+    }
+
+    @Override
+    public boolean updateTour(Tour tour) {
+        return this.tourRepository.updateTour(tour);
+    }
+
+    @Override
+    public boolean deleteTour(Tour tour) {
+        return this.tourRepository.deleteTour(tour);
+    }
+
 }

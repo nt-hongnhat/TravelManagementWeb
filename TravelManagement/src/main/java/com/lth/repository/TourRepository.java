@@ -6,6 +6,8 @@
 package com.lth.repository;
 
 import com.lth.pojos.Tour;
+import org.hibernate.Session;
+
 import java.util.List;
 
 /**
@@ -17,4 +19,7 @@ import java.util.List;
 public interface TourRepository {
     List<Tour> getTours(String keyword, int page);
     long countTour();
+    boolean addTour(Tour tour);
+    boolean updateTour(Tour tour);
+    boolean deleteTour(Tour tour);
 }

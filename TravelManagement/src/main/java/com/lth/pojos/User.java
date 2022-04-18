@@ -5,6 +5,8 @@
  */
 package com.lth.pojos;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -98,6 +100,8 @@ public class User implements Serializable {
 
     @Transient
     private String confirmPassword;
+    @Transient
+    private MultipartFile file;
 
     public User() {
     }
@@ -279,5 +283,13 @@ public class User implements Serializable {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }

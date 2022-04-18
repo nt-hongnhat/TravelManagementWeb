@@ -16,6 +16,7 @@ public class UserController {
 
     @GetMapping("/login")
     public String loginView() {
+        userDetailsService.getUser().get(0).getUserRole()
         return "login";
     }
 
