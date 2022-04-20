@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lth.controllers;
+package com.lth.controllers.user;
 
 import com.lth.service.CategoryService;
 import com.lth.service.ProvinceService;
@@ -14,13 +14,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author PC
  */
 @Controller
+@RequestMapping("")
 public class HomeController {
 	@Autowired
 	private CategoryService categoryService;
@@ -42,6 +45,11 @@ public class HomeController {
 		model.addAttribute("provinces", this.provinceService.getProvinces());
 		model.addAttribute("categories", this.categoryService.getCategories());
 		return "index";
+	}
+
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public String accessDenied() {
+		return "403";
 	}
 
 }

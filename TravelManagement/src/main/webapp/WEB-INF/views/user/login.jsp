@@ -40,13 +40,13 @@
                     <form method="post" action="${action}" class="was-validated">
                         <div class="form-floating mb-3">
                             <label for="inputUsername">Tên đăng nhập</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="" required>
+                            <input class="form-control" id="inputUsername" name="username" type="text" placeholder="" required>
                             <%--                            <div class="valid-feedback">Valid.</div>--%>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
                         <div class="form-floating mb-3">
                             <label for="inputPassword">Mật khẩu</label>
-                            <input class="form-control" id="inputPassword" type="password" placeholder="" required>
+                            <input class="form-control" id="inputPassword" name="password" type="password" placeholder="" required>
                             <%--                            <div class="valid-feedback">Valid.</div>--%>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
