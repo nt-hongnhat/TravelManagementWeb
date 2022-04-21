@@ -22,4 +22,7 @@ public interface TourRepository {
     boolean addTour(Tour tour);
     boolean updateTour(Tour tour);
     boolean deleteTour(Tour tour);
+    List<Tour> getToursByCategory(int categoryID);
+
+    List<Tour> getToursByCategory(int categoryID, int page);
 }
