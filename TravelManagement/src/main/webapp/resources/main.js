@@ -29,6 +29,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
+
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
@@ -53,6 +54,13 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 
+});
+$(document).ready(function(){
+    $('a.nav-link:not(a.nav-link:first-child)').classList.remove("active");
+
+});
+$(document).ready(function(){
+    $('body').scrollspy({target: ".navbar", offset: 100});
 });
 $(function () {
 

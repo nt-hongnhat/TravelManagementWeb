@@ -50,8 +50,14 @@ public class TourServiceImpl implements TourService{
     }
 
     @Override
-    public List<Tour> getToursByCategory(int categoryID) {
-        return this.tourRepository.getToursByCategory(categoryID);
+    public Tour getTourByID(int tourID) {
+        return this.tourRepository.getTourByID(tourID);
     }
+
+    @Override
+    public List<Tour> getToursByCategory(int categoryID, int page) {
+        return this.tourRepository.getToursByCategory(categoryID, page);
+    }
+
 
 }

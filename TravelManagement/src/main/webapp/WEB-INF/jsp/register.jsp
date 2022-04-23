@@ -58,7 +58,7 @@
                             <div class="form-floating mb-3 mb-md-0">
                                 <label for="inputFirstName">Họ</label>
                                 <form:input class="form-control" id="inputFirstName" type="text"
-                                            placeholder="Nguyễn" path="firstName" readonly="false" />
+                                            placeholder="Nguyễn" path="firstName"/>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -74,7 +74,7 @@
                         <form:input class="form-control" id="inputEmail" type="email"
                                     placeholder="name@example.com" path="email"/>
                     </div>
-                    <div class="form-floating mb-3 mb-md-0">
+                    <div class="form-floating mb-3">
                         <label for="inputUsername">Tên tài khoản</label>
                         <form:input class="form-control" id="inputUsername" type="text"
                                     placeholder="Nhập tên tài khoản" path="username"/>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-floating mb-3 mb-md-0">
+                            <div class="form-floating">
                                 <label for="inputPasswordConfirm">Xác nhận mật khẩu</label>
                                 <form:input class="form-control" id="inputPasswordConfirm" type="password"
                                             placeholder="Nhập lại mật khẩu" path="confirmPassword"/>

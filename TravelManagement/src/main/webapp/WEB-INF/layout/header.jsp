@@ -21,7 +21,7 @@
     <div class="navbar-collapse collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/">
+                <a class="nav-link active" href="${pageContext.request.contextPath}/">
                     <%--                    <span><i class="fa-solid fa-house-chimney"></i></span>--%>
                     <span>Trang chủ</span>
                 </a>
@@ -29,24 +29,25 @@
 
             <%--    Dropdown    --%>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbar-drop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="#tours" id="navbar-drop" data-toggle="dropdown">
                     <span>Du lịch</span>
                 </a>
                 <div class="dropdown-menu">
                     <c:forEach var="cate" items="${categories}">
-                        <a class="dropdown-item" href="#">${cate.name}</a>
+                        <a class="dropdown-item"
+                           href="<c:url value="/${cate.name}"/>">${cate.name}</a>
                     </c:forEach>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="#hotels">
                     <%--                    <span><i class="fa-solid fa-hotel"></i></span>--%>
                     <span>Khách sạn</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="#news">
                     <%--                    <span><i class="fa-solid fa-newspaper"></i></span>--%>
                     <span>Tin tức</span>
                 </a>
@@ -72,7 +73,7 @@
 
     </div>
 </nav>
-<header class="container-fluid">
+<header class="container-fluid" id="home">
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->
