@@ -84,8 +84,6 @@ public class News implements Serializable {
     private User userId;
     @OneToMany(mappedBy = "newsId")
     private Collection<Reaction> reactionCollection;
-    @OneToMany(mappedBy = "newsId")
-    private Collection<Catalog> catalogCollection;
 
     public News() {
     }
@@ -177,14 +175,6 @@ public class News implements Serializable {
         this.reactionCollection = reactionCollection;
     }
 
-    @XmlTransient
-    public Collection<Catalog> getCatalogCollection() {
-        return catalogCollection;
-    }
-
-    public void setCatalogCollection(Collection<Catalog> catalogCollection) {
-        this.catalogCollection = catalogCollection;
-    }
 
     @Override
     public int hashCode() {

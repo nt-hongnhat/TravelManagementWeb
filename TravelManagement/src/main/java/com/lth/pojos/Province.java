@@ -17,7 +17,7 @@ import java.util.Collection;
  * @author PC
  */
 @Entity
-@Table(name = "province")
+@Table(name = "location_province")
 @XmlRootElement
 @NamedQueries({
         @NamedQuery(name = "Province.findAll", query = "SELECT p FROM Province p"),

@@ -1,90 +1,60 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lth.pojos;
 
-import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import java.math.BigDecimal;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
-/**
- *
- * @author PC
- */
 @Entity
 @Table(name = "tour")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
-    @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
-    @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
-    @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
-    @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
-public class Tour implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private Integer id;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 45)
-    @Column(name = "name")
+
+    @Column(name = "name", nullable = false)
     private String name;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "price")
-    private long price;
-    @Size(max = 255)
+
+    @Column(name = "price", nullable = false, precision = 12)
+    private BigDecimal price;
+
+    @Column(name = "image", nullable = false)
+    private String image;
+
+    @Column(name = "limit_customer", nullable = false)
+    private Integer limitCustomer;
+
+    @Lob
     @Column(name = "description")
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tourId")
-    private Collection<TourDetail> tourDetailCollection;
-    @OneToMany(mappedBy = "tourId")
-    private Collection<Transport> transportCollection;
-    @JoinColumn(name = "duration_id", referencedColumnName = "id")
-    @ManyToOne
-    private Duration durationId;
-    @JoinColumn(name = "trip_id", referencedColumnName = "id")
-    @ManyToOne
-    private Trip tripId;
-    @OneToMany(mappedBy = "tourId")
-    private Collection<TourBooking> tourBookingCollection;
-    @OneToMany(mappedBy = "tourId")
-    private Collection<Feedback> feedbackCollection;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private Category category;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
-	public Category getCategory() {
-		return category;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "duration_id")
+    private Duration duration;
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id")
+    private Trip trip;
 
-	public Tour() {
-    }
+    @OneToMany(mappedBy = "tour")
+    private Set<TourSchedule> tourSchedules = new LinkedHashSet<>();
 
-    public Tour(Integer id) {
-        this.id = id;
-    }
+    @OneToMany(mappedBy = "tour")
+    private Set<TourDeparture> tourDepartures = new LinkedHashSet<>();
 
-    public Tour(Integer id, String name, long price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
+    @OneToMany(mappedBy = "tour")
+    private Set<TourPlace> tourPlaces = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "tour")
+    private Set<Feedback> feedbacks = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "tour")
+    private Set<Booking> bookings = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
@@ -102,12 +72,28 @@ public class Tour implements Serializable {
         this.name = name;
     }
 
-    public long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Integer getLimitCustomer() {
+        return limitCustomer;
+    }
+
+    public void setLimitCustomer(Integer limitCustomer) {
+        this.limitCustomer = limitCustomer;
     }
 
     public String getDescription() {
@@ -118,81 +104,68 @@ public class Tour implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
-    public Collection<TourDetail> getTourDetailCollection() {
-        return tourDetailCollection;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setTourDetailCollection(Collection<TourDetail> tourDetailCollection) {
-        this.tourDetailCollection = tourDetailCollection;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    @XmlTransient
-    public Collection<Transport> getTransportCollection() {
-        return transportCollection;
+    public Duration getDuration() {
+        return duration;
     }
 
-    public void setTransportCollection(Collection<Transport> transportCollection) {
-        this.transportCollection = transportCollection;
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 
-    public Duration getDurationId() {
-        return durationId;
+    public Trip getTrip() {
+        return trip;
     }
 
-    public void setDurationId(Duration durationId) {
-        this.durationId = durationId;
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 
-    public Trip getTripId() {
-        return tripId;
+    public Set<TourSchedule> getTourSchedules() {
+        return tourSchedules;
     }
 
-    public void setTripId(Trip tripId) {
-        this.tripId = tripId;
+    public void setTourSchedules(Set<TourSchedule> tourSchedules) {
+        this.tourSchedules = tourSchedules;
     }
 
-    @XmlTransient
-    public Collection<TourBooking> getTourBookingCollection() {
-        return tourBookingCollection;
+    public Set<TourDeparture> getTourDepartures() {
+        return tourDepartures;
     }
 
-    public void setTourBookingCollection(Collection<TourBooking> tourBookingCollection) {
-        this.tourBookingCollection = tourBookingCollection;
+    public void setTourDepartures(Set<TourDeparture> tourDepartures) {
+        this.tourDepartures = tourDepartures;
     }
 
-    @XmlTransient
-    public Collection<Feedback> getFeedbackCollection() {
-        return feedbackCollection;
+    public Set<TourPlace> getTourPlaces() {
+        return tourPlaces;
     }
 
-    public void setFeedbackCollection(Collection<Feedback> feedbackCollection) {
-        this.feedbackCollection = feedbackCollection;
+    public void setTourPlaces(Set<TourPlace> tourPlaces) {
+        this.tourPlaces = tourPlaces;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public Set<Feedback> getFeedbacks() {
+        return feedbacks;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Tour)) {
-            return false;
-        }
-        Tour other = (Tour) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setFeedbacks(Set<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
     }
 
-    @Override
-    public String toString() {
-        return "com.lth.pojos.Tour[ id=" + id + " ]";
+    public Set<Booking> getBookings() {
+        return bookings;
     }
-    
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
 }

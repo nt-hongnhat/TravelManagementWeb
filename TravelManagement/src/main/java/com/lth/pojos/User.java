@@ -90,8 +90,6 @@ public class User implements Serializable {
     private Collection<News> newsCollection;
     @OneToMany(mappedBy = "userId")
     private Collection<Reaction> reactionCollection;
-    @OneToMany(mappedBy = "employeeId")
-    private Collection<TourTicket> tourTicketCollection;
     @OneToMany(mappedBy = "userId")
     private Collection<Feedback> feedbackCollection;
     @JoinColumn(name = "user_info_id", referencedColumnName = "id")
@@ -226,14 +224,6 @@ public class User implements Serializable {
         this.reactionCollection = reactionCollection;
     }
 
-    @XmlTransient
-    public Collection<TourTicket> getTourTicketCollection() {
-        return tourTicketCollection;
-    }
-
-    public void setTourTicketCollection(Collection<TourTicket> tourTicketCollection) {
-        this.tourTicketCollection = tourTicketCollection;
-    }
 
     @XmlTransient
     public Collection<Feedback> getFeedbackCollection() {
