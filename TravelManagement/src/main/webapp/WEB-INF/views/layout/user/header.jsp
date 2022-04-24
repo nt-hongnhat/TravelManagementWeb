@@ -6,74 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<nav class="navbar navbar-expand-md navbar-dark sticky-top" id="mainNav">
-    <%--    Brand   --%>
-    <a class="navbar-brand" href="${pageContext.request.contextPath}/">
-        <span>TravelMore</span>
-    </a>
-
-    <!--    Toggler/collapsibe Button   -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span>Menu</span>
-        <span><i class="fas fa-bars"></i></span>
-    </button>
-    <%--    Navbar links    --%>
-    <div class="navbar-collapse collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="${pageContext.request.contextPath}/">
-                    <%--                    <span><i class="fa-solid fa-house-chimney"></i></span>--%>
-                    <span>Trang chủ</span>
-                </a>
-            </li>
-
-            <%--    Dropdown    --%>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#tours" id="navbar-drop" data-toggle="dropdown">
-                    <span>Du lịch</span>
-                </a>
-                <div class="dropdown-menu">
-                    <c:forEach var="cate" items="${categories}">
-                        <a class="dropdown-item"
-                           href="<c:url value="/${cate.name}"/>">${cate.name}</a>
-                    </c:forEach>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#hotels">
-                    <%--                    <span><i class="fa-solid fa-hotel"></i></span>--%>
-                    <span>Khách sạn</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#news">
-                    <%--                    <span><i class="fa-solid fa-newspaper"></i></span>--%>
-                    <span>Tin tức</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">
-                    <span>Liên hệ</span>
-                </a>
-            </li>
-
-        </ul>
-        <c:if test="${pageContext.request.userPrincipal.name == null}">
-            <a id="btnLogin" class="btn btn-success" href="<c:url value="/login"/>" role="button">Đăng nhập</a>
-        </c:if>
-        <c:if test="${pageContext.request.userPrincipal.name != null}">
-            <a class="nav-link nav-button btn-success" href="<c:url value="/" />">
-                    ${pageContext.request.userPrincipal.name}
-            </a>
-            <a id="btnLogout" class="btn btn-danger" href="<c:url value="/logout"/>" role="button">Đăng xuất</a>
-
-        </c:if>
-
-    </div>
-</nav>
-<header class="container-fluid" id="home">
+<header class="container-fluid">
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->

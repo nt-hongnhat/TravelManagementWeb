@@ -6,7 +6,6 @@
 package com.lth.pojos;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,22 +16,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author PC
  */
 @Entity
-@Table(name = "trip")
+@Table(name = "transport")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Trip.findAll", query = "SELECT t FROM Trip t"),
-    @NamedQuery(name = "Trip.findById", query = "SELECT t FROM Trip t WHERE t.id = :id")})
-public class Trip implements Serializable {
+    @NamedQuery(name = "Transport.findAll", query = "SELECT t FROM Transport t"),
+    @NamedQuery(name = "Transport.findById", query = "SELECT t FROM Transport t WHERE t.id = :id")})
+public class Transport implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,19 +37,17 @@ public class Trip implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "tripId")
-    private Collection<Tour> tourCollection;
-    @JoinColumn(name = "departure_province_id", referencedColumnName = "id")
+    @JoinColumn(name = "means_id", referencedColumnName = "id")
     @ManyToOne
-    private Province departureProvinceId;
-    @JoinColumn(name = "destination_province_id", referencedColumnName = "id")
+    private Means meansId;
+    @JoinColumn(name = "tour_id", referencedColumnName = "id")
     @ManyToOne
-    private Province destinationProvinceId;
+    private Tour tourId;
 
-    public Trip() {
+    public Transport() {
     }
 
-    public Trip(Integer id) {
+    public Transport(Integer id) {
         this.id = id;
     }
 
@@ -64,29 +59,20 @@ public class Trip implements Serializable {
         this.id = id;
     }
 
-    @XmlTransient
-    public Collection<Tour> getTourCollection() {
-        return tourCollection;
+    public Means getMeansId() {
+        return meansId;
     }
 
-    public void setTourCollection(Collection<Tour> tourCollection) {
-        this.tourCollection = tourCollection;
+    public void setMeansId(Means meansId) {
+        this.meansId = meansId;
     }
 
-    public Province getDepartureProvinceId() {
-        return departureProvinceId;
+    public Tour getTourId() {
+        return tourId;
     }
 
-    public void setDepartureProvinceId(Province departureProvinceId) {
-        this.departureProvinceId = departureProvinceId;
-    }
-
-    public Province getDestinationProvinceId() {
-        return destinationProvinceId;
-    }
-
-    public void setDestinationProvinceId(Province destinationProvinceId) {
-        this.destinationProvinceId = destinationProvinceId;
+    public void setTourId(Tour tourId) {
+        this.tourId = tourId;
     }
 
     @Override
@@ -99,10 +85,10 @@ public class Trip implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Trip)) {
+        if (!(object instanceof Transport)) {
             return false;
         }
-        Trip other = (Trip) object;
+        Transport other = (Transport) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -111,7 +97,7 @@ public class Trip implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Trip[ id=" + id + " ]";
+        return "com.lth.pojos.Transport[ id=" + id + " ]";
     }
     
 }
