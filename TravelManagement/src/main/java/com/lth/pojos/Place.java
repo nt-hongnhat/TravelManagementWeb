@@ -56,8 +56,6 @@ public class Place implements Serializable {
     @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "placeId")
-    private Collection<TourDetail> tourDetailCollection;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
     private Location locationId;
@@ -106,14 +104,6 @@ public class Place implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
-    public Collection<TourDetail> getTourDetailCollection() {
-        return tourDetailCollection;
-    }
-
-    public void setTourDetailCollection(Collection<TourDetail> tourDetailCollection) {
-        this.tourDetailCollection = tourDetailCollection;
-    }
 
     public Location getLocationId() {
         return locationId;

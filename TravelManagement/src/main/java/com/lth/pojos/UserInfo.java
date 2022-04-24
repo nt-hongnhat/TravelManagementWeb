@@ -68,7 +68,7 @@ public class UserInfo implements Serializable {
     private String address;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
-    private Location locationId;
+    private Location location;
     @OneToOne(mappedBy = "userInfoId")
     private User user;
 
@@ -132,12 +132,12 @@ public class UserInfo implements Serializable {
         this.address = address;
     }
 
-    public Location getLocationId() {
-        return locationId;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocationId(Location locationId) {
-        this.locationId = locationId;
+    public void setLocation(Location locationId) {
+        this.location = locationId;
     }
 
     public User getUser() {

@@ -417,7 +417,7 @@ CREATE TABLE `tour` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` decimal(12,0) NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `limit_customer` int NOT NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `category_id` int DEFAULT NULL,
@@ -433,7 +433,7 @@ CREATE TABLE `tour` (
   CONSTRAINT `fk_tour_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_tour_duration` FOREIGN KEY (`duration_id`) REFERENCES `duration` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_tour_trip` FOREIGN KEY (`trip_id`) REFERENCES `trip` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tour du lịch: tên tour, giá tour, hình ảnh, mô tả tour, danh mục (FK), số khách tối đa';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tour du lịch: tên tour, giá tour, hình ảnh, mô tả tour, danh mục (FK), số khách tối đa';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -442,6 +442,7 @@ CREATE TABLE `tour` (
 
 LOCK TABLES `tour` WRITE;
 /*!40000 ALTER TABLE `tour` DISABLE KEYS */;
+INSERT INTO `tour` VALUES (6,'Du lịch Hè - Tour Mỹ Tho - Cần Thơ - Cà Mau - Bạc Liêu - Sóc Trăng từ Sài Gòn 2022',3699000,'C:\\Users\\hongn\\Desktop\\278753335_1153327202186774_5108878643463341423_n.jpg',10,NULL,2,4,NULL);
 /*!40000 ALTER TABLE `tour` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -610,7 +611,6 @@ CREATE TABLE `user_info` (
   `citizenship` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location_id` int DEFAULT NULL,
-  `address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_info_location_idx` (`location_id`),
   CONSTRAINT `fk_info_location` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON UPDATE CASCADE
@@ -635,4 +635,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-24 15:04:47
+-- Dump completed on 2022-04-24 23:22:24
