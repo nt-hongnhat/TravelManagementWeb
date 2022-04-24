@@ -38,8 +38,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "UserInfo.findByGender", query = "SELECT u FROM UserInfo u WHERE u.gender = :gender"),
     @NamedQuery(name = "UserInfo.findByDayOfBirth", query = "SELECT u FROM UserInfo u WHERE u.dayOfBirth = :dayOfBirth"),
     @NamedQuery(name = "UserInfo.findByCitizenship", query = "SELECT u FROM UserInfo u WHERE u.citizenship = :citizenship"),
-    @NamedQuery(name = "UserInfo.findByPhone", query = "SELECT u FROM UserInfo u WHERE u.phone = :phone"),
-    @NamedQuery(name = "UserInfo.findByAddress", query = "SELECT u FROM UserInfo u WHERE u.address = :address")})
+    @NamedQuery(name = "UserInfo.findByPhone", query = "SELECT u FROM UserInfo u WHERE u.phone = :phone")})
 public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -63,9 +62,6 @@ public class UserInfo implements Serializable {
     @Size(max = 15)
     @Column(name = "phone")
     private String phone;
-    @Size(max = 45)
-    @Column(name = "address")
-    private String address;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
     private Location locationId;
@@ -122,14 +118,6 @@ public class UserInfo implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public Location getLocationId() {

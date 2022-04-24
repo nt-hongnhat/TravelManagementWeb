@@ -1,12 +1,20 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
+@XmlRootElement
 @Table(name = "tour")
+@NamedQueries({
+        @NamedQuery(name = "Tour.findAll", query = "select t from Tour t"),
+        @NamedQuery(name = "Tour.findById", query = "select t from Tour t where t.id = :id"),
+        @NamedQuery(name = "Tour.findByName", query = "select t from Tour t where t.name = :name"),
+        @NamedQuery(name = "Tour.findByPrice", query = "select t from Tour t where t.price = :price"),
+})
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

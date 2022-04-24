@@ -51,7 +51,7 @@ public class Location implements Serializable {
     @JoinColumn(name = "ward_id", referencedColumnName = "id")
     @ManyToOne
     private Ward wardId;
-    @OneToMany(mappedBy = "locationId")
+    @OneToMany(mappedBy = "location")
     private Collection<Place> placeCollection;
 
     public Location() {

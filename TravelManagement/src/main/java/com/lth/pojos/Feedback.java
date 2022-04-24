@@ -62,10 +62,10 @@ public class Feedback implements Serializable {
     private Date updatedDate;
     @JoinColumn(name = "tour_id", referencedColumnName = "id")
     @ManyToOne
-    private Tour tourId;
+    private Tour tour;
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @ManyToOne
-    private User userId;
+    private User user;
 
     public Feedback() {
     }
@@ -121,19 +121,19 @@ public class Feedback implements Serializable {
     }
 
     public Tour getTourId() {
-        return tourId;
+        return tour;
     }
 
     public void setTourId(Tour tourId) {
-        this.tourId = tourId;
+        this.tour = tourId;
     }
 
     public User getUserId() {
-        return userId;
+        return user;
     }
 
     public void setUserId(User userId) {
-        this.userId = userId;
+        this.user = userId;
     }
 
     @Override

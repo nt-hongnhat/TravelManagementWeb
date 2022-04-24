@@ -3,22 +3,28 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="com.lth_TravelManagement_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <class>com.lth.pojos.Province</class>
-        <class>com.lth.pojos.Ward</class>
-        <class>com.lth.pojos.Place</class>
-        <class>com.lth.pojos.Tour</class>
-        <class>com.lth.pojos.Feedback</class>
-        <class>com.lth.pojos.Surcharge</class>
-        <class>com.lth.pojos.Duration</class>
-        <class>com.lth.pojos.Trip</class>
-        <class>com.lth.pojos.District</class>
-        <class>com.lth.pojos.News</class>
-        <class>com.lth.pojos.User</class>
-        <class>com.lth.pojos.Reaction</class>
-        <class>com.lth.pojos.Location</class>
-        <class>com.lth.pojos.UserInfo</class>
+
+        <class>com.lth.pojos.Booking</class>
+        <class>com.lth.pojos.BookingDetail</class>
         <class>com.lth.pojos.Category</class>
+        <class>com.lth.pojos.District</class>
+        <class>com.lth.pojos.Duration</class>
+
+        <class>com.lth.pojos.Feedback</class>
+        <class>com.lth.pojos.Location</class>
+        <class>com.lth.pojos.News</class>
+        <class>com.lth.pojos.Place</class>
+        <class>com.lth.pojos.Province</class>
+        <class>com.lth.pojos.Reaction</class>
+        <class>com.lth.pojos.Surcharge</class>
+        <class>com.lth.pojos.Tour</class>
+        <class>com.lth.pojos.TourDeparture</class>
+        <class>com.lth.pojos.TourPlace</class>
+        <class>com.lth.pojos.TourSchedule</class>
+        <class>com.lth.pojos.Trip</class>
+        <class>com.lth.pojos.User</class>
+        <class>com.lth.pojos.UserInfo</class>
+        <class>com.lth.pojos.Ward</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.url"
