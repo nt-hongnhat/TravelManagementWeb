@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//ApacheSoftware Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!--BASE LAYOUT-->
+    <definition name="baseLayoutAdmin"
+                template="/WEB-INF/views/templates/admin_template.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="navbar" value="/WEB-INF/views/layout/admin/navbar.jsp"/>
+        <put-attribute name="sidenav" value="/WEB-INF/views/layout/admin/sidenav.jsp"/>
+        <put-attribute name="header" value=""/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/views/layout/user/footer.jsp"/>
+    </definition>
+
+    <!--ADMIN PAGE-->
+    <definition name="admin.index" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/admin.jsp"/>
+    </definition>
+
+    <!--TOUR PAGE-->
+    <definition name="admin.index.tour" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/tour/tour.jsp"/>
+    </definition>
+
+    <definition name="admin.index.tour.form" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/tour/form.jsp"/>
+    </definition>
+
+</tiles-definitions>

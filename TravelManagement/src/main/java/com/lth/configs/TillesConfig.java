@@ -29,7 +29,10 @@ public class TillesConfig {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer configurer = new TilesConfigurer();
-        configurer.setDefinitions("/WEB-INF/tiles.xml");
+        configurer.setDefinitions(new String[] {
+                "/WEB-INF/tiles/tiles_user.xml",
+                "/WEB-INF/tiles/tiles_admin.xml"
+        });
         configurer.setCheckRefresh(true);
         
         return configurer;

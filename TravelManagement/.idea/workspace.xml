@@ -5,63 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660fc632-be22-4bb7-9265-ac5b1703abb3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/JPAMappingSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/POJOGeneratorSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/artifacts/TravelManagement_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/artifacts/TravelManagement_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/jpa-buddy-datasource.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Database/traveldb.mwb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/JPAMappingSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/ProvinceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/CategoryRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/ProvinceRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/CategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/ProvinceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/ProvinceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/navbar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/flower-1853920_1920.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database/traveldb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/traveldb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/TourController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/admin/sidenav.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/traveldb.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/base.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TravelManagement-1.0-SNAPSHOT/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/TravelManagement-1.0-SNAPSHOT/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TravelManagement-1.0-SNAPSHOT/WEB-INF/classes/images/bg-main-page.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TravelManagement-1.0-SNAPSHOT/WEB-INF/layout/base.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/TravelManagement-1.0-SNAPSHOT/WEB-INF/layout/base.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles/tiles_admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles/tiles_admin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/admin/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/admin/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +26,9 @@
       <list>
         <option value="Enum" />
         <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -123,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../apache-tomcat-9.0.59" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/resources/js/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -132,6 +86,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\js\admin" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\css\admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\admin\tour" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\css\user" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\layout\user" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -183,6 +150,12 @@
       <workItem from="1650002758431" duration="3330000" />
       <workItem from="1650185292213" duration="4246000" />
       <workItem from="1650274436181" duration="4884000" />
+      <workItem from="1650338237569" duration="11658000" />
+      <workItem from="1650439767294" duration="5750000" />
+      <workItem from="1650471063648" duration="1772000" />
+      <workItem from="1650509995241" duration="3988000" />
+      <workItem from="1650543296398" duration="2445000" />
+      <workItem from="1650546922991" duration="10115000" />
     </task>
     <servers />
   </component>
@@ -202,5 +175,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/admin_template.jsp</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
