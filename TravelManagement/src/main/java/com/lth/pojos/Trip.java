@@ -40,7 +40,7 @@ public class Trip implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "tripId")
+    @OneToMany(mappedBy = "trip")
     private Collection<Tour> tourCollection;
     @JoinColumn(name = "departure_province_id", referencedColumnName = "id")
     @ManyToOne

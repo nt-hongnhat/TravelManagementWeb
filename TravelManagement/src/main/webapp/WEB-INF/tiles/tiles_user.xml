@@ -13,8 +13,12 @@ and open the template in the editor.
     <definition name="baseLayout"
                 template="/WEB-INF/views/templates/user_template.jsp">
         <put-attribute name="title" value=""/>
+<<<<<<< HEAD:TravelManagement/src/main/webapp/WEB-INF/tiles.xml
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+=======
         <put-attribute name="navbar" value="/WEB-INF/views/layout/user/navbar.jsp"/>
         <put-attribute name="header" value=""/>
+>>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_user.xml
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/views/layout/user/footer.jsp"/>
     </definition>
@@ -22,9 +26,13 @@ and open the template in the editor.
     <!--HOME PAGE-->
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="TravelMore - Trang chủ"/>
+<<<<<<< HEAD:TravelManagement/src/main/webapp/WEB-INF/tiles.xml
+        <put-attribute name="content" value="/WEB-INF/jsp/index.jsp"/>
+=======
         <put-attribute name="navbar" value="/WEB-INF/views/layout/user/navbar.jsp"/>
         <put-attribute name="header" value="/WEB-INF/views/layout/user/header.jsp"/>
         <put-attribute name="content" value="/WEB-INF/views/user/index.jsp"/>
+>>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_user.xml
     </definition>
 
     <!--LOGIN-->
@@ -45,4 +53,19 @@ and open the template in the editor.
         <put-attribute name="content" value="/WEB-INF/views/user/403.jsp"/>
     </definition>
 
+<<<<<<< HEAD:TravelManagement/src/main/webapp/WEB-INF/tiles.xml
+    <!--TOUR PAGE-->
+    <definition name="tour" extends="baseLayout">
+        <put-attribute name="title" value="Du lịch"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/tour.jsp"/>
+    </definition>
+
+    <!--HOTEL PAGE-->
+    <definition name="hotel" extends="baseLayout">
+        <put-attribute name="title" value="Khách sạn"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/hotel.jsp"/>
+    </definition>
+
+=======
+>>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_user.xml
 </tiles-definitions>

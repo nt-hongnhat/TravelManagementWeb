@@ -49,4 +49,15 @@ public class TourServiceImpl implements TourService{
         return this.tourRepository.deleteTour(tour);
     }
 
+    @Override
+    public Tour getTourByID(int tourID) {
+        return this.tourRepository.getTourByID(tourID);
+    }
+
+    @Override
+    public List<Tour> getToursByCategory(int categoryID, int page) {
+        return this.tourRepository.getToursByCategory(categoryID, page);
+    }
+
+
 }

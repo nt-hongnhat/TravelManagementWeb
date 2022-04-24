@@ -29,6 +29,21 @@
 <%--        <input type="submit" value="Đăng nhập"/>--%>
 <%--    </div>--%>
 <%--</form>--%>
+<<<<<<< HEAD:TravelManagement/src/main/webapp/WEB-INF/jsp/login.jsp
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header">
+                <h3 class="text-center font-weight-light my-4">Đăng nhập</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="${action}" class="was-validated">
+                    <div class="form-floating mb-3">
+                        <label for="inputUsername">Tên đăng nhập</label>
+                        <input class="form-control" id="inputUsername" type="text" placeholder="" required autofocus>
+                        <%--                            <div class="valid-feedback">Valid.</div>--%>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+=======
 <section class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-lg-5">
@@ -63,10 +78,30 @@
                 <div class="card-footer text-center py-3">
                     <div class="small">
                         <a href="<c:url value="/register"/>">Chưa có tài khoản? Đăng ký!</a>
+>>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/webapp/WEB-INF/views/user/login.jsp
                     </div>
+                    <div class="form-floating mb-3">
+                        <label for="inputPassword">Mật khẩu</label>
+                        <input class="form-control" id="inputPassword" type="password" placeholder="" required>
+                        <%--                            <div class="valid-feedback">Valid.</div>--%>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="">
+                        <label class="form-check-label" for="inputRememberPassword">Ghi nhớ mật khẩu</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                        <a class="small col-lg-6" href="#">Quên mật khẩu?</a>
+                        <input class="btn btn-primary btn-block col-lg-6" type="submit" value="Đăng nhập">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center py-3">
+                <div class="small">
+                    <a href="<c:url value="/register"/>">Chưa có tài khoản? Đăng ký!</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 

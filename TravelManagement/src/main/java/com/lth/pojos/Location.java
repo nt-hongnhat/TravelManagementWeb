@@ -40,12 +40,8 @@ public class Location implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "departureLocationId")
-    private Collection<TourBooking> tourBookingCollection;
     @OneToMany(mappedBy = "locationId")
     private Collection<UserInfo> userInfoCollection;
-    @OneToMany(mappedBy = "locationId")
-    private Collection<Hotel> hotelCollection;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     @ManyToOne
     private District districtId;
@@ -73,14 +69,6 @@ public class Location implements Serializable {
         this.id = id;
     }
 
-    @XmlTransient
-    public Collection<TourBooking> getTourBookingCollection() {
-        return tourBookingCollection;
-    }
-
-    public void setTourBookingCollection(Collection<TourBooking> tourBookingCollection) {
-        this.tourBookingCollection = tourBookingCollection;
-    }
 
     @XmlTransient
     public Collection<UserInfo> getUserInfoCollection() {
@@ -89,15 +77,6 @@ public class Location implements Serializable {
 
     public void setUserInfoCollection(Collection<UserInfo> userInfoCollection) {
         this.userInfoCollection = userInfoCollection;
-    }
-
-    @XmlTransient
-    public Collection<Hotel> getHotelCollection() {
-        return hotelCollection;
-    }
-
-    public void setHotelCollection(Collection<Hotel> hotelCollection) {
-        this.hotelCollection = hotelCollection;
     }
 
     public District getDistrictId() {

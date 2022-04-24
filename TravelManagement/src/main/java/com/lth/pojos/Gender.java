@@ -1,13 +1,12 @@
 package com.lth.pojos;
 
-public enum UserRole {
-    ADMIN("Người quản trị"), EMPLOYEE("Nhân viên"), CUSTOMER("Khách hàng");
+public enum Gender {
+    MALE("Nam"), FEMALE("Nữ"), OTHER("Khác");
+    private String content;
 
     public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         return Enum.valueOf(enumType, name);
     }
-
-    private String content;
 
     @Override
     public String toString() {
@@ -22,7 +21,7 @@ public enum UserRole {
         this.content = content;
     }
 
-    UserRole(String content) {
+    Gender(String content) {
         this.content = content;
     }
 }
