@@ -106,7 +106,6 @@
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.4" />
-
           <element id="library" level="project" name="Maven: com.cloudinary:cloudinary-taglib:1.31.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />

@@ -5,9 +5,14 @@
  */
 package com.lth.repository.impl;
 
-import com.lth.pojos.Category;
 import com.lth.pojos.Tour;
 import com.lth.repository.TourRepository;
+import java.util.List;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
@@ -16,17 +21,14 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Query;
-import javax.persistence.criteria.*;
-import java.util.List;
-
 /**
+ *
  * @author PC
  */
 @Repository
 @Transactional
 @PropertySource("classpath:pagination.properties")
-public class TourRepositoryImpl implements TourRepository {
+public class TourRepositoryImpl implements TourRepository{
     @Autowired
     private Environment env;
     @Autowired
@@ -40,17 +42,19 @@ public class TourRepositoryImpl implements TourRepository {
         CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
         Root<Tour> root = criteriaQuery.from(Tour.class);
         criteriaQuery = criteriaQuery.select(root);
-
-        if (keyword !=null) {
+        
+        if (!keyword.isEmpty()) {
             Predicate predicate = builder.like(root.get("name").as(String.class),
                     String.format("%%%s%%", keyword));
             criteriaQuery.where(predicate);
         }
-        criteriaQuery = criteriaQuery.orderBy(builder.desc(root.get("id")));
+
+
+
         Query query = session.createQuery(criteriaQuery);
         query.setMaxResults(pageNumberOfTour);
-        query.setFirstResult((page - 1) * pageNumberOfTour);
-
+        query.setFirstResult((page-1) * pageNumberOfTour);
+        
         return query.getResultList();
     }
 
@@ -58,7 +62,7 @@ public class TourRepositoryImpl implements TourRepository {
     public long countTour() {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         Query query = session.createQuery("SELECT Count(*) FROM Tour");
-
+        
         return Long.parseLong(query.getSingleResult().toString());
     }
 
@@ -101,30 +105,4 @@ public class TourRepositoryImpl implements TourRepository {
 
         return false;
     }
-
-    @Override
-    public Tour getTourByID(int tourID) {
-        Session session = this.sessionFactory.getObject().getCurrentSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        Query query = session.getNamedQuery("Tour.findById");
-        query.setParameter("id", tourID);
-        return (Tour) query;
-    }
-
-    @Override
-    public List<Tour> getToursByCategory(int categoryID, int page) {
-        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
-        Session session = this.sessionFactory.getObject().getCurrentSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
-        Root<Tour> root = criteriaQuery.from(Tour.class);
-        criteriaQuery.select(root);
-        criteriaQuery.where(builder.equal(root.get("category").get("id"), categoryID));
-        Query query = session.createQuery(criteriaQuery);
-        query.setMaxResults(pageNumberOfTour);
-        query.setFirstResult((page - 1) * pageNumberOfTour);
-
-        return query.getResultList();
-    }
-
 }

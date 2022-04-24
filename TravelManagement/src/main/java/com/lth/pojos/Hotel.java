@@ -6,7 +6,6 @@
 package com.lth.pojos;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,27 +16,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author PC
  */
 @Entity
-@Table(name = "place")
+@Table(name = "hotel")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
-    @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
-    @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
-    @NamedQuery(name = "Place.findByAddress", query = "SELECT p FROM Place p WHERE p.address = :address"),
-    @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
-public class Place implements Serializable {
+    @NamedQuery(name = "Hotel.findAll", query = "SELECT h FROM Hotel h"),
+    @NamedQuery(name = "Hotel.findById", query = "SELECT h FROM Hotel h WHERE h.id = :id"),
+    @NamedQuery(name = "Hotel.findByName", query = "SELECT h FROM Hotel h WHERE h.name = :name"),
+    @NamedQuery(name = "Hotel.findByPhone", query = "SELECT h FROM Hotel h WHERE h.phone = :phone"),
+    @NamedQuery(name = "Hotel.findByAddress", query = "SELECT h FROM Hotel h WHERE h.address = :address")})
+public class Hotel implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -47,31 +44,31 @@ public class Place implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 100)
+    @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "phone")
+    private int phone;
     @Size(max = 45)
     @Column(name = "address")
     private String address;
-    @Size(max = 255)
-    @Column(name = "description")
-    private String description;
-    @OneToMany(mappedBy = "placeId")
-    private Collection<TourDetail> tourDetailCollection;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
     private Location locationId;
 
-    public Place() {
+    public Hotel() {
     }
 
-    public Place(Integer id) {
+    public Hotel(Integer id) {
         this.id = id;
     }
 
-    public Place(Integer id, String name) {
+    public Hotel(Integer id, String name, int phone) {
         this.id = id;
         this.name = name;
+        this.phone = phone;
     }
 
     public Integer getId() {
@@ -90,29 +87,20 @@ public class Place implements Serializable {
         this.name = name;
     }
 
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @XmlTransient
-    public Collection<TourDetail> getTourDetailCollection() {
-        return tourDetailCollection;
-    }
-
-    public void setTourDetailCollection(Collection<TourDetail> tourDetailCollection) {
-        this.tourDetailCollection = tourDetailCollection;
     }
 
     public Location getLocationId() {
@@ -133,10 +121,10 @@ public class Place implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Place)) {
+        if (!(object instanceof Hotel)) {
             return false;
         }
-        Place other = (Place) object;
+        Hotel other = (Hotel) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -145,7 +133,7 @@ public class Place implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Place[ id=" + id + " ]";
+        return "com.lth.pojos.Hotel[ id=" + id + " ]";
     }
     
 }

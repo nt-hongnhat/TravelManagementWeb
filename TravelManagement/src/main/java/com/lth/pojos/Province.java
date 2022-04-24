@@ -5,24 +5,34 @@
  */
 package com.lth.pojos;
 
-import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.Serializable;
-import java.util.Collection;
 
 /**
+ *
  * @author PC
  */
 @Entity
 @Table(name = "location_province")
 @XmlRootElement
 @NamedQueries({
-        @NamedQuery(name = "Province.findAll", query = "SELECT p FROM Province p"),
-        @NamedQuery(name = "Province.findById", query = "SELECT p FROM Province p WHERE p.id = :id"),
-        @NamedQuery(name = "Province.findByName", query = "SELECT p FROM Province p WHERE p.name = :name")})
+    @NamedQuery(name = "Province.findAll", query = "SELECT p FROM Province p"),
+    @NamedQuery(name = "Province.findById", query = "SELECT p FROM Province p WHERE p.id = :id"),
+    @NamedQuery(name = "Province.findByName", query = "SELECT p FROM Province p WHERE p.name = :name")})
 public class Province implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -144,5 +154,5 @@ public class Province implements Serializable {
     public String toString() {
         return "com.lth.pojos.Province[ id=" + id + " ]";
     }
-
+    
 }
