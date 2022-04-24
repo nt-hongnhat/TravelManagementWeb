@@ -46,13 +46,13 @@ public class Province implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-    @OneToMany(mappedBy = "provinceId")
+    @OneToMany(mappedBy = "province")
     private Collection<Ward> wardCollection;
     @OneToMany(mappedBy = "departureProvinceId")
     private Collection<Trip> tripCollection;
     @OneToMany(mappedBy = "destinationProvinceId")
     private Collection<Trip> tripCollection1;
-    @OneToMany(mappedBy = "provinceId")
+    @OneToMany(mappedBy = "province")
     private Collection<District> districtCollection;
     @OneToMany(mappedBy = "provinceId")
     private Collection<Location> locationCollection;

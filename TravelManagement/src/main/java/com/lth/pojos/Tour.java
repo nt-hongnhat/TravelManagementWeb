@@ -46,8 +46,6 @@ public class Tour implements Serializable {
     @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tourId")
-    private Collection<TourDetail> tourDetailCollection;
     @OneToMany(mappedBy = "tourId")
     private Collection<Transport> transportCollection;
     @JoinColumn(name = "duration_id", referencedColumnName = "id")
@@ -56,8 +54,6 @@ public class Tour implements Serializable {
     @JoinColumn(name = "trip_id", referencedColumnName = "id")
     @ManyToOne
     private Trip tripId;
-    @OneToMany(mappedBy = "tourId")
-    private Collection<TourBooking> tourBookingCollection;
     @OneToMany(mappedBy = "tourId")
     private Collection<Feedback> feedbackCollection;
 
@@ -118,14 +114,6 @@ public class Tour implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
-    public Collection<TourDetail> getTourDetailCollection() {
-        return tourDetailCollection;
-    }
-
-    public void setTourDetailCollection(Collection<TourDetail> tourDetailCollection) {
-        this.tourDetailCollection = tourDetailCollection;
-    }
 
     @XmlTransient
     public Collection<Transport> getTransportCollection() {
@@ -152,14 +140,6 @@ public class Tour implements Serializable {
         this.tripId = tripId;
     }
 
-    @XmlTransient
-    public Collection<TourBooking> getTourBookingCollection() {
-        return tourBookingCollection;
-    }
-
-    public void setTourBookingCollection(Collection<TourBooking> tourBookingCollection) {
-        this.tourBookingCollection = tourBookingCollection;
-    }
 
     @XmlTransient
     public Collection<Feedback> getFeedbackCollection() {

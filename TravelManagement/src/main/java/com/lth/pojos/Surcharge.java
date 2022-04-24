@@ -51,8 +51,6 @@ public class Surcharge implements Serializable {
     @NotNull
     @Column(name = "percentage")
     private float percentage;
-    @OneToMany(mappedBy = "surchargeId")
-    private Collection<TourTicket> tourTicketCollection;
 
     public Surcharge() {
     }
@@ -91,14 +89,6 @@ public class Surcharge implements Serializable {
         this.percentage = percentage;
     }
 
-    @XmlTransient
-    public Collection<TourTicket> getTourTicketCollection() {
-        return tourTicketCollection;
-    }
-
-    public void setTourTicketCollection(Collection<TourTicket> tourTicketCollection) {
-        this.tourTicketCollection = tourTicketCollection;
-    }
 
     @Override
     public int hashCode() {

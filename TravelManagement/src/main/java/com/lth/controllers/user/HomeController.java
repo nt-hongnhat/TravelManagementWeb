@@ -14,15 +14,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author PC
  */
 @Controller
+@ControllerAdvice
 @RequestMapping("")
 public class HomeController {
 	@Autowired
@@ -31,6 +29,12 @@ public class HomeController {
 	private TourService tourService;
 	@Autowired
 	private ProvinceService provinceService;
+
+	@ModelAttribute
+	public void commonAttributes(Model model){
+		model.addAttribute("categories", this.categoryService.getCategories());
+		model.addAttribute("provinces", this.provinceService.getProvinces());
+	}
 
 	@RequestMapping("/")
 	public String index(Model model,
