@@ -37,6 +37,7 @@ public class Ward implements Serializable {
     @Column(name = "name")
     private String name;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
+
     @ManyToOne
     private District districtId;
     @JoinColumn(name = "province_id", referencedColumnName = "id")
