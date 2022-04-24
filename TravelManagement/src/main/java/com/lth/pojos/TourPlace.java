@@ -1,9 +1,11 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity(name = "TourPlace")
+@XmlRootElement
 @Table(name = "tour_places", indexes = {
         @Index(name = "fk_tour_places_idx1", columnList = "places_id"),
         @Index(name = "fk_tour_places_idx", columnList = "tour_id")

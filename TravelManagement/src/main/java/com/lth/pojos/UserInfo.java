@@ -52,7 +52,7 @@ public class UserInfo implements Serializable {
     @NotNull
     @Size(min = 1, max = 6)
     @Column(name = "gender")
-    private String gender;
+    private Gender gender;
     @Column(name = "day_of_birth")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dayOfBirth;
@@ -79,7 +79,7 @@ public class UserInfo implements Serializable {
         this.id = id;
     }
 
-    public UserInfo(Integer id, String gender) {
+    public UserInfo(Integer id, Gender gender) {
         this.id = id;
         this.gender = gender;
     }
@@ -92,11 +92,11 @@ public class UserInfo implements Serializable {
         this.id = id;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 

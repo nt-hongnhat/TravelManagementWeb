@@ -1,12 +1,14 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity(name = "Booking")
+@XmlRootElement
 @Table(name = "booking", indexes = {
         @Index(name = "fk_booking_tour_idx", columnList = "tour_id"),
         @Index(name = "fk_booking_user_idx", columnList = "user_id")

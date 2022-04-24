@@ -11,15 +11,7 @@ import com.lth.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-<<<<<<< HEAD:TravelManagement/src/main/java/com/lth/controllers/HomeController.java
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ModelAttribute;
-=======
-import org.springframework.web.bind.annotation.GetMapping;
->>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/java/com/lth/controllers/user/HomeController.java
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -27,11 +19,8 @@ import java.util.Map;
  * @author PC
  */
 @Controller
-<<<<<<< HEAD:TravelManagement/src/main/java/com/lth/controllers/HomeController.java
 @ControllerAdvice
-=======
 @RequestMapping("")
->>>>>>> 67f53234a827a8d01125e68f8f4a1dd4a02ebe1d:TravelManagement/src/main/java/com/lth/controllers/user/HomeController.java
 public class HomeController {
     @Autowired
     private CategoryService categoryService;
@@ -44,9 +33,7 @@ public class HomeController {
     public void commonAttributes(Model model) {
         model.addAttribute("categories", this.categoryService.getCategories());
         model.addAttribute("provinces", this.provinceService.getProvinces());
-
     }
-
 
     @RequestMapping("/")
     public String index(Model model,

@@ -16,42 +16,12 @@
 </c:if>
 
 <c:url value="/register" var="action"/>
-
-<%--<form:form method="post" action="${action}" modelAttribute="user">--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="lastname">Họ</label>--%>
-<%--        <form:input type="text" id="lastname" path="lastName" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="firstname">Tên</label>--%>
-<%--        <form:input type="text" id="firstname" path="firstName" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="email">Email</label>--%>
-<%--        <form:input type="email" id="email" path="email" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="username">Tài khoản</label>--%>
-<%--        <form:input type="text" id="username" path="username" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="password">Mật khẩu</label>--%>
-<%--        <form:input type="password" id="password" path="password" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <label for="confirm-password">Xác nhận mật khầu</label>--%>
-<%--        <form:input type="password" id="confirm-password" path="confirmPassword" class="form-control"/>--%>
-<%--    </div>--%>
-<%--    <div class="form-group">--%>
-<%--        <input type="submit" value="Đăng ký"/>--%>
-<%--    </div>--%>
-<%--</form:form>--%>
-
 <div class="row justify-content-center">
     <div class="col-lg-7">
         <div class="card shadow-lg border-0 rounded-lg mt-5">
             <div class="card-header"><h3 class="text-center font-weight-light my-4">Tạo tài khoản</h3></div>
             <div class="card-body">
+                <%--@elvariable id="user" type="java"--%>
                 <form:form method="post" action="${action}" modelAttribute="user">
                     <div class="row mb-3">
                         <div class="col-md-6">

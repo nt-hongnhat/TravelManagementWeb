@@ -19,7 +19,7 @@ public class Tour {
     @Column(name = "price", nullable = false, precision = 12)
     private BigDecimal price;
 
-    @Column(name = "image", nullable = false)
+    @Column(name = "image")
     private String image;
 
     @Column(name = "limit_customer", nullable = false)

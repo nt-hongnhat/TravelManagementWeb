@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse " id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/">
+                <a class="nav-link" href="<c:url value="/"/>">
                     <%--                    <span><i class="fa-solid fa-house-chimney"></i></span>--%>
                     <span>Trang chủ</span>
                 </a>
