@@ -5,37 +5,24 @@
  */
 package com.lth.pojos;
 
-import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
- *
  * @author PC
  */
 @Entity
-@Table(name = "ward")
+@Table(name = "location_ward")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Ward.findAll", query = "SELECT w FROM Ward w"),
-    @NamedQuery(name = "Ward.findById", query = "SELECT w FROM Ward w WHERE w.id = :id"),
-    @NamedQuery(name = "Ward.findByName", query = "SELECT w FROM Ward w WHERE w.name = :name"),
-    @NamedQuery(name = "Ward.findByPrefix", query = "SELECT w FROM Ward w WHERE w.prefix = :prefix")})
+        @NamedQuery(name = "Ward.findAll", query = "SELECT w FROM Ward w"),
+        @NamedQuery(name = "Ward.findById", query = "SELECT w FROM Ward w WHERE w.id = :id"),
+        @NamedQuery(name = "Ward.findByName", query = "SELECT w FROM Ward w WHERE w.name = :name")})
 public class Ward implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -49,17 +36,11 @@ public class Ward implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
-    @Column(name = "prefix")
-    private String prefix;
-    @JoinColumn(name = "district_id", referencedColumnName = "id")
     @ManyToOne
-    private District districtId;
+    private District district;
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     @ManyToOne
-    private Province provinceId;
+    private Province province;
     @OneToMany(mappedBy = "wardId")
     private Collection<Location> locationCollection;
 
@@ -70,10 +51,9 @@ public class Ward implements Serializable {
         this.id = id;
     }
 
-    public Ward(Integer id, String name, String prefix) {
+    public Ward(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.prefix = prefix;
     }
 
     public Integer getId() {
@@ -92,28 +72,20 @@ public class Ward implements Serializable {
         this.name = name;
     }
 
-    public String getPrefix() {
-        return prefix;
+    public District getDistrict() {
+        return district;
     }
 
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
-    public District getDistrictId() {
-        return districtId;
+    public Province getProvince() {
+        return province;
     }
 
-    public void setDistrictId(District districtId) {
-        this.districtId = districtId;
-    }
-
-    public Province getProvinceId() {
-        return provinceId;
-    }
-
-    public void setProvinceId(Province provinceId) {
-        this.provinceId = provinceId;
+    public void setProvince(Province province) {
+        this.province = province;
     }
 
     @XmlTransient
@@ -149,5 +121,5 @@ public class Ward implements Serializable {
     public String toString() {
         return "com.lth.pojos.Ward[ id=" + id + " ]";
     }
-    
+
 }

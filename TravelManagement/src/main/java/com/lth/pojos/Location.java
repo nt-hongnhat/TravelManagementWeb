@@ -5,33 +5,21 @@
  */
 package com.lth.pojos;
 
-import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
- *
  * @author PC
  */
 @Entity
 @Table(name = "location")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Location.findAll", query = "SELECT l FROM Location l"),
-    @NamedQuery(name = "Location.findById", query = "SELECT l FROM Location l WHERE l.id = :id")})
+        @NamedQuery(name = "Location.findAll", query = "SELECT l FROM Location l"),
+        @NamedQuery(name = "Location.findById", query = "SELECT l FROM Location l WHERE l.id = :id")})
 public class Location implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,9 +28,7 @@ public class Location implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "departureLocationId")
-    private Collection<TourBooking> tourBookingCollection;
-    @OneToMany(mappedBy = "locationId")
+    @OneToMany(mappedBy = "location")
     private Collection<UserInfo> userInfoCollection;
     @OneToMany(mappedBy = "locationId")
     private Collection<Hotel> hotelCollection;
@@ -73,14 +59,6 @@ public class Location implements Serializable {
         this.id = id;
     }
 
-    @XmlTransient
-    public Collection<TourBooking> getTourBookingCollection() {
-        return tourBookingCollection;
-    }
-
-    public void setTourBookingCollection(Collection<TourBooking> tourBookingCollection) {
-        this.tourBookingCollection = tourBookingCollection;
-    }
 
     @XmlTransient
     public Collection<UserInfo> getUserInfoCollection() {
@@ -157,5 +135,5 @@ public class Location implements Serializable {
     public String toString() {
         return "com.lth.pojos.Location[ id=" + id + " ]";
     }
-    
+
 }
