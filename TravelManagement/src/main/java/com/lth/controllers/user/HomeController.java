@@ -48,7 +48,7 @@ public class HomeController {
                 this.tourService.getTours(keyword, page));
         model.addAttribute("numberOfTour",
                 this.tourService.countTour());
-        model.addAttribute("news", this.newsService.getNews("",page));
+        model.addAttribute("news", this.newsService.getNews("", page));
         return "index";
     }
 

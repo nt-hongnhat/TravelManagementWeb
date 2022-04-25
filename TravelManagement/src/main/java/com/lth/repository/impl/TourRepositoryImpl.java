@@ -75,6 +75,7 @@ public class TourRepositoryImpl implements TourRepository{
         } catch (Exception ex) {
             System.err.println("ADD TOUR ERROR!" + ex.getMessage());
             ex.printStackTrace();
+            System.err.println(ex);
         }
 
         return false;
@@ -104,5 +105,23 @@ public class TourRepositoryImpl implements TourRepository{
         }
 
         return false;
+    }
+
+    @Override
+    public Tour findTourById(long tourId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
+        Root<Tour> root = criteriaQuery.from(Tour.class);
+        criteriaQuery = criteriaQuery.select(root);
+
+        if (tourId != -1) {
+            Predicate predicate = builder.equal(root.get("id").as(Long.class), tourId);
+            criteriaQuery.where(predicate);
+        }
+
+        Query query = session.createQuery(criteriaQuery);
+
+        return (Tour) query.getSingleResult();
     }
 }

@@ -15,18 +15,17 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- *
  * @author PC
  */
 @Entity
 @Table(name = "tour")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
-    @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
-    @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
-    @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
-    @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
+        @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
+        @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
+        @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
+        @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
+        @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,9 +61,9 @@ public class Tour implements Serializable {
     @OneToMany(mappedBy = "tourId")
     private Collection<Feedback> feedbackCollection;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "category_id")
-	private Category category;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @OneToMany(mappedBy = "tour")
     private Set<TourSchedule> tourSchedules = new LinkedHashSet<>();
@@ -111,14 +110,14 @@ public class Tour implements Serializable {
     }
 
     public Category getCategory() {
-		return category;
-	}
+        return category;
+    }
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-	public Tour() {
+    public Tour() {
     }
 
     public Tour(Integer id) {
@@ -180,6 +179,7 @@ public class Tour implements Serializable {
     public void setImage(String image) {
         this.image = image;
     }
+
     public Duration getDuration() {
         return duration;
     }
@@ -228,5 +228,5 @@ public class Tour implements Serializable {
     public String toString() {
         return "com.lth.pojos.Tour[ id=" + id + " ]";
     }
-    
+
 }
