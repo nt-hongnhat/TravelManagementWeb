@@ -30,8 +30,6 @@ public class Location implements Serializable {
     private Integer id;
     @OneToMany(mappedBy = "location")
     private Collection<UserInfo> userInfoCollection;
-    @OneToMany(mappedBy = "locationId")
-    private Collection<Hotel> hotelCollection;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     @ManyToOne
     private District districtId;
@@ -67,15 +65,6 @@ public class Location implements Serializable {
 
     public void setUserInfoCollection(Collection<UserInfo> userInfoCollection) {
         this.userInfoCollection = userInfoCollection;
-    }
-
-    @XmlTransient
-    public Collection<Hotel> getHotelCollection() {
-        return hotelCollection;
-    }
-
-    public void setHotelCollection(Collection<Hotel> hotelCollection) {
-        this.hotelCollection = hotelCollection;
     }
 
     public District getDistrictId() {

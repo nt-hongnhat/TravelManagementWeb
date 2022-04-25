@@ -20,7 +20,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="com.lth_TravelManagement_war_1.0-SNAPSHOTPU" />
+          <factory-entry name="com.lth_TravelManagement_war_1.0-SNAPSHOTPU" value="42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
@@ -143,5 +143,7 @@
     <orderEntry type="library" name="Maven: com.cloudinary:cloudinary-taglib:1.31.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jsp-api:2.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="popper.js" level="application" />
   </component>
 </module>

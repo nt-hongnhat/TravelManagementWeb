@@ -120,6 +120,9 @@ header.container-fluid {
     width      : 100%;
     object-fit : cover;
 }
+body {
+    position: relative;
+}
 
 footer {
     width    : 100%;
@@ -135,13 +138,25 @@ div.dropdown-menu {
 }
 
 section.container-fluid {
-    background-color : #343a40;
-    background-image : url("http://localhost:8080/TravelManagement/resources/images/bg-main-page.jpg");
-    background-size  : cover;
-    height: inherit;
+    /*background-color : #343a40;*/
+    /*background-image : url("http://localhost:8080/TravelManagement/resources/images/bg-main-page.jpg");*/
+    /*background-size  : cover;*/
+    height: fit-content;
 }
 
 div.col-lg-5 div.card {
     margin : 5vh auto;
+}
+
+i {
+    display: inline-block;
+    margin-right: 3pt;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: inherit;
 }
 

@@ -6,15 +6,15 @@
 package com.lth.controllers.user;
 
 import com.lth.service.CategoryService;
+import com.lth.service.NewsService;
 import com.lth.service.ProvinceService;
 import com.lth.service.TourService;
-
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author PC
@@ -23,37 +23,38 @@ import org.springframework.web.bind.annotation.*;
 @ControllerAdvice
 @RequestMapping("")
 public class HomeController {
-	@Autowired
-	private CategoryService categoryService;
-	@Autowired
-	private TourService tourService;
-	@Autowired
-	private ProvinceService provinceService;
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    private TourService tourService;
+    @Autowired
+    private ProvinceService provinceService;
+    @Autowired
+    private NewsService newsService;
 
-	@ModelAttribute
-	public void commonAttributes(Model model){
-		model.addAttribute("categories", this.categoryService.getCategories());
-		model.addAttribute("provinces", this.provinceService.getProvinces());
-	}
+    @ModelAttribute
+    public void commonAttributes(Model model) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("provinces", this.provinceService.getProvinces());
+    }
 
-	@RequestMapping("/")
-	public String index(Model model,
-						@RequestParam(required = false) Map<String, String> params) {
-		String keyword = params.getOrDefault("kw", "");
-		int page = Integer.parseInt(params.getOrDefault("page", "1"));
+    @RequestMapping("/")
+    public String index(Model model,
+                        @RequestParam(required = false) Map<String, String> params) {
+        String keyword = params.getOrDefault("kw", "");
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
 
-		model.addAttribute("tours",
-				this.tourService.getTours(keyword, page));
-		model.addAttribute("numberOfTour",
-				this.tourService.countTour());
-		model.addAttribute("provinces", this.provinceService.getProvinces());
-		model.addAttribute("categories", this.categoryService.getCategories());
-		return "index";
-	}
+        model.addAttribute("tours",
+                this.tourService.getTours(keyword, page));
+        model.addAttribute("numberOfTour",
+                this.tourService.countTour());
+        model.addAttribute("news", this.newsService.getNews("",page));
+        return "index";
+    }
 
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
-	public String accessDenied() {
-		return "403";
-	}
+    @RequestMapping(value = "/403", method = RequestMethod.GET)
+    public String accessDenied() {
+        return "403";
+    }
 
 }

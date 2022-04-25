@@ -5,38 +5,23 @@
  */
 package com.lth.pojos;
 
-import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
 
 /**
- *
  * @author PC
  */
 @Entity
-@Table(name = "place")
+@Table(name = "places")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
-    @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
-    @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
-    @NamedQuery(name = "Place.findByAddress", query = "SELECT p FROM Place p WHERE p.address = :address"),
-    @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
+        @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
+        @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
+        @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
+        @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
 public class Place implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,9 +35,6 @@ public class Place implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "name")
     private String name;
-    @Size(max = 45)
-    @Column(name = "address")
-    private String address;
     @Size(max = 255)
     @Column(name = "description")
     private String description;
@@ -86,14 +68,6 @@ public class Place implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getDescription() {
@@ -137,5 +111,5 @@ public class Place implements Serializable {
     public String toString() {
         return "com.lth.pojos.Place[ id=" + id + " ]";
     }
-    
+
 }
