@@ -14,8 +14,14 @@ import java.util.List;
  */
 public interface TourService {
     List<Tour> getTours(String keyword, int page);
+
     long countTour();
+
     boolean addTour(Tour tour);
+
     boolean updateTour(Tour tour);
+
     boolean deleteTour(Tour tour);
+
+    Tour findTourById(long tourId);
 }

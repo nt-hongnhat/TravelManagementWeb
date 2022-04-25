@@ -49,4 +49,9 @@ public class TourServiceImpl implements TourService{
         return this.tourRepository.deleteTour(tour);
     }
 
+    @Override
+    public Tour findTourById(long tourId) {
+        return this.tourRepository.findTourById(tourId);
+    }
+
 }
