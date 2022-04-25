@@ -49,7 +49,7 @@ public class Duration implements Serializable {
     @NotNull
     @Column(name = "quantity_nights")
     private int quantityNights;
-    @OneToMany(mappedBy = "durationId")
+    @OneToMany(mappedBy = "duration")
     private Collection<Tour> tourCollection;
 
     public Duration() {
@@ -120,7 +120,7 @@ public class Duration implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Duration[ id=" + id + " ]";
+        return this.getQuantityDays() + " ngày " + this.getQuantityNights() + " đêm";
     }
     
 }

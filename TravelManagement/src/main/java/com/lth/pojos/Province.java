@@ -48,9 +48,9 @@ public class Province implements Serializable {
     private String name;
     @OneToMany(mappedBy = "province")
     private Collection<Ward> wardCollection;
-    @OneToMany(mappedBy = "departureProvinceId")
+    @OneToMany(mappedBy = "departureProvince")
     private Collection<Trip> tripCollection;
-    @OneToMany(mappedBy = "destinationProvinceId")
+    @OneToMany(mappedBy = "destinationProvince")
     private Collection<Trip> tripCollection1;
     @OneToMany(mappedBy = "province")
     private Collection<District> districtCollection;
@@ -152,7 +152,7 @@ public class Province implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Province[ id=" + id + " ]";
+        return this.getName();
     }
     
 }
