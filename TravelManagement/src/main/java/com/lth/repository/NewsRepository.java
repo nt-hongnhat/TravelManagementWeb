@@ -1,7 +1,6 @@
 package com.lth.repository;
 
 import com.lth.pojos.News;
-import com.lth.pojos.Tour;
 
 import java.util.List;
 
@@ -11,4 +10,5 @@ public interface NewsRepository {
     boolean addNews(News news);
     boolean updateNews(News news);
     boolean deleteNews(News news);
+    News findNewsById(long newsId);
 }

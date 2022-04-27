@@ -1,6 +1,8 @@
 package com.lth.repository.impl;
 
+import com.lth.pojos.Tour;
 import com.lth.pojos.User;
+import com.lth.pojos.UserInfo;
 import com.lth.pojos.UserRole;
 import com.lth.repository.EmployeeRepository;
 import org.hibernate.Session;
@@ -10,10 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.List;
 
 @Repository
@@ -23,18 +22,21 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     private LocalSessionFactoryBean sessionFactory;
 
     @Override
-    public List<User> getEmployee(String username, int page) {
+    public List<User> getEmployees(String username, int page) {
         Session session = sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
-        Root<User> root = criteriaQuery.from(User.class);
-        Predicate predicateCustomer = builder.equal(root.get("user_role").as(String.class), UserRole.CUSTOMER.toString());
-        criteriaQuery = criteriaQuery.select(root).where(predicateCustomer);
-
-        if(!username.isEmpty()) {
-            Predicate predicate = builder.equal(root.get("username").as(String.class), username.trim());
-            criteriaQuery = criteriaQuery.where(predicate);
-        }
+        CriteriaQuery<Object[]> criteriaQuery = builder.createQuery(Object[].class);
+        Root<User> rootUser = criteriaQuery.from(User.class);
+        Root<UserInfo> rootUserInfo = criteriaQuery.from(UserInfo.class);
+        criteriaQuery.where(builder.equal(rootUser.get("userInfoId"), rootUserInfo.get("id")));
+        criteriaQuery.multiselect(rootUser.get("username"), rootUser.get("password"));
+//        Predicate predicateCustomer = builder.equal(rootUser.get("userRole").as(String.class), UserRole.EMPLOYEE.toString());
+//        criteriaQuery.where(predicateCustomer);
+//
+//        if(!username.isEmpty()) {
+//            Predicate predicate = builder.equal(rootUser.get("username").as(String.class), username.trim());
+//            criteriaQuery = criteriaQuery.where(predicate);
+//        }
 
         Query query = session.createQuery(criteriaQuery);
         return query.getResultList();
@@ -85,5 +87,23 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         }
 
         return false;
+    }
+
+    @Override
+    public User findEmployeeById(long employeeId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
+        Root<User> root = criteriaQuery.from(User.class);
+        criteriaQuery = criteriaQuery.select(root);
+
+        if (employeeId != -1) {
+            Predicate predicate = builder.equal(root.get("id").as(Long.class), employeeId);
+            criteriaQuery.where(predicate);
+        }
+
+        Query query = session.createQuery(criteriaQuery);
+
+        return (User) query.getSingleResult();
     }
 }

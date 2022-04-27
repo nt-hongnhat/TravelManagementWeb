@@ -24,6 +24,8 @@
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link" href="<c:url value="/admin/tour"/>">Du lịch</a>
+                    <a class="nav-link" href="<c:url value="/admin/employee"/>">Nhân viên</a>
+                    <a class="nav-link" href="<c:url value="/admin/news"/>">Tin tức</a>
                     <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                 </nav>
             </div>

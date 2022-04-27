@@ -120,7 +120,7 @@ public class Duration implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Duration[ id=" + id + " ]";
+        return "Ngày: " + quantityDays + ", Đêm: " + quantityNights;
     }
     
 }

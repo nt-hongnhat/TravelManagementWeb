@@ -57,7 +57,7 @@ public class Tour implements Serializable {
     @OneToMany(mappedBy = "tourId")
     private Collection<Feedback> feedbackCollection;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
 

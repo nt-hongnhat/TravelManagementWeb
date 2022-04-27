@@ -65,7 +65,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return name;
 	}
 
 	@Override

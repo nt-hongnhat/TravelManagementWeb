@@ -30,8 +30,6 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableTransactionManagement
 @ComponentScan(basePackages = {
     "com.lth.controllers",
-        "com.lth.controllers.admin",
-        "com.lth.controllers.user",
     "com.lth.repository",
     "com.lth.service"
 })

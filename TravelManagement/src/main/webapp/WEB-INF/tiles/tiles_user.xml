@@ -22,7 +22,6 @@ and open the template in the editor.
     <!--HOME PAGE-->
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="TravelMore - Trang chủ"/>
-        <put-attribute name="navbar" value="/WEB-INF/views/layout/user/navbar.jsp"/>
         <put-attribute name="header" value="/WEB-INF/views/layout/user/header.jsp"/>
         <put-attribute name="content" value="/WEB-INF/views/user/index.jsp"/>
     </definition>

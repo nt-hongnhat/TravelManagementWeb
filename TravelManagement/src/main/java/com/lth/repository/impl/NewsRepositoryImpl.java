@@ -1,6 +1,7 @@
 package com.lth.repository.impl;
 
 import com.lth.pojos.News;
+import com.lth.pojos.User;
 import com.lth.repository.NewsRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -80,5 +81,23 @@ public class NewsRepositoryImpl implements NewsRepository {
             System.err.println(ex.getMessage());
         }
         return false;
+    }
+
+    @Override
+    public News findNewsById(long newsId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<News> criteriaQuery = builder.createQuery(News.class);
+        Root<News> root = criteriaQuery.from(News.class);
+        criteriaQuery = criteriaQuery.select(root);
+
+        if (newsId != -1) {
+            Predicate predicate = builder.equal(root.get("id").as(Long.class), newsId);
+            criteriaQuery.where(predicate);
+        }
+
+        Query query = session.createQuery(criteriaQuery);
+
+        return (News) query.getSingleResult();
     }
 }

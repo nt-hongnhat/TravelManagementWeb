@@ -22,7 +22,7 @@ public class TourController {
     private Environment env;
 
 
-    @RequestMapping(value ="tour" ,method = RequestMethod.GET)
+    @RequestMapping(value ="/tour" ,method = RequestMethod.GET)
     public String getTour(ModelMap modelMap,
                           @RequestParam(required = false) Map<String, String> params) {
         int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
@@ -36,14 +36,14 @@ public class TourController {
         return "admin.index.tour";
     }
 
-    @RequestMapping(value ="tour/form", method = RequestMethod.GET)
+    @RequestMapping(value ="/tour/form", method = RequestMethod.GET)
     public String formTour(ModelMap modelMap) {
         modelMap.put("tour", new Tour());
         modelMap.put("valueButton", "Lưu");
         return "admin.index.tour.form";
     }
 
-    @RequestMapping (value ="tour/save", method = RequestMethod.POST)
+    @PostMapping ("/tour/save")
     public String saveTour(ModelMap modelMap, @ModelAttribute(value = "tour") Tour tour) {
         int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         if(tour.getId() == 0) {
@@ -59,7 +59,7 @@ public class TourController {
         return "admin.index.tour";
     }
 
-    @RequestMapping (value ="tour/edit/{tourId}", method = RequestMethod.GET)
+    @RequestMapping (value ="/tour/edit/{tourId}", method = RequestMethod.GET)
     public String editTour(ModelMap modelMap, @PathVariable("tourId") int tourId) {
         Tour tour = tourService.findTourById(tourId);
         modelMap.put("valueButton", "Sửa");
@@ -67,7 +67,7 @@ public class TourController {
         return "admin.index.tour.form";
     }
 
-    @RequestMapping (value ="tour/delete/{tourId}", method = RequestMethod.GET)
+    @RequestMapping (value ="/tour/delete/{tourId}", method = RequestMethod.GET)
     public String deleteTour(ModelMap modelMap, @PathVariable("tourId") int tourId) {
         int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         Tour tour = tourService.findTourById(tourId);
