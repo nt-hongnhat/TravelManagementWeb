@@ -6,17 +6,17 @@
 package com.lth.controllers.user;
 
 import com.lth.service.CategoryService;
+import com.lth.service.NewsService;
 import com.lth.service.ProvinceService;
 import com.lth.service.TourService;
-
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * @author PC
@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.*;
 @PropertySource("classpath:pagination.properties")
 @RequestMapping("")
 public class HomeController {
+<<<<<<< HEAD
 	@Autowired
 	private Environment env;
 	@Autowired
@@ -34,13 +35,24 @@ public class HomeController {
 	private TourService tourService;
 	@Autowired
 	private ProvinceService provinceService;
+=======
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    private TourService tourService;
+    @Autowired
+    private ProvinceService provinceService;
+    @Autowired
+    private NewsService newsService;
+>>>>>>> e32beb279dec320df27c604d47ceec5d3f803083
 
-	@ModelAttribute
-	public void commonAttributes(Model model){
-		model.addAttribute("categories", this.categoryService.getCategories());
-		model.addAttribute("provinces", this.provinceService.getProvinces());
-	}
+    @ModelAttribute
+    public void commonAttributes(Model model) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("provinces", this.provinceService.getProvinces());
+    }
 
+<<<<<<< HEAD
 	@RequestMapping("/")
 	public String index(Model model,
 						@RequestParam(required = false) Map<String, String> params) {
@@ -56,10 +68,25 @@ public class HomeController {
 		model.addAttribute("categories", this.categoryService.getCategories());
 		return "index";
 	}
+=======
+    @RequestMapping("/")
+    public String index(Model model,
+                        @RequestParam(required = false) Map<String, String> params) {
+        String keyword = params.getOrDefault("kw", "");
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
 
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
-	public String accessDenied() {
-		return "403";
-	}
+        model.addAttribute("tours",
+                this.tourService.getTours(keyword, page));
+        model.addAttribute("numberOfTour",
+                this.tourService.countTour());
+        model.addAttribute("news", this.newsService.getNews("", page));
+        return "index";
+    }
+>>>>>>> e32beb279dec320df27c604d47ceec5d3f803083
+
+    @RequestMapping(value = "/403", method = RequestMethod.GET)
+    public String accessDenied() {
+        return "403";
+    }
 
 }

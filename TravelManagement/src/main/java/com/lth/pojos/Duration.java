@@ -49,7 +49,7 @@ public class Duration implements Serializable {
     @NotNull
     @Column(name = "quantity_nights")
     private int quantityNights;
-    @OneToMany(mappedBy = "durationId")
+    @OneToMany(mappedBy = "duration")
     private Collection<Tour> tourCollection;
 
     public Duration() {

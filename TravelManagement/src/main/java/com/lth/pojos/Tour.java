@@ -5,27 +5,27 @@
  */
 package com.lth.pojos;
 
-import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
- *
  * @author PC
  */
 @Entity
 @Table(name = "tour")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
-    @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
-    @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
-    @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
-    @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
+        @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
+        @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
+        @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
+        @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
+        @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -44,42 +44,93 @@ public class Tour implements Serializable {
     @Column(name = "price")
     private long price;
     @Size(max = 255)
+    @Column(name = "image")
+    private String image;
+    @NotNull
+    @Column(name = "limit_customer")
+    private Integer limit_customer;
+    @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "tourId")
-    private Collection<Transport> transportCollection;
     @JoinColumn(name = "duration_id", referencedColumnName = "id")
     @ManyToOne
-    private Duration durationId;
+    private Duration duration;
     @JoinColumn(name = "trip_id", referencedColumnName = "id")
     @ManyToOne
-    private Trip tripId;
+    private Trip trip;
     @OneToMany(mappedBy = "tourId")
     private Collection<Feedback> feedbackCollection;
-
+    
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
 
-	public Category getCategory() {
-		return category;
-	}
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    @OneToMany(mappedBy = "tour")
+    private Set<TourSchedule> tourSchedules = new LinkedHashSet<>();
 
-	public Tour() {
+    @OneToMany(mappedBy = "tour")
+    private Set<TourDeparture> tourDepartures = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "tour")
+    private Set<TourPlace> tourPlaces = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "tour")
+    private Set<Booking> bookings = new LinkedHashSet<>();
+
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public Set<TourPlace> getTourPlaces() {
+        return tourPlaces;
+    }
+
+    public void setTourPlaces(Set<TourPlace> tourPlaces) {
+        this.tourPlaces = tourPlaces;
+    }
+
+    public Set<TourDeparture> getTourDepartures() {
+        return tourDepartures;
+    }
+
+    public void setTourDepartures(Set<TourDeparture> tourDepartures) {
+        this.tourDepartures = tourDepartures;
+    }
+
+    public Set<TourSchedule> getTourSchedules() {
+        return tourSchedules;
+    }
+
+    public void setTourSchedules(Set<TourSchedule> tourSchedules) {
+        this.tourSchedules = tourSchedules;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Tour() {
     }
 
     public Tour(Integer id) {
         this.id = id;
     }
 
-    public Tour(Integer id, String name, long price) {
+    public Tour(Integer id, String name, long price, String image, Integer limit_customer) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.image = image;
+        this.limit_customer = limit_customer;
     }
 
     public Integer getId() {
@@ -110,38 +161,42 @@ public class Tour implements Serializable {
         return description;
     }
 
+    public Integer getLimit_customer() {
+        return limit_customer;
+    }
+
+    public void setLimit_customer(Integer limit_customer) {
+        this.limit_customer = limit_customer;
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
 
-
-    @XmlTransient
-    public Collection<Transport> getTransportCollection() {
-        return transportCollection;
+    public String getImage() {
+        return image;
     }
 
-    public void setTransportCollection(Collection<Transport> transportCollection) {
-        this.transportCollection = transportCollection;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public Duration getDurationId() {
-        return durationId;
+    public Duration getDuration() {
+        return duration;
     }
 
-    public void setDurationId(Duration durationId) {
-        this.durationId = durationId;
+    public void setDuration(Duration durationId) {
+        this.duration = durationId;
     }
 
-    public Trip getTripId() {
-        return tripId;
+    public Trip getTrip() {
+        return trip;
     }
 
-    public void setTripId(Trip tripId) {
-        this.tripId = tripId;
+    public void setTrip(Trip tripId) {
+        this.trip = tripId;
     }
 
-
-    @XmlTransient
     public Collection<Feedback> getFeedbackCollection() {
         return feedbackCollection;
     }
@@ -174,5 +229,5 @@ public class Tour implements Serializable {
     public String toString() {
         return "com.lth.pojos.Tour[ id=" + id + " ]";
     }
-    
+
 }
