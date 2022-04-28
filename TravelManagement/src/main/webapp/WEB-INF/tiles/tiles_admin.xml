@@ -31,4 +31,32 @@
         <put-attribute name="content" value="/WEB-INF/views/admin/tour/form.jsp"/>
     </definition>
 
+    <!--EMPLOYEE PAGE-->
+    <definition name="admin.index.employee" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/employee/employee.jsp"/>
+    </definition>
+
+    <definition name="admin.index.employee.form" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/employee/form.jsp"/>
+    </definition>
+
+    <!--NEWS PAGE-->
+    <definition name="admin.index.news" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/news/news.jsp"/>
+    </definition>
+
+    <definition name="admin.index.news.form" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/news/form.jsp"/>
+    </definition>
+
+    <!--403-->
+    <definition name="403" extends="baseLayout">
+        <put-attribute name="title" value="403"/>
+        <put-attribute name="content" value="/WEB-INF/views/user/403.jsp"/>
+    </definition>
+
 </tiles-definitions>

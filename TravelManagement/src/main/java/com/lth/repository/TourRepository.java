@@ -21,6 +21,5 @@ public interface TourRepository {
     boolean addTour(Tour tour);
     boolean updateTour(Tour tour);
     boolean deleteTour(Tour tour);
-    Tour getTourByID(int tourID);
-    List<Tour> getToursByCategory(int categoryID, int page);
+    Tour findTourById(long tourId);
 }

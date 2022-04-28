@@ -1,6 +1,7 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -11,6 +12,12 @@ import java.io.Serializable;
 })
 public class BookingDetail implements Serializable {
     private static final long serialVersionUID = -2346968037097589304L;
+=======
+
+@Entity
+@Table(name = "booking_detail")
+public class BookingDetail {
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -33,45 +40,40 @@ public class BookingDetail implements Serializable {
         return id;
     }
 
-    public BookingDetail setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public String getCustomerName() {
         return customerName;
     }
 
-    public BookingDetail setCustomerName(String customerName) {
+    public void setCustomerName(String customerName) {
         this.customerName = customerName;
-        return this;
     }
 
     public Integer getCustomerPhone() {
         return customerPhone;
     }
 
-    public BookingDetail setCustomerPhone(Integer customerPhone) {
+    public void setCustomerPhone(Integer customerPhone) {
         this.customerPhone = customerPhone;
-        return this;
     }
 
     public Boolean getIsPayment() {
         return isPayment;
     }
 
-    public BookingDetail setIsPayment(Boolean isPayment) {
+    public void setIsPayment(Boolean isPayment) {
         this.isPayment = isPayment;
-        return this;
     }
 
     public Booking getBooking() {
         return booking;
     }
 
-    public BookingDetail setBooking(Booking booking) {
+    public void setBooking(Booking booking) {
         this.booking = booking;
-        return this;
     }
 
 }

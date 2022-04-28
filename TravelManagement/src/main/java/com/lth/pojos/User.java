@@ -247,7 +247,6 @@ public class User implements Serializable {
         this.reactionCollection = reactionCollection;
     }
 
-
     @XmlTransient
     public Collection<Feedback> getFeedbackCollection() {
         return feedbackCollection;

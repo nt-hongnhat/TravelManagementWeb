@@ -1,56 +1,93 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.lth.pojos;
 
 import javax.persistence.*;
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.math.BigDecimal;
+=======
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.util.Collection;
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * @author PC
+ */
 @Entity
 @XmlRootElement
 @Table(name = "tour")
+<<<<<<< HEAD
 @NamedQueries({
         @NamedQuery(name = "Tour.findAll", query = "select t from Tour t"),
         @NamedQuery(name = "Tour.findById", query = "select t from Tour t where t.id = :id"),
         @NamedQuery(name = "Tour.findByName", query = "select t from Tour t where t.name = :name"),
         @NamedQuery(name = "Tour.findByPrice", query = "select t from Tour t where t.price = :price"),
 })
+=======
+@XmlRootElement
+@NamedQueries({
+        @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
+        @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
+        @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
+        @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
+        @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "id")
     private Integer id;
-
-    @Column(name = "name", nullable = false)
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "name")
     private String name;
+<<<<<<< HEAD
 
     @Column(name = "price", nullable = false, precision = 12)
     private BigDecimal price;
 
+=======
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "price")
+    private long price;
+    @Size(max = 255)
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Column(name = "image")
     private String image;
-
-    @Column(name = "limit_customer", nullable = false)
-    private Integer limitCustomer;
-
-    @Lob
+    @NotNull
+    @Column(name = "limit_customer")
+    private Integer limit_customer;
+    @Size(max = 255)
     @Column(name = "description")
     private String description;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "duration_id")
+    @JoinColumn(name = "duration_id", referencedColumnName = "id")
+    @ManyToOne
     private Duration duration;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "trip_id")
+    @JoinColumn(name = "trip_id", referencedColumnName = "id")
+    @ManyToOne
     private Trip trip;
+    @OneToMany(mappedBy = "tourId")
+    private Collection<Feedback> feedbackCollection;
+
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
+
 
     @OneToMany(mappedBy = "tour")
     private Set<TourSchedule> tourSchedules = new LinkedHashSet<>();
@@ -62,10 +99,62 @@ public class Tour implements Serializable {
     private Set<TourPlace> tourPlaces = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "tour")
-    private Set<Feedback> feedbacks = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "tour")
     private Set<Booking> bookings = new LinkedHashSet<>();
+
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public Set<TourPlace> getTourPlaces() {
+        return tourPlaces;
+    }
+
+    public void setTourPlaces(Set<TourPlace> tourPlaces) {
+        this.tourPlaces = tourPlaces;
+    }
+
+    public Set<TourDeparture> getTourDepartures() {
+        return tourDepartures;
+    }
+
+    public void setTourDepartures(Set<TourDeparture> tourDepartures) {
+        this.tourDepartures = tourDepartures;
+    }
+
+    public Set<TourSchedule> getTourSchedules() {
+        return tourSchedules;
+    }
+
+    public void setTourSchedules(Set<TourSchedule> tourSchedules) {
+        this.tourSchedules = tourSchedules;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Tour() {
+    }
+
+    public Tour(Integer id) {
+        this.id = id;
+    }
+
+    public Tour(Integer id, String name, long price, String image, Integer limit_customer) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.limit_customer = limit_customer;
+    }
 
     public Integer getId() {
         return id;
@@ -83,12 +172,28 @@ public class Tour implements Serializable {
         this.name = name;
     }
 
-    public BigDecimal getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(long price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getLimit_customer() {
+        return limit_customer;
+    }
+
+    public void setLimit_customer(Integer limit_customer) {
+        this.limit_customer = limit_customer;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImage() {
@@ -99,84 +204,53 @@ public class Tour implements Serializable {
         this.image = image;
     }
 
-    public Integer getLimitCustomer() {
-        return limitCustomer;
-    }
-
-    public void setLimitCustomer(Integer limitCustomer) {
-        this.limitCustomer = limitCustomer;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public Duration getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setDuration(Duration durationId) {
+        this.duration = durationId;
     }
 
     public Trip getTrip() {
         return trip;
     }
 
-    public void setTrip(Trip trip) {
-        this.trip = trip;
+    public void setTrip(Trip tripId) {
+        this.trip = tripId;
     }
 
-    public Set<TourSchedule> getTourSchedules() {
-        return tourSchedules;
+    public Collection<Feedback> getFeedbackCollection() {
+        return feedbackCollection;
     }
 
-    public void setTourSchedules(Set<TourSchedule> tourSchedules) {
-        this.tourSchedules = tourSchedules;
+    public void setFeedbackCollection(Collection<Feedback> feedbackCollection) {
+        this.feedbackCollection = feedbackCollection;
     }
 
-    public Set<TourDeparture> getTourDepartures() {
-        return tourDepartures;
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
 
-    public void setTourDepartures(Set<TourDeparture> tourDepartures) {
-        this.tourDepartures = tourDepartures;
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Tour)) {
+            return false;
+        }
+        Tour other = (Tour) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
-    public Set<TourPlace> getTourPlaces() {
-        return tourPlaces;
-    }
-
-    public void setTourPlaces(Set<TourPlace> tourPlaces) {
-        this.tourPlaces = tourPlaces;
-    }
-
-    public Set<Feedback> getFeedbacks() {
-        return feedbacks;
-    }
-
-    public void setFeedbacks(Set<Feedback> feedbacks) {
-        this.feedbacks = feedbacks;
-    }
-
-    public Set<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(Set<Booking> bookings) {
-        this.bookings = bookings;
+    @Override
+    public String toString() {
+        return "com.lth.pojos.Tour[ id=" + id + " ]";
     }
 
 }

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660fc632-be22-4bb7-9265-ac5b1703abb3" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/configs/HibernateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/configs/HibernateConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/AdminController.java" afterDir="false" />
@@ -30,6 +31,30 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicaitonContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicaitonContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/FeedbackRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourPlaceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourScheduleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourPlaceRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourScheduleRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/TourPlaceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/TourScheduleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourPlaceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourScheduleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/TourAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Duration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Duration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/TourPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles/tiles_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles/tiles_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" afterDir="false" />
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +66,23 @@
       <list>
         <option value="Enum" />
         <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -108,11 +141,11 @@
       <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\css\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\user\tour" />
       <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\admin\tour" />
       <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\css\user" />
       <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views" />
       <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\admin" />
-      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\layout\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -171,6 +204,21 @@
       <workItem from="1650509995241" duration="3988000" />
       <workItem from="1650543296398" duration="2445000" />
       <workItem from="1650546922991" duration="10115000" />
+      <workItem from="1650693517466" duration="1268000" />
+      <workItem from="1650701894783" duration="6591000" />
+      <workItem from="1650708775333" duration="5984000" />
+      <workItem from="1650778917623" duration="9926000" />
+      <workItem from="1650792440061" duration="4172000" />
+      <workItem from="1650874034430" duration="6044000" />
+      <workItem from="1650880246360" duration="8476000" />
+      <workItem from="1650899997915" duration="1310000" />
+      <workItem from="1650962538940" duration="2418000" />
+      <workItem from="1650991173724" duration="415000" />
+      <workItem from="1651031240508" duration="9943000" />
+      <workItem from="1651046505937" duration="4432000" />
+      <workItem from="1651058189767" duration="9254000" />
+      <workItem from="1651111766052" duration="7732000" />
+      <workItem from="1651126178804" duration="8929000" />
     </task>
     <servers />
   </component>

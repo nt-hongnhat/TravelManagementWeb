@@ -12,15 +12,14 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- *
  * @author PC
  */
 @Entity
 @Table(name = "location")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Location.findAll", query = "SELECT l FROM Location l"),
-    @NamedQuery(name = "Location.findById", query = "SELECT l FROM Location l WHERE l.id = :id")})
+        @NamedQuery(name = "Location.findAll", query = "SELECT l FROM Location l"),
+        @NamedQuery(name = "Location.findById", query = "SELECT l FROM Location l WHERE l.id = :id")})
 public class Location implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,7 +28,7 @@ public class Location implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @OneToMany(mappedBy = "locationId")
+    @OneToMany(mappedBy = "location")
     private Collection<UserInfo> userInfoCollection;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     @ManyToOne
@@ -136,5 +135,5 @@ public class Location implements Serializable {
     public String toString() {
         return "com.lth.pojos.Location[ id=" + id + " ]";
     }
-    
+
 }

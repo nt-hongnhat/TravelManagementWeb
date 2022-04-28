@@ -36,13 +36,11 @@ public class Ward implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-    @JoinColumn(name = "district_id", referencedColumnName = "id")
-
     @ManyToOne
-    private District districtId;
+    private District district;
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     @ManyToOne
-    private Province provinceId;
+    private Province province;
     @OneToMany(mappedBy = "wardId")
     private Collection<Location> locationCollection;
 
@@ -74,20 +72,20 @@ public class Ward implements Serializable {
         this.name = name;
     }
 
-    public District getDistrictId() {
-        return districtId;
+    public District getDistrict() {
+        return district;
     }
 
-    public void setDistrictId(District districtId) {
-        this.districtId = districtId;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
-    public Province getProvinceId() {
-        return provinceId;
+    public Province getProvince() {
+        return province;
     }
 
-    public void setProvinceId(Province provinceId) {
-        this.provinceId = provinceId;
+    public void setProvince(Province province) {
+        this.province = province;
     }
 
     @XmlTransient

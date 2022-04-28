@@ -1,6 +1,7 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
@@ -12,14 +13,20 @@ import java.util.Date;
 })
 public class TourDeparture implements Serializable {
     private static final long serialVersionUID = -4616509128737460454L;
+=======
+import java.time.Instant;
+
+@Entity
+@Table(name = "tour_departure")
+public class TourDeparture {
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "departure", nullable = false)
-    private Date departure;
+    private Instant departure;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tour_id")
@@ -29,27 +36,24 @@ public class TourDeparture implements Serializable {
         return id;
     }
 
-    public TourDeparture setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
-    public Date getDeparture() {
+    public Instant getDeparture() {
         return departure;
     }
 
-    public TourDeparture setDeparture(Date departure) {
+    public void setDeparture(Instant departure) {
         this.departure = departure;
-        return this;
     }
 
     public Tour getTour() {
         return tour;
     }
 
-    public TourDeparture setTour(Tour tour) {
+    public void setTour(Tour tour) {
         this.tour = tour;
-        return this;
     }
 
 }

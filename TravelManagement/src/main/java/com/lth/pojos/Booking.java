@@ -1,6 +1,7 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
@@ -15,6 +16,15 @@ import java.util.Set;
 })
 public class Booking implements Serializable {
     private static final long serialVersionUID = -5501102043128342986L;
+=======
+import java.time.Instant;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "booking")
+public class Booking {
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -28,13 +38,11 @@ public class Booking implements Serializable {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date", nullable = false)
-    private Date createdDate;
+    private Instant createdDate;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "departure_date", nullable = false)
-    private Date departureDate;
+    private Instant departureDate;
 
     @Column(name = "departure_location_id")
     private Integer departureLocation;
@@ -52,81 +60,78 @@ public class Booking implements Serializable {
         return id;
     }
 
-    public Booking setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public Tour getTour() {
         return tour;
     }
 
-    public Booking setTour(Tour tour) {
+    public void setTour(Tour tour) {
         this.tour = tour;
-        return this;
     }
 
     public User getUser() {
         return user;
     }
 
-    public Booking setUser(User user) {
+    public void setUser(User user) {
         this.user = user;
-        return this;
     }
 
-    public Date getCreatedDate() {
+    public Instant getCreatedDate() {
         return createdDate;
     }
 
-    public Booking setCreatedDate(Date createdDate) {
+    public void setCreatedDate(Instant createdDate) {
         this.createdDate = createdDate;
-        return this;
     }
 
-    public Date getDepartureDate() {
+    public Instant getDepartureDate() {
         return departureDate;
     }
 
-    public Booking setDepartureDate(Date departureDate) {
+    public void setDepartureDate(Instant departureDate) {
         this.departureDate = departureDate;
-        return this;
     }
 
     public Integer getDepartureLocation() {
         return departureLocation;
     }
 
+<<<<<<< HEAD
     public Booking setDepartureLocation(Integer departureLocationId) {
         this.departureLocation = departureLocationId;
         return this;
+=======
+    public void setDepartureLocationId(Integer departureLocationId) {
+        this.departureLocationId = departureLocationId;
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     }
 
     public Integer getNumberAdult() {
         return numberAdult;
     }
 
-    public Booking setNumberAdult(Integer numberAdult) {
+    public void setNumberAdult(Integer numberAdult) {
         this.numberAdult = numberAdult;
-        return this;
     }
 
     public Integer getNumberChild() {
         return numberChild;
     }
 
-    public Booking setNumberChild(Integer numberChild) {
+    public void setNumberChild(Integer numberChild) {
         this.numberChild = numberChild;
-        return this;
     }
 
     public Set<BookingDetail> getBookingDetails() {
         return bookingDetails;
     }
 
-    public Booking setBookingDetails(Set<BookingDetail> bookingDetails) {
+    public void setBookingDetails(Set<BookingDetail> bookingDetails) {
         this.bookingDetails = bookingDetails;
-        return this;
     }
 
 }

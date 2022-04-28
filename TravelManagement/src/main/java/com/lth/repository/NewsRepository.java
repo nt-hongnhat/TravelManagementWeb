@@ -10,4 +10,5 @@ public interface NewsRepository {
     boolean addNews(News news);
     boolean updateNews(News news);
     boolean deleteNews(News news);
+    News findNewsById(long newsId);
 }

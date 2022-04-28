@@ -16,6 +16,10 @@
 </c:if>
 
 <c:url value="/register" var="action"/>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 <div class="row justify-content-center">
     <div class="col-lg-7">
         <div class="card shadow-lg border-0 rounded-lg mt-5">
@@ -44,7 +48,7 @@
                         <form:input class="form-control" id="inputEmail" type="email"
                                     placeholder="name@example.com" path="email"/>
                     </div>
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 mb-md-0">
                         <label for="inputUsername">Tên tài khoản</label>
                         <form:input class="form-control" id="inputUsername" type="text"
                                     placeholder="Nhập tên tài khoản" path="username"/>
@@ -58,7 +62,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-floating">
+                            <div class="form-floating mb-3 mb-md-0">
                                 <label for="inputPasswordConfirm">Xác nhận mật khẩu</label>
                                 <form:input class="form-control" id="inputPasswordConfirm" type="password"
                                             placeholder="Nhập lại mật khẩu" path="confirmPassword"/>

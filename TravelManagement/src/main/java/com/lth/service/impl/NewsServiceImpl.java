@@ -6,11 +6,12 @@ import com.lth.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class NewsServiceImpl implements NewsService {
     @Autowired
-    private NewsRepository  newsRepository;
+    private NewsRepository newsRepository;
 
     @Override
     public List<News> getNews(String keyword, int page) {
@@ -24,6 +25,10 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public boolean addNews(News news) {
+        news.setQuantityLikes(0);
+        news.setQuantityViews(0);
+        news.setPostedDate(new Date());
+        news.setUpdatedDate(new Date());
         return newsRepository.addNews(news);
     }
 
@@ -35,5 +40,10 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public boolean deleteNews(News news) {
         return newsRepository.deleteNews(news);
+    }
+
+    @Override
+    public News findNewsById(long newsId) {
+        return newsRepository.findNewsById(newsId);
     }
 }

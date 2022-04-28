@@ -6,9 +6,12 @@
 package com.lth.controllers.user;
 
 import com.lth.service.CategoryService;
+import com.lth.service.NewsService;
 import com.lth.service.ProvinceService;
 import com.lth.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +23,22 @@ import java.util.Map;
  */
 @Controller
 @ControllerAdvice
+<<<<<<< HEAD
+=======
+@PropertySource("classpath:pagination.properties")
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 @RequestMapping("")
 public class HomeController {
+	@Autowired
+	private Environment env;
     @Autowired
     private CategoryService categoryService;
     @Autowired
     private TourService tourService;
     @Autowired
     private ProvinceService provinceService;
+    @Autowired
+    private NewsService newsService;
 
     @ModelAttribute
     public void commonAttributes(Model model) {
@@ -35,22 +46,34 @@ public class HomeController {
         model.addAttribute("provinces", this.provinceService.getProvinces());
     }
 
+<<<<<<< HEAD
     @RequestMapping("/")
     public String index(Model model,
                         @RequestParam(required = false) Map<String, String> params) {
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
+=======
 
-        String keyword = params.getOrDefault("kw", null);
-        model.addAttribute("tours", this.tourService.getTours(keyword, page));
+	@RequestMapping("/")
+	public String index(Model model,
+						@RequestParam(required = false) Map<String, String> params) {
+		String keyword = params.getOrDefault("kw", "");
+		int page = Integer.parseInt(params.getOrDefault("page", "1"));
+		int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 
-        model.addAttribute("numberOfTour",
-                this.tourService.countTour());
-        return "index";
-    }
-
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
-	public String accessDenied() {
-		return "403";
+		model.addAttribute("tours",
+				this.tourService.getTours(keyword, page));
+		model.addAttribute("numberOfTourPaginationItem",
+				this.tourService.countTour() / pageNumberOfTour);
+		model.addAttribute("provinces", this.provinceService.getProvinces());
+		model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("news", this.newsService.getNews("", page));
+		return "index";
 	}
+
+    @RequestMapping(value = "/403", method = RequestMethod.GET)
+    public String accessDenied() {
+        return "403";
+    }
 
 }

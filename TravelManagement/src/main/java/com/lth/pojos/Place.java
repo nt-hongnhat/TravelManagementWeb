@@ -10,21 +10,30 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.Set;
+=======
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 
 /**
- *
  * @author PC
  */
 @Entity
 @Table(name = "places")
 @XmlRootElement
 @NamedQueries({
+<<<<<<< HEAD
     @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
     @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
     @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
     @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
+=======
+        @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
+        @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
+        @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
+        @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 public class Place implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -105,12 +114,21 @@ public class Place implements Serializable {
     }
 
 
+<<<<<<< HEAD
     public Location getLocation() {
         return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
+=======
+    public Location getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Location locationId) {
+        this.locationId = locationId;
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     }
 
     @Override
@@ -135,7 +153,7 @@ public class Place implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Place[ id=" + id + " ]";
+        return name;
     }
-    
+
 }

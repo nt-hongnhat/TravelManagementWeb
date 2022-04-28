@@ -1,6 +1,7 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
@@ -11,6 +12,12 @@ import java.io.Serializable;
 })
 public class TourSchedule implements Serializable {
     private static final long serialVersionUID = -1830656334025034161L;
+=======
+
+@Entity
+@Table(name = "tour_schedule")
+public class TourSchedule {
+>>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -31,36 +38,32 @@ public class TourSchedule implements Serializable {
         return id;
     }
 
-    public TourSchedule setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public TourSchedule setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public TourSchedule setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
-        return this;
     }
 
     public Tour getTour() {
         return tour;
     }
 
-    public TourSchedule setTour(Tour tour) {
+    public void setTour(Tour tour) {
         this.tour = tour;
-        return this;
     }
 
 }

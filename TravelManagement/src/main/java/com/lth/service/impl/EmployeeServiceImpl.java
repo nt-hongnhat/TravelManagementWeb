@@ -19,8 +19,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public List<User> getEmployee(String customer, int page) {
-        return null;
+    public List<User> getEmployees(String username, int page) {
+        return employeeRepository.getEmployees(username, page);
     }
 
     @Override
@@ -47,4 +47,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public boolean deleteEmployee(User user) {
         return employeeRepository.deleteEmployee(user);
     }
+
+    @Override
+    public User findEmployeeById(long employeeId) {
+        return employeeRepository.findEmployeeById(employeeId);
+    }
+
 }

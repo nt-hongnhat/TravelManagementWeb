@@ -10,4 +10,5 @@ public interface NewsService {
     boolean addNews(News news);
     boolean updateNews(News news);
     boolean deleteNews(News news);
+    News findNewsById(long newsId);
 }

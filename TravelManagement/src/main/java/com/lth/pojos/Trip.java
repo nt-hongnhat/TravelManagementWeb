@@ -33,10 +33,10 @@ public class Trip implements Serializable {
     private Collection<Tour> tourCollection;
     @JoinColumn(name = "departure_province_id", referencedColumnName = "id")
     @ManyToOne
-    private Province departureProvinceId;
+    private Province departureProvince;
     @JoinColumn(name = "destination_province_id", referencedColumnName = "id")
     @ManyToOne
-    private Province destinationProvinceId;
+    private Province destinationProvince;
 
     public Trip() {
     }
@@ -62,20 +62,20 @@ public class Trip implements Serializable {
         this.tourCollection = tourCollection;
     }
 
-    public Province getDepartureProvinceId() {
-        return departureProvinceId;
+    public Province getDepartureProvince() {
+        return departureProvince;
     }
 
-    public void setDepartureProvinceId(Province departureProvinceId) {
-        this.departureProvinceId = departureProvinceId;
+    public void setDepartureProvince(Province departureProvinceId) {
+        this.departureProvince = departureProvinceId;
     }
 
-    public Province getDestinationProvinceId() {
-        return destinationProvinceId;
+    public Province getDestinationProvince() {
+        return destinationProvince;
     }
 
-    public void setDestinationProvinceId(Province destinationProvinceId) {
-        this.destinationProvinceId = destinationProvinceId;
+    public void setDestinationProvince(Province destinationProvinceId) {
+        this.destinationProvince = destinationProvinceId;
     }
 
     @Override
@@ -96,6 +96,16 @@ public class Trip implements Serializable {
             return false;
         }
         return true;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 
     @Override
