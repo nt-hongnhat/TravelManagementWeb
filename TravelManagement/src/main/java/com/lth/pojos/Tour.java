@@ -60,7 +60,7 @@ public class Tour implements Serializable {
     private Trip trip;
     @OneToMany(mappedBy = "tourId")
     private Collection<Feedback> feedbackCollection;
-    
+
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;

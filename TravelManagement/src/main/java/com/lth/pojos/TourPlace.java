@@ -14,7 +14,7 @@ public class TourPlace {
     @JoinColumn(name = "tour_id", nullable = false)
     private Tour tour;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "places_id")
     private Place places;
 

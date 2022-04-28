@@ -120,7 +120,7 @@ public class Duration implements Serializable {
 
     @Override
     public String toString() {
-        return "Ngày: " + quantityDays + ", Đêm: " + quantityNights;
+        return quantityDays + " ngày, " + quantityNights + " đêm.";
     }
     
 }

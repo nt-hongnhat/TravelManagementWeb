@@ -36,12 +36,12 @@
 
     <div class="form-group">
       <label for="tripid" class="control-label">Mã chuyến &nbsp</label>
-      <form:input class="form-control" id="tripid" path="tripId"/>
+      <form:input class="form-control" id="tripid" path="trip"/>
     </div>
 
     <div class="form-group">
       <label for="durationid" class="control-label">Mã thời điểm &nbsp</label>
-      <form:input class="form-control" id="durationid" path="durationId"/>
+      <form:input class="form-control" id="durationid" path="duration"/>
     </div>
 
     <div class="form-group">

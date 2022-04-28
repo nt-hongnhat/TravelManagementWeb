@@ -32,6 +32,13 @@
         <put-attribute name="content" value="/WEB-INF/views/user/register.jsp"/>
     </definition>
 
+    <!--TOUR-->
+    <definition name="user.index.tourdetail" extends="baseLayout">
+        <put-attribute name="title" value="Chi tiết chuyến du lịch"/>
+        <put-attribute name="content" value="/WEB-INF/views/user/tour/detail.jsp"/>
+    </definition>
+
+
     <!--403-->
     <definition name="403" extends="baseLayout">
         <put-attribute name="title" value="403"/>

@@ -109,7 +109,7 @@ public class Place implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Place[ id=" + id + " ]";
+        return name;
     }
 
 }

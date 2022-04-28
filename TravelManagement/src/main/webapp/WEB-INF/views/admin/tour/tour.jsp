@@ -58,8 +58,8 @@
                             <td>${tourItem.name}</td>
                             <td>${tourItem.price}</td>
                             <td>${tourItem.description}</td>
-                            <td>${tourItem.tripId}</td>
-                            <td>${tourItem.durationId}</td>
+                            <td>${tourItem.trip}</td>
+                            <td>${tourItem.duration}</td>
                             <td>${tourItem.category}</td>
                         </tr>
                     </c:forEach>

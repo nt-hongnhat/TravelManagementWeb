@@ -24,7 +24,7 @@
 
 <div class="container-fluid mt-md-3">
     <section id="#tours">
-        <h3 class="mb-3">${numberOfTour} TOUR DU LỊCH</h3>
+        <h3 class="mb-3">${numberOfTourPaginationItem} TOUR DU LỊCH</h3>
         <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <c:forEach items="${tours}" var="tour">
                 <div class="col mb-3">
@@ -54,7 +54,7 @@
         </div>
     </section>
     <section id="#news">
-        <h3 class="mb-3">${numberOfTour} TIN TỨC MỚI NHẤT</h3>
+        <h3 class="mb-3">${numberOfTourPaginationItem} TIN TỨC MỚI NHẤT</h3>
         <div class="row gx-3 gx-lg-4 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
             <c:forEach items="${news}" var="news">
                 <div class="col mb-3">
