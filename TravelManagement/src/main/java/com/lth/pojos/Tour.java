@@ -2,6 +2,7 @@ package com.lth.pojos;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -15,7 +16,9 @@ import java.util.Set;
         @NamedQuery(name = "Tour.findByName", query = "select t from Tour t where t.name = :name"),
         @NamedQuery(name = "Tour.findByPrice", query = "select t from Tour t where t.price = :price"),
 })
-public class Tour {
+public class Tour implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

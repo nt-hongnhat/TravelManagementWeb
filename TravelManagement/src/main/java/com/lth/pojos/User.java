@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * @author PC
@@ -99,6 +101,28 @@ public class User implements Serializable {
     private String confirmPassword;
     @Transient
     private MultipartFile file;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Feedback> feedbacks = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Booking> bookings = new LinkedHashSet<>();
+
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public Set<Feedback> getFeedbacks() {
+        return feedbacks;
+    }
+
+    public void setFeedbacks(Set<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
+    }
 
     public User() {
     }

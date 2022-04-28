@@ -1,7 +1,6 @@
 package com.lth.repository;
 
 import com.lth.pojos.News;
-import com.lth.pojos.Tour;
 
 import java.util.List;
 

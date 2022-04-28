@@ -6,7 +6,6 @@
 package com.lth.repository;
 
 import com.lth.pojos.Tour;
-import org.hibernate.Session;
 
 import java.util.List;
 

@@ -37,7 +37,7 @@ public class Booking implements Serializable {
     private Date departureDate;
 
     @Column(name = "departure_location_id")
-    private Integer departureLocationId;
+    private Integer departureLocation;
 
     @Column(name = "number_adult", nullable = false)
     private Integer numberAdult;
@@ -93,12 +93,12 @@ public class Booking implements Serializable {
         return this;
     }
 
-    public Integer getDepartureLocationId() {
-        return departureLocationId;
+    public Integer getDepartureLocation() {
+        return departureLocation;
     }
 
-    public Booking setDepartureLocationId(Integer departureLocationId) {
-        this.departureLocationId = departureLocationId;
+    public Booking setDepartureLocation(Integer departureLocationId) {
+        this.departureLocation = departureLocationId;
         return this;
     }
 
