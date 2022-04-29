@@ -1,7 +1,10 @@
 package com.lth.pojos;
 
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "tour_departure")
@@ -12,7 +15,7 @@ public class TourDeparture {
     private Integer id;
 
     @Column(name = "departure", nullable = false)
-    private Instant departure;
+    private Date departure;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tour_id")
@@ -26,11 +29,11 @@ public class TourDeparture {
         this.id = id;
     }
 
-    public Instant getDeparture() {
+    public Date getDeparture() {
         return departure;
     }
 
-    public void setDeparture(Instant departure) {
+    public void setDeparture(Date departure) {
         this.departure = departure;
     }
 
