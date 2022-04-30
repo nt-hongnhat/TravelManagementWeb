@@ -23,10 +23,7 @@ import java.util.Map;
  */
 @Controller
 @ControllerAdvice
-<<<<<<< HEAD
-=======
 @PropertySource("classpath:pagination.properties")
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 @RequestMapping("")
 public class HomeController {
 	@Autowired
@@ -46,20 +43,12 @@ public class HomeController {
         model.addAttribute("provinces", this.provinceService.getProvinces());
     }
 
-<<<<<<< HEAD
-    @RequestMapping("/")
-    public String index(Model model,
-                        @RequestParam(required = false) Map<String, String> params) {
-        int page = Integer.parseInt(params.getOrDefault("page", "1"));
-=======
-
 	@RequestMapping("/")
 	public String index(Model model,
 						@RequestParam(required = false) Map<String, String> params) {
 		String keyword = params.getOrDefault("kw", "");
 		int page = Integer.parseInt(params.getOrDefault("page", "1"));
 		int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 
 		model.addAttribute("tours",
 				this.tourService.getTours(keyword, page));

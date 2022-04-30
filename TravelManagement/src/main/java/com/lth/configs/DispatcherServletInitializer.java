@@ -30,11 +30,7 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 
     @Override
     protected String[] getServletMappings() {
-<<<<<<< HEAD
-        return new String[]{"/"};
-=======
         return new String[]{"/", "/admin"};
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     }
 
 }
