@@ -14,7 +14,7 @@ public class TourScheduleServiceImpl implements TourScheduleService {
     TourScheduleRepository tourScheduleRepository;
 
     @Override
-    public List<TourPlace> findTourScheduleByTourId(long tourId) {
+    public List<TourSchedule> findTourScheduleByTourId(long tourId) {
         return tourScheduleRepository.findTourScheduleByTourId(tourId);
     }
 }

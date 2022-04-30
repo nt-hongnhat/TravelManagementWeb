@@ -48,7 +48,7 @@ public class Tour implements Serializable {
     private String image;
     @NotNull
     @Column(name = "limit_customer")
-    private Integer limit_customer;
+    private Integer limitCustomer;
     @Size(max = 255)
     @Column(name = "description")
     private String description;
@@ -130,9 +130,13 @@ public class Tour implements Serializable {
         this.name = name;
         this.price = price;
         this.image = image;
+<<<<<<< HEAD
         this.limit_customer = limit_customer;
         this.description = description;
         this.category = category;
+=======
+        this.limitCustomer = limit_customer;
+>>>>>>> a1909669fb5ac98bd7b74eb19972cae1d9c374d2
     }
 
     public Integer getId() {
@@ -163,12 +167,12 @@ public class Tour implements Serializable {
         return description;
     }
 
-    public Integer getLimit_customer() {
-        return limit_customer;
+    public Integer getLimitCustomer() {
+        return limitCustomer;
     }
 
-    public void setLimit_customer(Integer limit_customer) {
-        this.limit_customer = limit_customer;
+    public void setLimitCustomer(Integer limitCustomer) {
+        this.limitCustomer = limitCustomer;
     }
 
     public void setDescription(String description) {

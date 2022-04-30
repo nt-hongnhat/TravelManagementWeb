@@ -110,7 +110,7 @@ public class Trip implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.Trip[ id=" + id + " ]";
+        return departureProvince.toString();
     }
     
 }

@@ -160,3 +160,14 @@ i {
     width: inherit;
 }
 
+.fa-star{
+    color: orange;
+}
+
+div.collapse {
+    height: auto;
+    margin-bottom: 1rem;
+}
+.btn-tourSchedule {
+    text-align: left;
+}

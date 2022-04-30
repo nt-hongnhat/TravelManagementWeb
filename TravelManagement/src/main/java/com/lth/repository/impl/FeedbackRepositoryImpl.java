@@ -1,8 +1,8 @@
 package com.lth.repository.impl;
 
-import com.lth.pojos.TourPlace;
+import com.lth.pojos.Feedback;
 import com.lth.pojos.TourSchedule;
-import com.lth.repository.TourScheduleRepository;
+import com.lth.repository.FeedbackRepository;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -14,30 +14,29 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.List;
+import java.math.BigDecimal;
 
 @Repository
 @Transactional
-public class TourScheduleRepositoryImpl implements TourScheduleRepository {
+public class FeedbackRepositoryImpl implements FeedbackRepository {
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
 
     @Override
-    public List<TourSchedule> findTourScheduleByTourId(long tourId) {
+    public Object[] getRatingByTourId(int tourId) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<TourSchedule> criteriaQuery = builder.createQuery(TourSchedule.class);
-        Root<TourSchedule> root = criteriaQuery.from(TourSchedule.class);
-        criteriaQuery = criteriaQuery.select(root);
-
+        CriteriaQuery<Object[]> criteriaQuery = builder.createQuery(Object[].class);
+        Root<Feedback> root = criteriaQuery.from(Feedback.class);
+        criteriaQuery.multiselect(builder.count(root.get("id")),builder.avg(root.get("rating").as(BigDecimal.class)));
 
         if (tourId != -1) {
-            Predicate predicate = builder.equal(root.get("tour").get("id").as(Long.class), tourId);
+            Predicate predicate = builder.equal(root.get("tourId").get("id").as(Long.class), tourId);
             criteriaQuery.where(predicate);
         }
 
         Query query = session.createQuery(criteriaQuery);
 
-        return query.getResultList();
+        return (Object[]) query.getSingleResult();
     }
 }
