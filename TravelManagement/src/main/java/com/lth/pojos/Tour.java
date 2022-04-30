@@ -6,17 +6,12 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
-<<<<<<< HEAD
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
-import java.math.BigDecimal;
-=======
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -26,22 +21,13 @@ import java.util.Set;
 @Entity
 @XmlRootElement
 @Table(name = "tour")
-<<<<<<< HEAD
-@NamedQueries({
-        @NamedQuery(name = "Tour.findAll", query = "select t from Tour t"),
-        @NamedQuery(name = "Tour.findById", query = "select t from Tour t where t.id = :id"),
-        @NamedQuery(name = "Tour.findByName", query = "select t from Tour t where t.name = :name"),
-        @NamedQuery(name = "Tour.findByPrice", query = "select t from Tour t where t.price = :price"),
-})
-=======
-@XmlRootElement
 @NamedQueries({
         @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
         @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
         @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
         @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
         @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
+
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -55,18 +41,9 @@ public class Tour implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-<<<<<<< HEAD
-
     @Column(name = "price", nullable = false, precision = 12)
     private BigDecimal price;
 
-=======
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "price")
-    private long price;
-    @Size(max = 255)
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     @Column(name = "image")
     private String image;
     @NotNull
@@ -81,7 +58,7 @@ public class Tour implements Serializable {
     @JoinColumn(name = "trip_id", referencedColumnName = "id")
     @ManyToOne
     private Trip trip;
-    @OneToMany(mappedBy = "tourId")
+    @OneToMany(mappedBy = "tour")
     private Collection<Feedback> feedbackCollection;
 
 	@ManyToOne
@@ -148,12 +125,14 @@ public class Tour implements Serializable {
         this.id = id;
     }
 
-    public Tour(Integer id, String name, long price, String image, Integer limit_customer) {
+    public Tour(Integer id, String name, BigDecimal price, String image, Integer limit_customer, String description, Category category) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.image = image;
         this.limit_customer = limit_customer;
+        this.description = description;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -172,11 +151,11 @@ public class Tour implements Serializable {
         this.name = name;
     }
 
-    public long getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

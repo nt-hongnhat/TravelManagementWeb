@@ -107,21 +107,12 @@ public class UserInfo implements Serializable {
         this.phone = phone;
     }
 
-<<<<<<< HEAD
-    public Location getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Location locationId) {
-        this.locationId = locationId;
-=======
     public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location locationId) {
-        this.location = locationId;
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public User getUser() {

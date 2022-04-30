@@ -3,7 +3,6 @@ package com.lth.controllers.admin;
 import com.lth.pojos.Tour;
 import com.lth.pojos.User;
 import com.lth.service.EmployeeService;
-import com.lth.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;

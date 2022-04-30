@@ -1,7 +1,6 @@
 package com.lth.repository.impl;
 
 import com.lth.pojos.News;
-import com.lth.pojos.User;
 import com.lth.repository.NewsRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

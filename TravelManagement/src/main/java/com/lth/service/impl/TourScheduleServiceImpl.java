@@ -1,7 +1,6 @@
 package com.lth.service.impl;
 
 import com.lth.pojos.TourPlace;
-import com.lth.pojos.TourSchedule;
 import com.lth.repository.TourScheduleRepository;
 import com.lth.service.TourScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
