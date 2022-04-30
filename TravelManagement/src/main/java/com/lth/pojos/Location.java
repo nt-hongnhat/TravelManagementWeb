@@ -41,6 +41,8 @@ public class Location implements Serializable {
     private Ward wardId;
     @OneToMany(mappedBy = "locationId")
     private Collection<Place> placeCollection;
+    @Column(name = "detail")
+    private Integer detail;
 
     public Location() {
     }
@@ -125,4 +127,11 @@ public class Location implements Serializable {
         return "com.lth.pojos.Location[ id=" + id + " ]";
     }
 
+    public Integer getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Integer detail) {
+        this.detail = detail;
+    }
 }

@@ -102,6 +102,7 @@ public class User implements Serializable {
     private MultipartFile file;
 
     public User() {
+        this.userInfoId = new UserInfo();
     }
 
     public User(Integer id) {
@@ -116,6 +117,7 @@ public class User implements Serializable {
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
         this.userRole = userRole;
+        this.userInfoId = new UserInfo();
     }
 
     public Integer getId() {

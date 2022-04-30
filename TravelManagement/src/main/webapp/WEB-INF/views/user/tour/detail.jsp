@@ -31,7 +31,7 @@
             <div class="col-md-8">
                 <img class="card-img-top" src="<c:url value="${tour.image}"/>" alt="${tour.name}"/>
             </div>
-            <div class="d-sm-none d-md-block col-md-4">
+            <div class="d-none d-sm-none d-md-block col-md-4">
                 <div class="card card-body">
                     <p>
                         ${tour.name}
@@ -79,20 +79,21 @@
                 <p> ${tour.description}</p>
             </div>
             <div class=" col-md-4" style="margin-top: 2rem">
-                <div class="card card-body">
-                    <div class="price-box-content align list-group-item">
+                <div class="card">
+                    <div class="card-header">
                         Giá từ <strong style="font-size: 1.3rem">${tour.price}</strong>
                     </div>
+                    <div class="card-body">
+                        <form:form cssClass="admin-form" method="post" action="" modelAttribute="booking" >
+                            <div class="form-group">
+                                <input value="<fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${minDate}" />" readonly style="width: 100%; padding: .5rem; margin-top: 1rem">
+                            </div>
 
-                    <form:form cssClass="admin-form" method="post" action="" modelAttribute="booking" >
-                        <div class="form-group">
-                            <input value="<fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${minDate}" />" readonly style="width: 100%; padding: .5rem; margin-top: 1rem">
-                        </div>
-
-                        <div class="form-group">
-                            <input class="btn btn-primary" type="submit" value="Đặt tour" style="width: 100%">
-                        </div>
-                    </form:form>
+                            <div class="form-group">
+                                <input class="btn btn-primary" type="submit" value="Đặt tour" style="width: 100%">
+                            </div>
+                        </form:form>
+                    </div>
                 </div>
             </div>
             <div class="col-md-8">

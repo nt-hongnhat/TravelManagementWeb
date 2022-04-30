@@ -30,14 +30,24 @@ public class Booking {
     @Column(name = "departure_location_id")
     private Integer departureLocationId;
 
-    @Column(name = "number_adult", nullable = false)
-    private Integer numberAdult;
+    @Column(name = "customer_name", nullable = false, length = 45)
+    private String customerName;
 
-    @Column(name = "number_child", nullable = false)
-    private Integer numberChild;
+    @Column(name = "customer_phone", nullable = false, length = 45)
+    private String customerPhone;
 
-    @OneToMany(mappedBy = "booking")
-    private Set<BookingDetail> bookingDetails = new LinkedHashSet<>();
+    @Column(name = "address", length = 100)
+    private String address;
+
+    @Column(name = "note", length = 200)
+    private String note;
+
+    @Column(name = "email", length = 255)
+    private String email;
+
+    @JoinColumn(name = "booking_detail_id", referencedColumnName = "id")
+    @OneToOne
+    private BookingDetail bookingDetail;
 
     public Integer getId() {
         return id;
@@ -87,28 +97,43 @@ public class Booking {
         this.departureLocationId = departureLocationId;
     }
 
-    public Integer getNumberAdult() {
-        return numberAdult;
+    public BookingDetail getBookingDetail() {
+        return bookingDetail;
     }
 
-    public void setNumberAdult(Integer numberAdult) {
-        this.numberAdult = numberAdult;
+    public void setBookingDetail(BookingDetail bookingDetail) {
+        this.bookingDetail = bookingDetail;
     }
 
-    public Integer getNumberChild() {
-        return numberChild;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setNumberChild(Integer numberChild) {
-        this.numberChild = numberChild;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public Set<BookingDetail> getBookingDetails() {
-        return bookingDetails;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setBookingDetails(Set<BookingDetail> bookingDetails) {
-        this.bookingDetails = bookingDetails;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.awt.print.Book;
 import java.util.Date;
 import java.util.List;
 
@@ -27,6 +28,8 @@ public class TourController {
     TourDepartureService tourDepartureService;
     @Autowired
     FeedbackService feedbackService;
+    @Autowired
+    SurchangeService surchangeService;
 
     @GetMapping ("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
@@ -53,5 +56,20 @@ public class TourController {
             modelMap.put("rating", rating);
 
         return "user.index.tourdetail";
+    }
+
+    @GetMapping("/tour/{id}/abate")
+    public String abateTour(ModelMap modelMap, @PathVariable("id") int id) {
+        Tour tour = tourService.findTourById(id);
+        List<TourDeparture> tourDepartures = tourDepartureService.findTourDepartureByTourId(id);
+        List<Surcharge> surcharges = surchangeService.getSurchange();
+        Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
+
+        modelMap.put("minDate", minDate);
+        modelMap.put("tour", tour);
+        modelMap.put("surchanges", surcharges);
+        modelMap.put("booking", new Booking());
+
+        return "user.index.abate";
     }
 }

@@ -1,6 +1,7 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "booking_detail")
@@ -10,17 +11,35 @@ public class BookingDetail {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "customer_name", nullable = false, length = 45)
-    private String customerName;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "number_adult")
+    private int numberAdult;
 
-    @Column(name = "customer_phone", nullable = false)
-    private Integer customerPhone;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "number_agegroup_0_2")
+    private int numberAgegroup02;
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "number_agegroup_2_5")
+    private int numberAgegroup25;
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "number_agegroup_5_11")
+    private int numberAgegroup511;
 
     @Column(name = "is_payment", nullable = false)
     private Boolean isPayment = false;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "booking_id")
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "total_price")
+    private long totalPrice;
+
+    @OneToOne(mappedBy = "bookingDetail")
     private Booking booking;
 
     public Integer getId() {
@@ -29,22 +48,6 @@ public class BookingDetail {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public Integer getCustomerPhone() {
-        return customerPhone;
-    }
-
-    public void setCustomerPhone(Integer customerPhone) {
-        this.customerPhone = customerPhone;
     }
 
     public Boolean getIsPayment() {
@@ -63,4 +66,43 @@ public class BookingDetail {
         this.booking = booking;
     }
 
+    public long getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(long totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getNumberAgegroup511() {
+        return numberAgegroup511;
+    }
+
+    public void setNumberAgegroup511(int numberAgegroup511) {
+        this.numberAgegroup511 = numberAgegroup511;
+    }
+
+    public int getNumberAgegroup25() {
+        return numberAgegroup25;
+    }
+
+    public void setNumberAgegroup25(int numberAgegroup25) {
+        this.numberAgegroup25 = numberAgegroup25;
+    }
+
+    public int getNumberAgegroup02() {
+        return numberAgegroup02;
+    }
+
+    public void setNumberAgegroup02(int numberAgegroup02) {
+        this.numberAgegroup02 = numberAgegroup02;
+    }
+
+    public int getNumberAdult() {
+        return numberAdult;
+    }
+
+    public void setNumberAdult(int numberAdult) {
+        this.numberAdult = numberAdult;
+    }
 }
