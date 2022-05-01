@@ -2,12 +2,13 @@ package com.lth.pojos;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @XmlRootElement
 @Table(name = "booking")
-public class Booking {
+public class Booking implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -153,4 +154,33 @@ public class Booking {
 //    public void setNote(String note) {
 //        this.note = note;
 //    }
+
+    public Booking() {
+        super();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
 }

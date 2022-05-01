@@ -9,7 +9,8 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:url value="/" var="action"/>
+
+<c:url value="/tours/${categoryId}" var="action"/>
 <div class="row justify-content-center">
     <div class="col-lg-12">
         <form method="get" action="${action}">
@@ -18,9 +19,10 @@
                     <div class="form-floating px-lg-2 py-lg-2">
                         <label for="inputDepartureDate">Ngày khởi hành</label>
                         <input class="form-control" id="inputDepartureDate" name="inputDepartureDate" type="date"
-                               placeholder="Ngày khởi hành" min="2022-04-18" max="2022-05-01"/>
+                               placeholder="Ngày khởi hành" min="" max=""/>
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="form-floating px-lg-2 py-lg-2">
                         <label for="departureProvince">Nơi khởi hành</label>
@@ -31,6 +33,7 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="form-floating px-lg-2 py-lg-2">
                         <label for="destinationProvince">Nơi đến</label>
@@ -41,15 +44,14 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="form-floating mt-4 px-lg-3 py-lg-3">
                         <input class="btn btn-primary btn-block" type="submit" placeholder="" value="Tìm kiếm">
                     </div>
                 </div>
             </div>
-
         </form>
-
     </div>
 </div>
 
@@ -74,7 +76,8 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="/tour/${tour.id}">Chi tiết</a>
+                            <a class="btn btn-outline-dark mt-auto" href="<c:url value="/tour/${tour.id}"/>">Chi
+                                                                                                             tiết</a>
                         </div>
                     </div>
                 </div>

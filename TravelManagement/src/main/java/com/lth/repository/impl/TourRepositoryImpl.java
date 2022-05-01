@@ -5,7 +5,10 @@
  */
 package com.lth.repository.impl;
 
+import com.lth.pojos.Category;
 import com.lth.pojos.Tour;
+import com.lth.pojos.TourDeparture;
+import com.lth.pojos.Trip;
 import com.lth.repository.TourRepository;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,10 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author PC
@@ -123,4 +129,45 @@ public class TourRepositoryImpl implements TourRepository {
 
         return (Tour) query.getSingleResult();
     }
+
+    @Override
+    public List<Tour> getTours(Map<String, String> params) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> criteriaQuery = builder.createQuery(Object[].class);
+        Root<Tour> root = criteriaQuery.from(Tour.class);
+        Root<TourDeparture> tourDepartureRoot = criteriaQuery.from(TourDeparture.class);
+        Root<Category> categoryRoot = criteriaQuery.from(Category.class);
+        Root<Trip> tripRoot = criteriaQuery.from(Trip.class);
+
+        criteriaQuery.multiselect(root, categoryRoot, tourDepartureRoot, tripRoot);
+
+        if (params != null) {
+            List<Predicate> predicates = new ArrayList<>();
+            if (params.containsKey("categoryId") == true) {
+                Predicate predicate = builder.equal(root.get("category").get("id").as(String.class), params.get("categoryId"));
+                predicates.add(predicate);
+            }
+            if (params.containsKey("departureDate") == true) {
+                Predicate predicate = builder.equal(root.get("departure").as(Date.class), java.sql.Date.valueOf(params.get("departureDate")));
+                predicates.add(predicate);
+            }
+
+            if (params.containsKey("departureProvince") == true) {
+                Predicate predicate = builder.equal(root.get("departureProvince").get("name").as(String.class), params.get("departureProvince"));
+                predicates.add(predicate);
+            }
+
+            if (params.containsKey("destinationProvince") == true) {
+                Predicate predicate = builder.equal(root.get("destinationProvince").get("name").as(String.class), params.get("destinationProvince"));
+                predicates.add(predicate);
+            }
+            criteriaQuery = criteriaQuery.where(predicates.toArray(new Predicate[]{}));
+        }
+        criteriaQuery = criteriaQuery.orderBy(builder.desc(root.get("id")));
+        Query query = session.createQuery(criteriaQuery);
+        return query.getResultList();
+    }
+
+
 }

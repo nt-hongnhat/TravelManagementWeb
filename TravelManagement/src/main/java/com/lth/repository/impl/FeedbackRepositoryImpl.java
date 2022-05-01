@@ -31,7 +31,7 @@ public class FeedbackRepositoryImpl implements FeedbackRepository {
         criteriaQuery.multiselect(builder.count(root.get("id")),builder.avg(root.get("rating").as(BigDecimal.class)));
 
         if (tourId != -1) {
-            Predicate predicate = builder.equal(root.get("tourId").get("id").as(Long.class), tourId);
+            Predicate predicate = builder.equal(root.get("tour").get("id").as(Long.class), tourId);
             criteriaQuery.where(predicate);
         }
 

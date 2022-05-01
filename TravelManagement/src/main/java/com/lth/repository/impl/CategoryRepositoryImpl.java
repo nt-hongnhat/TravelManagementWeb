@@ -30,12 +30,51 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     @Override
     public Category getCategoryByID(int id) {
         Session session = this.sessionFactoryBean.getObject().getCurrentSession();
-        CriteriaBuilder builder= session.getCriteriaBuilder();
-        CriteriaQuery<Category> criteriaQuery= builder.createQuery(Category.class);
-        Root<Category> root= criteriaQuery.from(Category.class);
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Category> criteriaQuery = builder.createQuery(Category.class);
+        Root<Category> root = criteriaQuery.from(Category.class);
         criteriaQuery.select(root);
-        criteriaQuery.where(builder.equal(root.get("id"),id));
-        Query query= session.createQuery(criteriaQuery);
-        return (Category) query;
+        criteriaQuery.where(builder.equal(root.get("id").as(Integer.class), id));
+        Query query = session.createQuery(criteriaQuery);
+        return (Category) query.getSingleResult();
+    }
+
+    @Override
+    public boolean addCategory(Category category) {
+        Session session = this.sessionFactoryBean.getObject().getCurrentSession();
+        try {
+            session.save(category);
+            return true;
+        } catch (Exception exception) {
+            System.err.println("ADD CATEGORY ERROR!" + exception.getMessage());
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateCategory(Category category) {
+        Session session = this.sessionFactoryBean.getObject().getCurrentSession();
+        try {
+            session.update(category);
+            return true;
+        } catch (Exception exception) {
+            System.err.println("UPDATE CATEGORY ERROR!" + exception.getMessage());
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteCategory(Category category) {
+        Session session = this.sessionFactoryBean.getObject().getCurrentSession();
+        try {
+            session.delete(category);
+            return true;
+        } catch (Exception exception) {
+            System.err.println("DELETE CATEGORY ERROR!" + exception.getMessage());
+            exception.printStackTrace();
+        }
+        return false;
     }
 }

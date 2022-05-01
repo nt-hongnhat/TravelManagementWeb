@@ -20,7 +20,10 @@ import java.util.Set;
         @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
         @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
         @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
-        @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
+        @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description"),
+        @NamedQuery(name = "Tour.findByTourDepartures_Departure", query = "select t from Tour t inner join t.tourDepartures tourDepartures where tourDepartures.departure = :departure"),
+        @NamedQuery(name = "Tour.findByParams", query = "select t from Tour t inner join t.tourDepartures tourDepartures where t.trip.departureProvince.name = :name1 and t.trip.destinationProvince.name = :name2 and tourDepartures.departure = :departure and t.category.id = :id")
+})
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;

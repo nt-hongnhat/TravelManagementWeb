@@ -1,11 +1,12 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "tour_departure")
-public class TourDeparture {
+public class TourDeparture implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

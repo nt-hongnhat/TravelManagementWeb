@@ -45,7 +45,7 @@
 
     <definition name="user.index.tour" extends="baseLayout">
         <put-attribute name="title" value="Chuyến du lịch"/>
-        <put-attribute name="content" value="/WEB-INF/views/user/tour.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/views/user/tour/tour.jsp"/>
     </definition>
 
     <!--403-->

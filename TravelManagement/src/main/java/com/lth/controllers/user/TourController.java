@@ -7,12 +7,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @PropertySource("classpath:pagination.properties")
@@ -32,6 +31,14 @@ public class TourController {
     SurchangeService surchangeService;
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    private ProvinceService provinceService;
+
+    @ModelAttribute
+    public void commonAttributes(Model model) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("provinces", this.provinceService.getProvinces());
+    }
 
     @GetMapping("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
@@ -74,11 +81,26 @@ public class TourController {
         return "user.index.abate";
     }
 
-    @GetMapping("/tours/{categoryId}")
+    @GetMapping(value = "/tours/{categoryId}")
     public String tours(Model model, @PathVariable("categoryId") int categoryId) {
         Category category = this.categoryService.getCategoryByID(categoryId);
         model.addAttribute("tours", category.getTours());
         model.addAttribute("categoryName", category.getName());
+        return "user.index.tour";
+    }
+
+    @GetMapping("/tours/{categoryId}")
+    public String toursSearch(Model model, @PathVariable("categoryId") int categoryId, @RequestParam(required = false) Map<String, String> params) {
+        String departureDate = params.get("departureDate");
+        String departureProvince = params.getOrDefault("departureProvince", "");
+        String destinationProvince = params.getOrDefault("destinationProvince", "");
+        Category category = this.categoryService.getCategoryByID(categoryId);
+
+        
+        model.addAttribute("tours", this.tourService.getTours(params));
+
+
+
         return "user.index.tour";
     }
 }

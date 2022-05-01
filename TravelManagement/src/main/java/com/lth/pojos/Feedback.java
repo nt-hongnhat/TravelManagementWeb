@@ -34,7 +34,7 @@ public class Feedback implements Serializable {
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "id")
-    private String id;
+    private int id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "rating")
@@ -60,21 +60,21 @@ public class Feedback implements Serializable {
     public Feedback() {
     }
 
-    public Feedback(String id) {
+    public Feedback(int id) {
         this.id = id;
     }
 
-    public Feedback(String id, short rating, Date createdDate) {
+    public Feedback(int id, short rating, Date createdDate) {
         this.id = id;
         this.rating = rating;
         this.createdDate = createdDate;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -128,22 +128,22 @@ public class Feedback implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+        return super.hashCode();
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Feedback)) {
-            return false;
-        }
-        Feedback other = (Feedback) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     @Override

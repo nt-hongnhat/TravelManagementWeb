@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -51,6 +52,11 @@ public class TourServiceImpl implements TourService{
     @Override
     public Tour findTourById(long tourId) {
         return this.tourRepository.findTourById(tourId);
+    }
+
+    @Override
+    public List<Tour> getTours(Map<String, String> params) {
+        return this.tourRepository.getTours(params);
     }
 
 }

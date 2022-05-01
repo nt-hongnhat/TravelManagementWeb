@@ -6,11 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<<<<<< HEAD
+
 <header class="container-fluid" id="home">
-=======
-<header class="container-fluid">
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->

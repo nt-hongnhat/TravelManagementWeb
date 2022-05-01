@@ -6,8 +6,11 @@
 package com.lth.repository;
 
 import com.lth.pojos.Tour;
+import com.lth.pojos.Trip;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -22,4 +25,5 @@ public interface TourRepository {
     boolean updateTour(Tour tour);
     boolean deleteTour(Tour tour);
     Tour findTourById(long tourId);
+    List<Tour> getTours(Map<String, String> params);
 }
