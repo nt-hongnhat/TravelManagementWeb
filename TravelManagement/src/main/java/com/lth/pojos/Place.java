@@ -17,11 +17,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "places")
 @XmlRootElement
-@NamedQueries({
-        @NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"),
-        @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"),
-        @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"),
-        @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
+@NamedQueries({@NamedQuery(name = "Place.findAll", query = "SELECT p FROM Place p"), @NamedQuery(name = "Place.findById", query = "SELECT p FROM Place p WHERE p.id = :id"), @NamedQuery(name = "Place.findByName", query = "SELECT p FROM Place p WHERE p.name = :name"), @NamedQuery(name = "Place.findByDescription", query = "SELECT p FROM Place p WHERE p.description = :description")})
 public class Place implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,7 +36,7 @@ public class Place implements Serializable {
     private String description;
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne
-    private Location locationId;
+    private Location location;
 
     public Place() {
     }
@@ -78,13 +74,12 @@ public class Place implements Serializable {
         this.description = description;
     }
 
-
-    public Location getLocationId() {
-        return locationId;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocationId(Location locationId) {
-        this.locationId = locationId;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
@@ -101,10 +96,7 @@ public class Place implements Serializable {
             return false;
         }
         Place other = (Place) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return (this.id != null || other.id == null) && (this.id == null || this.id.equals(other.id));
     }
 
     @Override

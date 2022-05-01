@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lth.pojos;
 
 import javax.persistence.*;
@@ -19,10 +14,7 @@ import java.util.Collection;
 @Entity
 @Table(name = "location_district")
 @XmlRootElement
-@NamedQueries({
-        @NamedQuery(name = "District.findAll", query = "SELECT d FROM District d"),
-        @NamedQuery(name = "District.findById", query = "SELECT d FROM District d WHERE d.id = :id"),
-        @NamedQuery(name = "District.findByName", query = "SELECT d FROM District d WHERE d.name = :name")})
+@NamedQueries({@NamedQuery(name = "District.findAll", query = "SELECT d FROM District d"), @NamedQuery(name = "District.findById", query = "SELECT d FROM District d WHERE d.id = :id"), @NamedQuery(name = "District.findByName", query = "SELECT d FROM District d WHERE d.name = :name")})
 public class District implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,7 +33,7 @@ public class District implements Serializable {
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     @ManyToOne
     private Province province;
-    @OneToMany(mappedBy = "districtId")
+    @OneToMany(mappedBy = "district")
     private Collection<Location> locationCollection;
 
     public District() {

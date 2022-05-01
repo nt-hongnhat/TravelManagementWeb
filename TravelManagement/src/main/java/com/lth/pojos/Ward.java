@@ -41,7 +41,7 @@ public class Ward implements Serializable {
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     @ManyToOne
     private Province province;
-    @OneToMany(mappedBy = "wardId")
+    @OneToMany(mappedBy = "ward")
     private Collection<Location> locationCollection;
 
     public Ward() {

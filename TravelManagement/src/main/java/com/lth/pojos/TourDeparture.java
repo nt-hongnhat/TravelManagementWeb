@@ -1,9 +1,6 @@
 package com.lth.pojos;
 
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
 import javax.persistence.*;
-import java.time.Instant;
 import java.util.Date;
 
 @Entity

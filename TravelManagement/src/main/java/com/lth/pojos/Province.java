@@ -45,7 +45,7 @@ public class Province implements Serializable {
     private Collection<Trip> tripCollection1;
     @OneToMany(mappedBy = "province")
     private Collection<District> districtCollection;
-    @OneToMany(mappedBy = "provinceId")
+    @OneToMany(mappedBy = "province")
     private Collection<Location> locationCollection;
 
     public Province() {

@@ -22,16 +22,13 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-=======
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 /**
- *
  * @author PC
  */
 @Repository
 @Transactional
 @PropertySource("classpath:pagination.properties")
-public class TourRepositoryImpl implements TourRepository{
+public class TourRepositoryImpl implements TourRepository {
     @Autowired
     private Environment env;
     @Autowired
@@ -45,7 +42,7 @@ public class TourRepositoryImpl implements TourRepository{
         CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
         Root<Tour> root = criteriaQuery.from(Tour.class);
         criteriaQuery = criteriaQuery.select(root);
-        
+
         if (!keyword.isEmpty()) {
             Predicate predicate = builder.like(root.get("name").as(String.class),
                     String.format("%%%s%%", keyword));
@@ -53,11 +50,10 @@ public class TourRepositoryImpl implements TourRepository{
         }
 
 
-
         Query query = session.createQuery(criteriaQuery);
         query.setMaxResults(pageNumberOfTour);
-        query.setFirstResult((page-1) * pageNumberOfTour);
-        
+        query.setFirstResult((page - 1) * pageNumberOfTour);
+
         return query.getResultList();
     }
 
@@ -65,7 +61,7 @@ public class TourRepositoryImpl implements TourRepository{
     public long countTour() {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         Query query = session.createQuery("SELECT Count(*) FROM Tour");
-        
+
         return Long.parseLong(query.getSingleResult().toString());
     }
 

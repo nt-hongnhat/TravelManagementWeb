@@ -8,11 +8,7 @@
                 template="/WEB-INF/views/templates/user_template.jsp">
         <put-attribute name="title" value=""/>
         <put-attribute name="navbar" value="/WEB-INF/views/layout/user/navbar.jsp"/>
-<<<<<<< HEAD
-        <put-attribute name="header" value="/WEB-INF/views/layout/user/header.jsp"/>
-=======
         <put-attribute name="header" value=""/>
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
         <put-attribute name="content" value=""/>
         <put-attribute name="footer" value="/WEB-INF/views/layout/user/footer.jsp"/>
     </definition>
@@ -20,10 +16,7 @@
     <!--HOME PAGE-->
     <definition name="index" extends="baseLayout">
         <put-attribute name="title" value="TravelMore - Trang chủ"/>
-<<<<<<< HEAD
-=======
         <put-attribute name="header" value="/WEB-INF/views/layout/user/header.jsp"/>
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
         <put-attribute name="content" value="/WEB-INF/views/user/index.jsp"/>
     </definition>
 
@@ -50,25 +43,15 @@
         <put-attribute name="content" value="/WEB-INF/views/user/tour/abate.jsp"/>
     </definition>
 
+    <definition name="user.index.tour" extends="baseLayout">
+        <put-attribute name="title" value="Chuyến du lịch"/>
+        <put-attribute name="content" value="/WEB-INF/views/user/tour.jsp"/>
+    </definition>
+
     <!--403-->
     <definition name="403" extends="baseLayout">
         <put-attribute name="title" value="403"/>
         <put-attribute name="content" value="/WEB-INF/views/user/403.jsp"/>
     </definition>
 
-<<<<<<< HEAD
-    <!--TOUR PAGE-->
-    <definition name="tour" extends="baseLayout">
-        <put-attribute name="title" value="Du lịch"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/tour.jsp"/>
-    </definition>
-
-    <!--HOTEL PAGE-->
-    <definition name="hotel" extends="baseLayout">
-        <put-attribute name="title" value="Khách sạn"/>
-        <put-attribute name="content" value="/WEB-INF/jsp/hotel.jsp"/>
-    </definition>
-
-=======
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 </tiles-definitions>

@@ -5,12 +5,12 @@ import com.lth.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.awt.print.Book;
 import java.util.Date;
 import java.util.List;
 
@@ -30,8 +30,10 @@ public class TourController {
     FeedbackService feedbackService;
     @Autowired
     SurchangeService surchangeService;
+    @Autowired
+    CategoryService categoryService;
 
-    @GetMapping ("/tour/{id}")
+    @GetMapping("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
         Tour tour = tourService.findTourById(id);
         List<TourPlace> tourPlace = tourPlaceService.findTourPlaceByTourId(id);
@@ -47,12 +49,11 @@ public class TourController {
 
         Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
         modelMap.put("minDate", minDate);
-        if(rating == null) {
+        if (rating == null) {
             rating[0] = 0;
             rating[1] = 5;
             modelMap.put("rating", rating);
-        }
-        else
+        } else
             modelMap.put("rating", rating);
 
         return "user.index.tourdetail";
@@ -71,5 +72,13 @@ public class TourController {
         modelMap.put("booking", new Booking());
 
         return "user.index.abate";
+    }
+
+    @GetMapping("/tours/{categoryId}")
+    public String tours(Model model, @PathVariable("categoryId") int categoryId) {
+        Category category = this.categoryService.getCategoryByID(categoryId);
+        model.addAttribute("tours", category.getTours());
+        model.addAttribute("categoryName", category.getName());
+        return "user.index.tour";
     }
 }

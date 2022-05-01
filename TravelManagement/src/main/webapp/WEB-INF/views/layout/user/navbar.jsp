@@ -31,11 +31,11 @@
             <%--    Dropdown    --%>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbar-drop" data-toggle="dropdown">
-                    <span>Du lịch</span>
+                    <span>Danh mục du lịch</span>
                 </a>
                 <div class="dropdown-menu">
                     <c:forEach var="cate" items="${categories}">
-                        <a class="dropdown-item" href="#">${cate.name}</a>
+                        <a class="dropdown-item" href="/tours/${cate.id}">${cate.name}</a>
                     </c:forEach>
                 </div>
             </li>

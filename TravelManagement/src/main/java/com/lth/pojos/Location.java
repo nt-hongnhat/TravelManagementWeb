@@ -32,26 +32,23 @@ public class Location implements Serializable {
     private Collection<UserInfo> userInfoCollection;
     @JoinColumn(name = "district_id", referencedColumnName = "id")
     @ManyToOne
-    private District districtId;
+    private District district;
     @JoinColumn(name = "province_id", referencedColumnName = "id")
     @ManyToOne
-    private Province provinceId;
+    private Province province;
     @JoinColumn(name = "ward_id", referencedColumnName = "id")
     @ManyToOne
-    private Ward wardId;
+    private Ward ward;
     @OneToMany(mappedBy = "location")
     private Collection<Place> placeCollection;
     @Column(name = "detail")
     private Integer detail;
 
-    @Column(name = "detail", length = 100)
-    private String detail;
-
-    public String getDetail() {
+    public Integer getDetail() {
         return detail;
     }
 
-    public void setDetail(String detail) {
+    public void setDetail(Integer detail) {
         this.detail = detail;
     }
 
@@ -80,28 +77,28 @@ public class Location implements Serializable {
         this.userInfoCollection = userInfoCollection;
     }
 
-    public District getDistrictId() {
-        return districtId;
+    public District getDistrict() {
+        return district;
     }
 
-    public void setDistrictId(District districtId) {
-        this.districtId = districtId;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
-    public Province getProvinceId() {
-        return provinceId;
+    public Province getProvince() {
+        return province;
     }
 
-    public void setProvinceId(Province provinceId) {
-        this.provinceId = provinceId;
+    public void setProvince(Province province) {
+        this.province = province;
     }
 
-    public Ward getWardId() {
-        return wardId;
+    public Ward getWard() {
+        return ward;
     }
 
-    public void setWardId(Ward wardId) {
-        this.wardId = wardId;
+    public void setWard(Ward ward) {
+        this.ward = ward;
     }
 
     @XmlTransient
@@ -136,13 +133,5 @@ public class Location implements Serializable {
     @Override
     public String toString() {
         return "com.lth.pojos.Location[ id=" + id + " ]";
-    }
-
-    public Integer getDetail() {
-        return detail;
-    }
-
-    public void setDetail(Integer detail) {
-        this.detail = detail;
     }
 }

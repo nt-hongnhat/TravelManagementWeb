@@ -91,7 +91,7 @@ public class User implements Serializable {
     private Collection<News> newsCollection;
     @OneToMany(mappedBy = "userId")
     private Collection<Reaction> reactionCollection;
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "user")
     private Collection<Feedback> feedbackCollection;
     @JoinColumn(name = "user_info_id", referencedColumnName = "id")
     @OneToOne

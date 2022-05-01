@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lth.pojos;
 
 import javax.persistence.*;
@@ -10,7 +5,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,15 +13,14 @@ import java.util.Set;
  * @author PC
  */
 @Entity
-@XmlRootElement
 @Table(name = "tour")
+@XmlRootElement
 @NamedQueries({
         @NamedQuery(name = "Tour.findAll", query = "SELECT t FROM Tour t"),
         @NamedQuery(name = "Tour.findById", query = "SELECT t FROM Tour t WHERE t.id = :id"),
         @NamedQuery(name = "Tour.findByName", query = "SELECT t FROM Tour t WHERE t.name = :name"),
         @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
         @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description")})
-
 public class Tour implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,9 +34,11 @@ public class Tour implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "name")
     private String name;
-    @Column(name = "price", nullable = false, precision = 12)
-    private BigDecimal price;
-
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "price")
+    private long price;
+    @Size(max = 255)
     @Column(name = "image")
     private String image;
     @NotNull
@@ -61,9 +56,9 @@ public class Tour implements Serializable {
     @OneToMany(mappedBy = "tour")
     private Collection<Feedback> feedbackCollection;
 
-	@ManyToOne
-	@JoinColumn(name = "category_id")
-	private Category category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 
     @OneToMany(mappedBy = "tour")
@@ -125,18 +120,12 @@ public class Tour implements Serializable {
         this.id = id;
     }
 
-    public Tour(Integer id, String name, BigDecimal price, String image, Integer limit_customer, String description, Category category) {
+    public Tour(Integer id, String name, long price, String image, Integer limit_customer) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.image = image;
-<<<<<<< HEAD
-        this.limit_customer = limit_customer;
-        this.description = description;
-        this.category = category;
-=======
         this.limitCustomer = limit_customer;
->>>>>>> a1909669fb5ac98bd7b74eb19972cae1d9c374d2
     }
 
     public Integer getId() {
@@ -155,11 +144,11 @@ public class Tour implements Serializable {
         this.name = name;
     }
 
-    public BigDecimal getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
