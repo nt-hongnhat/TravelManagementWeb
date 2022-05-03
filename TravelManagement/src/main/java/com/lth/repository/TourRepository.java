@@ -19,11 +19,10 @@ import java.util.Map;
 
 
 public interface TourRepository {
-    List<Tour> getTours(String keyword, int page);
+    List<Tour> getTours(Map<String, String> params, int page);
     long countTour();
     boolean addTour(Tour tour);
     boolean updateTour(Tour tour);
     boolean deleteTour(Tour tour);
     Tour findTourById(long tourId);
-    List<Tour> getTours(Map<String, String> params);
 }

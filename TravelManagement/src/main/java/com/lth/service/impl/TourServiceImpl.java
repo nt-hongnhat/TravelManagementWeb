@@ -23,10 +23,10 @@ import java.util.Map;
 public class TourServiceImpl implements TourService{
     @Autowired
     private TourRepository tourRepository;
-    
+
     @Override
-    public List<Tour> getTours(String keyword,int page) {
-        return this.tourRepository.getTours(keyword, page);
+    public List<Tour> getTours(Map<String, String> params, int page) {
+        return null;
     }
 
     @Override
@@ -54,9 +54,5 @@ public class TourServiceImpl implements TourService{
         return this.tourRepository.findTourById(tourId);
     }
 
-    @Override
-    public List<Tour> getTours(Map<String, String> params) {
-        return this.tourRepository.getTours(params);
-    }
 
 }

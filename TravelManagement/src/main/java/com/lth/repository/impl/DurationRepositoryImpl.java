@@ -74,7 +74,20 @@ public class DurationRepositoryImpl implements DurationRepository {
             session.update(duration);
             return true;
         } catch (Exception exception) {
-            System.err.println("UPDATA DURATION ERROR!" + exception.getMessage());
+            System.err.println("UPDATE DURATION ERROR!" + exception.getMessage());
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteDuration(Duration duration) {
+        Session session = this.sessionFactoryBean.getObject().getCurrentSession();
+        try {
+            session.delete(duration);
+            return true;
+        } catch (Exception exception) {
+            System.err.println("DELETE DURATION ERROR!" + exception.getMessage());
             exception.printStackTrace();
         }
         return false;

@@ -5,10 +5,7 @@
  */
 package com.lth.controllers.user;
 
-import com.lth.service.CategoryService;
-import com.lth.service.NewsService;
-import com.lth.service.ProvinceService;
-import com.lth.service.TourService;
+import com.lth.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -36,11 +33,16 @@ public class HomeController {
     private ProvinceService provinceService;
     @Autowired
     private NewsService newsService;
-
+    @Autowired
+    private DurationService durationService;
+@Autowired
+private TourDepartureService tourDepartureService;
     @ModelAttribute
     public void commonAttributes(Model model) {
         model.addAttribute("categories", this.categoryService.getCategories());
-        model.addAttribute("provinces", this.provinceService.getProvinces());
+        model.addAttribute("provinces", this.provinceService.getProvinces(""));
+        model.addAttribute("durations", this.durationService.getDurations(0));
+        model.addAttribute("departures", this.tourDepartureService.findTourDepartureByTourId(-1));
     }
 
 	@RequestMapping("/")
@@ -51,10 +53,10 @@ public class HomeController {
 		int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
 
 		model.addAttribute("tours",
-				this.tourService.getTours(keyword, page));
+				this.tourService.getTours(params, page));
 		model.addAttribute("numberOfTourPaginationItem",
 				this.tourService.countTour() / pageNumberOfTour);
-		model.addAttribute("provinces", this.provinceService.getProvinces());
+		model.addAttribute("provinces", this.provinceService.getProvinces(""));
 		model.addAttribute("categories", this.categoryService.getCategories());
         model.addAttribute("news", this.newsService.getNews("", page));
 		return "index";

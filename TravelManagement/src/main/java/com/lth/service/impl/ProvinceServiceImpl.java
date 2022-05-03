@@ -13,8 +13,19 @@ public class ProvinceServiceImpl implements ProvinceService {
     @Autowired
     private ProvinceRepository provinceRepository;
 
+
     @Override
-    public List<Province> getProvinces() {
-        return this.provinceRepository.getProvinces();
+    public List<Province> getProvinces(String name) {
+        return this.provinceRepository.getProvinces(name);
+    }
+
+    @Override
+    public Province findProvinceById(int id) {
+        return this.provinceRepository.findProvinceById(id);
+    }
+
+    @Override
+    public boolean updateProvince(Province province) {
+        return this.provinceRepository.updateProvince(province);
     }
 }

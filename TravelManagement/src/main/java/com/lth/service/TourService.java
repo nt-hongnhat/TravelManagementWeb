@@ -11,11 +11,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
  * @author PC
  */
 public interface TourService {
-    List<Tour> getTours(String keyword, int page);
+    List<Tour> getTours(Map<String, String> params, int page);
 
     long countTour();
 
@@ -26,6 +25,4 @@ public interface TourService {
     boolean deleteTour(Tour tour);
 
     Tour findTourById(long tourId);
-
-    List<Tour> getTours(Map<String, String> params);
 }

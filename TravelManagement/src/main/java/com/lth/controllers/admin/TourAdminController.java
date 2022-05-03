@@ -29,7 +29,7 @@ public class TourAdminController {
         int page = Integer.parseInt(params.getOrDefault("page", "1"));
 
         modelMap.addAttribute("tours",
-                this.tourService.getTours(keyword, page));
+                this.tourService.getTours(params, page));
         modelMap.put("numberOfTourPaginationItem",
                 this.tourService.countTour() / pageNumberOfTour);
         return "admin.index.tour";
@@ -51,7 +51,7 @@ public class TourAdminController {
             tourService.updateTour(tour);
         }
         modelMap.put("tours",
-                this.tourService.getTours("", 1));
+                this.tourService.getTours(null, 1));
         modelMap.put("numberOfTourPaginationItem",
                 this.tourService.countTour() / pageNumberOfTour);
 
@@ -74,7 +74,7 @@ public class TourAdminController {
             tourService.deleteTour(tour);
         }
         modelMap.put("tours",
-                this.tourService.getTours("", 1));
+                this.tourService.getTours(null, 1));
         modelMap.put("numberOfTourPaginationItem",
                 this.tourService.countTour() / pageNumberOfTour);
         return "admin.index.tour";

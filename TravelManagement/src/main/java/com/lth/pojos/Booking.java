@@ -52,6 +52,28 @@ public class Booking implements Serializable {
     @OneToOne
     private BookingDetail bookingDetail;
 
+    private Integer numberAdult;
+
+    private Integer numberChild;
+
+    @Column(name = "number_child", nullable = false)
+    public Integer getNumberChild() {
+        return numberChild;
+    }
+
+    public void setNumberChild(Integer numberChild) {
+        this.numberChild = numberChild;
+    }
+
+    @Column(name = "number_adult", nullable = false)
+    public Integer getNumberAdult() {
+        return numberAdult;
+    }
+
+    public void setNumberAdult(Integer numberAdult) {
+        this.numberAdult = numberAdult;
+    }
+
     public Integer getId() {
         return id;
     }

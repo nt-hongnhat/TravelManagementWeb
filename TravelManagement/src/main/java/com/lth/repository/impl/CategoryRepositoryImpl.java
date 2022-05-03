@@ -28,7 +28,7 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public Category getCategoryByID(int id) {
+    public Category findById(int id) {
         Session session = this.sessionFactoryBean.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Category> criteriaQuery = builder.createQuery(Category.class);
