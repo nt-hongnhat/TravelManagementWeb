@@ -13,7 +13,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -40,21 +39,4 @@ public class TourDepartureRepositoryImpl implements TourDepartureRepository {
         return query.getResultList();
     }
 
-    public List<Date> findDateByTourId(long tourId) {
-        Session session = this.sessionFactory.getObject().getCurrentSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<TourDeparture> criteriaQuery = builder.createQuery(TourDeparture.class);
-        Root<TourDeparture> root = criteriaQuery.from(TourDeparture.class);
-        criteriaQuery = criteriaQuery.select(root.get("departure"));
-
-
-        if (tourId != -1) {
-            Predicate predicate = builder.equal(root.get("tour").get("id").as(Long.class), tourId);
-            criteriaQuery.where(predicate);
-        }
-
-        Query query = session.createQuery(criteriaQuery);
-
-        return query.getResultList();
-    }
 }

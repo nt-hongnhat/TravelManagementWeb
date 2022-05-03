@@ -84,13 +84,15 @@
                         Giá từ <strong style="font-size: 1.3rem">${tour.price}</strong>
                     </div>
                     <div class="card-body">
-                        <form:form cssClass="admin-form" method="post" action="" modelAttribute="booking" >
+                        <form:form cssClass="admin-form" method="get" action="" modelAttribute="booking" >
                             <div class="form-group">
                                 <input value="<fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${minDate}" />" readonly style="width: 100%; padding: .5rem; margin-top: 1rem">
                             </div>
 
                             <div class="form-group">
-                                <input class="btn btn-primary" type="submit" value="Đặt tour" style="width: 100%">
+                                <a class="btn btn-primary" type="submit"
+                                       href="${pageContext.request.contextPath}/tour/${tour.id}/abate"
+                                        style="width: 100%">Đặt tour</a>
                             </div>
                         </form:form>
                     </div>

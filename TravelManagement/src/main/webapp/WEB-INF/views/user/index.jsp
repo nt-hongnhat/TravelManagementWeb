@@ -14,13 +14,13 @@
     </div>
 </ser:authorize>
 
-<div>
-    <ul class="pagination">
-        <c:forEach begin="1" end="${Math.ceil(numberOfTourPaginationItem)}" var="i">
-            <li class="page-item"><a class="page-link" href="<c:url value="/" />?page=${i}">${i}</a></li>
-        </c:forEach>
-    </ul>
-</div>
+<%--<div>--%>
+<%--    <ul class="pagination">--%>
+<%--        <c:forEach begin="1" end="${Math.ceil(numberOfTourPaginationItem)}" var="i">--%>
+<%--            <li class="page-item"><a class="page-link" href="<c:url value="/" />?page=${i}">${i}</a></li>--%>
+<%--        </c:forEach>--%>
+<%--    </ul>--%>
+<%--</div>--%>
 
 <div class="container-fluid mt-md-3">
     <section id="#tours">
@@ -60,7 +60,7 @@
                 <div class="col mb-3">
                     <div class="card card-deck">
                             <%--                        <img class="card-img-top" src="<c:url value="${news.image}"/>" alt="${news.title}"/>--%>
-
+<%----%>
                         <!-- News details-->
                         <div class="card-body p-2 w-100">
                             <h5 class="card-title text-center">

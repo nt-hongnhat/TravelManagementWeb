@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface TourDepartureRepository {
     List<TourDeparture> findTourDepartureByTourId (long tourId);
-    public List<Date> findDateByTourId(long tourId);
 }

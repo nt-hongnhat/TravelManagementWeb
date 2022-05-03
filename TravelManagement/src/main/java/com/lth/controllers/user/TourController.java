@@ -5,10 +5,9 @@ import com.lth.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Book;
 import java.util.Date;
@@ -30,6 +29,8 @@ public class TourController {
     FeedbackService feedbackService;
     @Autowired
     SurchangeService surchangeService;
+    @Autowired
+    BookingService bookingService;
 
     @GetMapping ("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
@@ -38,7 +39,7 @@ public class TourController {
         Object[] rating = feedbackService.getRatingByTourId(id);
         List<TourSchedule> tourSchedules = tourScheduleService.findTourScheduleByTourId(id);
         List<TourDeparture> tourDepartures = tourDepartureService.findTourDepartureByTourId(id);
-        List<Date> departureDate = tourDepartureService.findDateByTourId(id);
+
         modelMap.put("tour", tour);
         modelMap.put("tourPlace", tourPlace);
         modelMap.put("tourSchedules", tourSchedules);
@@ -69,6 +70,48 @@ public class TourController {
         modelMap.put("tour", tour);
         modelMap.put("surchanges", surcharges);
         modelMap.put("booking", new Booking());
+
+        return "user.index.abate";
+    }
+
+    @PostMapping("/tour/{id}/abate/announce")
+    public String announce(ModelMap modelMap, @PathVariable("id") int id, @ModelAttribute("booking") Booking booking,
+                           @RequestParam("abateType") String abateType) {
+        Tour tour = tourService.findTourById(id);
+        List<TourDeparture> tourDepartures = tourDepartureService.findTourDepartureByTourId(id);
+        List<Surcharge> surcharges = surchangeService.getSurchange();
+        Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
+
+        long price = tour.getPrice();
+        long adultPrice = (long) Math.round(price / 1000) * 1000
+                * booking.getBookingDetail().getNumberAdult();
+        long ageGroup511Price = (long) Math.round(price * surcharges.get(1).getPercentage() / 1000) * 1000
+                * booking.getBookingDetail().getNumberAgegroup511();
+        long ageGroup25Price = (long) Math.round(price * surcharges.get(2).getPercentage() / 1000) * 1000
+                * booking.getBookingDetail().getNumberAgegroup25();
+        long ageGroup02Price = (long) Math.round(price * surcharges.get(3).getPercentage() / 1000) * 1000
+                * booking.getBookingDetail().getNumberAgegroup02();
+
+        String message = "";
+
+//        if (abateType.equals("radioDefault")){
+//            booking.getBookingDetail().setIsPayment(false);
+//            booking.getBookingDetail().setTotalPrice(price + ageGroup511Price + ageGroup25Price * ageGroup02Price);
+////            if (bookingService.addBooking(booking) == true) {
+////                message = "Thêm thành công";
+////            }
+////            else
+////                message = "Thêm thất bại";
+//
+//        }
+
+
+        modelMap.put("minDate", minDate);
+        modelMap.put("tour", tour);
+        modelMap.put("surchanges", surcharges);
+        modelMap.put("booking", booking);
+        modelMap.put("bookingNumberAdult", booking.getBookingDetail().getNumberAdult());
+        modelMap.put("message", message);
 
         return "user.index.abate";
     }

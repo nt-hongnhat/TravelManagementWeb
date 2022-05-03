@@ -43,7 +43,7 @@
                     </div>
                     <div class="row" style="margin-top: .5rem">
                         <div class="col-md-4 font-weight-light">Số chỗ còn nhận</div>
-                        <div class="col-md-8"></div>
+                        <div class="col-md-8">${tour.limitCustomer}</div>
                     </div>
                 </div>
             </div>
@@ -86,73 +86,73 @@
         <div class="col-12">
             <br>
             <h3 class="text-center text-uppercase">thông tin liên hệ</h3>
-            <form:form method="post" action="" modelAttribute="booking">
+            <form:form method="post" action="${pageContext.request.contextPath}/tour/${tour.id}/abate/announce" modelAttribute="booking">
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <div class="form-floating mb-3 mb-md-0">
                             <label for="inputName">Họ và tên</label>
-                            <input name="booking.customerName" class="form-control" id="inputName" type="text"
-                                   placeholder="Nguyễn Văn A....">
+                            <form:input name="booking.customerName"  class="form-control" id="inputName" type="text"
+                                   placeholder="Nguyễn Văn A...." path="customerName"/>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
                             <label for="email">Email</label>
-                            <input name="booking.email" class="form-control" id="email" type="email"
-                                   placeholder="Nhập số điện thoại...">
+                            <form:input name="booking.email" class="form-control" id="email" type="email"
+                                   placeholder="Nhập số điện thoại..." path="email"/>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
                             <label for="phone">Số điện thoại</label>
-                            <input name="booking.phone" class="form-control" id="phone" type="text"
-                                   placeholder="Nhập số điện thoại...">
+                            <form:input name="booking.phone" class="form-control" id="phone" type="text"
+                                   placeholder="Nhập số điện thoại..." path="customerPhone"/>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-floating mb-3">
                             <label for="address">Địa chỉ</label>
-                            <input name="booking.address" class="form-control" id="address" type="text"
-                                   placeholder="Nhập địa chỉ...">
+                            <form:input name="booking.address" class="form-control" id="address" type="text"
+                                   placeholder="Nhập địa chỉ..." path="address"/>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="form-floating mb-3">
                             <label for="note">Ghi chú</label>
-                            <input name="booking.note" class="form-control" id="note" type="text"
-                                   placeholder="Nhập ghi chú...">
+                            <form:input name="booking.note" class="form-control" id="note" type="text"
+                                   placeholder="Nhập ghi chú..." path="note"/>
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="form-floating mb-3">
                             <label for="numberAdult">Người lớn</label>
-                            <input name="booking.note" class="form-control" id="numberAdult" type="number"
-                                   value="1">
+                            <form:input class="form-control" id="numberAdult" type="number"
+                                   value="1" path="bookingDetail.numberAdult"/>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating mb-3">
-                            <label for="numberAgegroup02">Trẻ em(5 - 11 tuổi)</label>
-                            <input name="booking.bookingDetail.numberAgegroup02" class="form-control"
-                                   id="numberAgegroup02" type="number"
-                                   value="0">
+                            <label for="numberAgegroup511">Trẻ em(5 - 11 tuổi)</label>
+                            <form:input class="form-control"
+                                   id="numberAgegroup511" type="number"
+                                   value="0" path="bookingDetail.numberAgegroup511"/>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating mb-3">
                             <label for="numberAgegroup25">Trẻ nhỏ(2 - 5 tuổi)</label>
-                            <input name="booking.bookingDetail.numberAgegroup25" class="form-control"
+                            <form:input class="form-control"
                                    id="numberAgegroup25" type="number"
-                                   value="0">
+                                   value="0" path="bookingDetail.numberAgegroup25"/>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-floating mb-3">
-                            <label for="numberAgegroup511">Sơ sinh( < 2 tuổi)</label>
-                            <input name="booking.bookingDetail.numberAgegroup511" class="form-control"
-                                   id="numberAgegroup511" type="number"
-                                   value="0">
+                            <label for="numberAgegroup02">Sơ sinh( < 2 tuổi)</label>
+                            <form:input class="form-control"
+                                   id="numberAgegroup02" type="number"
+                                   value="0" path="bookingDetail.numberAgegroup02"/>
                         </div>
                     </div>
                     <hr>
@@ -163,25 +163,29 @@
 
 <%--                    Check way to abate--%>
                     <div class="form-check col-md-6">
-                        <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault" checked>
+                        <input class="form-check-input" type="radio" name="abateType" id="radioDefault"
+                               value="radioDefault" checked>
                         <label class="form-check-label" for="radioDefault">
                             Thanh toán tại quầy TravelMore
                         </label>
                     </div>
                     <div class="form-check col-md-6">
-                        <input class="form-check-input" type="radio" name="radioMomo" id="radioMomo">
+                        <input class="form-check-input" type="radio" name="abateType" id="radioMomo"
+                               value="radioMomo">
                         <label class="form-check-label" for="radioMomo">
                             Thanh toán qua ví Momo
                         </label>
                     </div>
                     <div class="form-check col-md-6">
-                        <input class="form-check-input" type="radio" name="radioBanking" id="radioBanking" checked>
+                        <input class="form-check-input" type="radio" name="abateType" id="radioBanking"
+                               value="radioBaking">
                         <label class="form-check-label" for="radioBanking">
                             Thanh toán chuyển khoản qua ngân hàng
                         </label>
                     </div>
                     <div class="form-check col-md-6">
-                        <input class="form-check-input" type="radio" name="radioVnpay" id="radioVnpay">
+                        <input class="form-check-input" type="radio" name="abateType" id="radioVnpay"
+                               value="radioVnpay">
                         <label class="form-check-label" for="radioVnpay">
                             Thanh toán qua VNPAY
                         </label>
@@ -194,9 +198,7 @@
                         </div>
                     </div>
                 </div>
-
-
-
+                ${message}
             </form:form>
 
         </div>

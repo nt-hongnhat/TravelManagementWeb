@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface TourDepartureService {
     List<TourDeparture> findTourDepartureByTourId (long tourId);
-    List<Date> findDateByTourId(long tourId);
 }

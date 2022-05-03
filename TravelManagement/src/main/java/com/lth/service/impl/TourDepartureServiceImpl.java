@@ -19,7 +19,4 @@ public class TourDepartureServiceImpl implements TourDepartureService {
         return tourDepartureRepository.findTourDepartureByTourId(tourId);
     }
 
-    public List<Date> findDateByTourId(long tourId) {
-        return tourDepartureRepository.findDateByTourId(tourId);
-    }
 }

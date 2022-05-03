@@ -1,6 +1,8 @@
 package com.lth.pojos;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.time.Instant;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -21,11 +23,14 @@ public class Booking {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "created_date", nullable = false)
-    private Instant createdDate;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "created_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
     @Column(name = "departure_date", nullable = false)
-    private Instant departureDate;
+    private Date departureDate;
 
     @Column(name = "departure_location_id")
     private Integer departureLocationId;
@@ -48,6 +53,9 @@ public class Booking {
     @JoinColumn(name = "booking_detail_id", referencedColumnName = "id")
     @OneToOne
     private BookingDetail bookingDetail;
+
+    public Booking() {
+    }
 
     public Integer getId() {
         return id;
@@ -73,19 +81,19 @@ public class Booking {
         this.user = user;
     }
 
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getDepartureDate() {
+    public Date getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Instant departureDate) {
+    public void setDepartureDate(Date departureDate) {
         this.departureDate = departureDate;
     }
 
@@ -135,5 +143,13 @@ public class Booking {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

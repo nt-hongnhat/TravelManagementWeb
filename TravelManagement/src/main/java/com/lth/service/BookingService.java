@@ -1,7 +1,7 @@
-package com.lth.repository;
+package com.lth.service;
 
 import com.lth.pojos.Booking;
 
-public interface BookingRepository {
+public interface BookingService {
     boolean addBooking(Booking booking);
 }
