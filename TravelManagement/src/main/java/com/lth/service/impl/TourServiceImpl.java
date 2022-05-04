@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.lth.service.impl;
 
 import com.lth.pojos.Tour;
@@ -16,17 +11,16 @@ import java.util.Map;
 
 
 /**
- *
  * @author PC
  */
 @Service
-public class TourServiceImpl implements TourService{
+public class TourServiceImpl implements TourService {
     @Autowired
     private TourRepository tourRepository;
 
     @Override
     public List<Tour> getTours(Map<String, String> params, int page) {
-        return null;
+        return this.tourRepository.getTours(params, page);
     }
 
     @Override
@@ -52,6 +46,11 @@ public class TourServiceImpl implements TourService{
     @Override
     public Tour findTourById(long tourId) {
         return this.tourRepository.findTourById(tourId);
+    }
+
+    @Override
+    public List<Tour> findAll(int page) {
+        return this.tourRepository.findAll(page);
     }
 
 

@@ -23,8 +23,8 @@ import java.util.Map;
 @PropertySource("classpath:pagination.properties")
 @RequestMapping("")
 public class HomeController {
-	@Autowired
-	private Environment env;
+    @Autowired
+    private Environment env;
     @Autowired
     private CategoryService categoryService;
     @Autowired
@@ -35,8 +35,9 @@ public class HomeController {
     private NewsService newsService;
     @Autowired
     private DurationService durationService;
-@Autowired
-private TourDepartureService tourDepartureService;
+    @Autowired
+    private TourDepartureService tourDepartureService;
+
     @ModelAttribute
     public void commonAttributes(Model model) {
         model.addAttribute("categories", this.categoryService.getCategories());
@@ -45,22 +46,22 @@ private TourDepartureService tourDepartureService;
         model.addAttribute("departures", this.tourDepartureService.findTourDepartureByTourId(-1));
     }
 
-	@RequestMapping("/")
-	public String index(Model model,
-						@RequestParam(required = false) Map<String, String> params) {
-		String keyword = params.getOrDefault("kw", "");
-		int page = Integer.parseInt(params.getOrDefault("page", "1"));
-		int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
+    @RequestMapping("/")
+    public String index(Model model,
+                        @RequestParam(required = false) Map<String, String> params) {
+        String keyword = params.getOrDefault("kw", "");
+        int page = Integer.parseInt(params.getOrDefault("page", "1"));
+        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
 
-		model.addAttribute("tours",
-				this.tourService.getTours(params, page));
-		model.addAttribute("numberOfTourPaginationItem",
-				this.tourService.countTour() / pageNumberOfTour);
-		model.addAttribute("provinces", this.provinceService.getProvinces(""));
-		model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("tours",
+                this.tourService.findAll(page));
+        model.addAttribute("numberOfTourPaginationItem",
+                this.tourService.countTour() / pageNumberOfTour);
+        model.addAttribute("provinces", this.provinceService.getProvinces(""));
+        model.addAttribute("categories", this.categoryService.getCategories());
         model.addAttribute("news", this.newsService.getNews("", page));
-		return "index";
-	}
+        return "index";
+    }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String accessDenied() {

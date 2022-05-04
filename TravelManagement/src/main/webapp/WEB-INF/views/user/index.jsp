@@ -1,16 +1,16 @@
-<%@ page import="java.text.DecimalFormat" %>
-<%@ page %><%--
+<%@ page import="java.text.DecimalFormat" %><%--
     Document   : index
     Created on : Mar 28, 2022, 2:58:57 PM
     Author     : PC
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
-<%@ taglib prefix="ser" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib prefix="ser" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <% DecimalFormat decimalFormat = new DecimalFormat("###, ###, ###");%>
+
 <ser:authorize access="hasRole('CUSTOMER')">
     <div>
         <h2>Đây là tài khoản</h2>
@@ -28,33 +28,28 @@
 <div class="container-fluid mt-md-3">
     <section id="#tours">
         <h3 class="mb-3">${numberOfTourPaginationItem} TOUR DU LỊCH</h3>
-        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <c:forEach items="${tours}" var="tour">
-                <div class="col mb-3">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="<c:url value="${tour.image}"/>" alt="${tour.name}"/>
-                        <!-- Tour image-->
-                        <!-- Tour details-->
-                        <div class="card-body p-2"><h5 class="card-title text-center">
-                            <a class="text-justify text-decoration-none text-info" href="">${tour.name}</a>
-                        </h5>
-                            <h6><i class="fa-solid fa-calendar-check"></i>${tour.trip.departureProvince}</h6>
-                            <h6><i class="fa-solid fa-clock"></i>${tour.duration}</h6>
-                            <h5 class="text-danger float-end float-right">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <c:forEach var="tour" items="${tours}">
+                <div class="col mb-5">
+                    <div class="card w-100 h-100">
+                        <img class="card-img-top" src="${tour.image}" alt="${tour.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${tour.name}</h5>
+                            <p class="card-text">${tour.description}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">${tour.trip}</li>
+                            <li class="list-group-item">${tour.duration}</li>
+                            <li class="list-group-item text-danger">
                                 <i class="fa-solid fa-wallet"></i>
                                 <fmt:formatNumber value="${tour.price}" type="number" pattern="###,###,###"/> VNĐ
-                            </h5>
-                        </div>
-                        <!-- Tour actions-->
-                        <div class="card-footer p-2 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-primary mt-auto"
-                                   href="<c:url value="/tour/${tour.id}"/>">Chi tiết</a>
-                            </div>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="<c:url value="/tour/${tour.id}"/>" class="btn btn-outline-primary justify-content-center">Chi tiết</a>
                         </div>
                     </div>
                 </div>
-
             </c:forEach>
         </div>
     </section>

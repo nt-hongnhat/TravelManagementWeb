@@ -25,4 +25,6 @@ public interface TourRepository {
     boolean updateTour(Tour tour);
     boolean deleteTour(Tour tour);
     Tour findTourById(long tourId);
+    List<Tour> findAll(int page);
+
 }

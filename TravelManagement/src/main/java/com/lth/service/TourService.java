@@ -25,4 +25,6 @@ public interface TourService {
     boolean deleteTour(Tour tour);
 
     Tour findTourById(long tourId);
+
+    List<Tour> findAll(int page);
 }

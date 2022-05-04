@@ -5,32 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/DurationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/DurationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/TourAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/admin/TourAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/DurationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/DurationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/ProvinceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/ProvinceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Trip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/CategoryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/CategoryRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/DurationRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/DurationRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/ProvinceRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/ProvinceRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/ProvinceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/ProvinceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/TourService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/ProvinceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/ProvinceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/user/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/user/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,11 +117,13 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="TravelManagement" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+    <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/TravelManagement" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
@@ -221,6 +207,7 @@
       <workItem from="1651395874099" duration="21491000" />
       <workItem from="1651497939763" duration="1209000" />
       <workItem from="1651499762943" duration="29629000" />
+      <workItem from="1651646344632" duration="10066000" />
     </task>
     <servers />
   </component>

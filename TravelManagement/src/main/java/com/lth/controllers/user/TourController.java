@@ -34,11 +34,11 @@ public class TourController {
     @Autowired
     private ProvinceService provinceService;
 
-//    @ModelAttribute
-//    public void commonAttributes(Model model) {
-//        model.addAttribute("categories", this.categoryService.getCategories());
-//        model.addAttribute("provinces", this.provinceService.getProvinces(""));
-//    }
+    @ModelAttribute
+    public void commonAttributes(Model model) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("provinces", this.provinceService.getProvinces(""));
+    }
 
     @GetMapping("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
@@ -84,15 +84,16 @@ public class TourController {
 
     @GetMapping("/tours/{categoryId}")
     public String toursSearch(Model model, @PathVariable("categoryId") int categoryId, @RequestParam(required = false) Map<String, String> params) {
-
-        String departureDate = params.get("departureDate");
-        String departureProvince = params.getOrDefault("departureProvince", "");
-        String destinationProvince = params.getOrDefault("destinationProvince", "");
+//
+//        String departureDate = params.get("departureDate");
+//        String departureProvince = params.getOrDefault("departureProvince", "");
+//        String destinationProvince = params.getOrDefault("destinationProvince", "");
         Category category = this.categoryService.getCategoryByID(categoryId);
+        params.put("categoryId", String.valueOf(categoryId));
+        model.addAttribute("toursByCategoryId", category.getTours());
+        model.addAttribute("toursByKeyword", this.tourService.getTours(params,1));
 
-//        model.addAttribute("tours", this.tourService.getTours());
-
-
+        model.addAttribute("categoryName", category.getName());
 
         return "user.index.tour";
     }

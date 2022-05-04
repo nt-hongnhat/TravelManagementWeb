@@ -1,4 +1,4 @@
-<%@ page import="java.util.Date" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: hongn
   Date: 4/18/2022
@@ -9,149 +9,106 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <c:url value="/tours/${categoryId}" var="action"/>
-<div class="row justify-content-center">
-    <div class="col-lg-12">
-        <form method="get" action="${action}">
-            <div class="row my-3">
-                <div class="col-md-4">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                        <label for="inputDepartureDate">Ngày khởi hành</label>
-                        <input class="form-control" id="inputDepartureDate" name="departureDate" type="date"
-                               placeholder="Ngày khởi hành" autofocus/>
-                        <script>
-                            var departureDate = document.getElementById("inputDepartureDate");
-                            departureDate.valueAsDate = new Date();
-                            departureDate.min = departureDate.value;
-                        </script>
-                    </div>
-                </div>
+<div class="container-fluid mt-md-3">
+    <%--Form tìm kiếm--%>
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <form method="get" action="${action}">
+                <div class="row my-3">
+                    <%--                    &lt;%&ndash;Ngày khởi hành&ndash;%&gt;--%>
+                    <%--                    <div class="col-md-2">--%>
+                    <%--                        <div class="form-floating mt-2 px-lg-2 py-lg-2">--%>
+                    <%--                            <label for="inputDepartureDate">Ngày khởi hành</label>--%>
+                    <%--                            <input class="form-control" id="inputDepartureDate" name="departureDate" type="date"--%>
+                    <%--                                   placeholder="Ngày khởi hành" autofocus/>--%>
+                    <%--                            <script>--%>
+                    <%--                                const departureDate = document.getElementById("inputDepartureDate");--%>
+                    <%--                                departureDate.valueAsDate = new Date();--%>
+                    <%--                                departureDate.min = departureDate.value;--%>
+                    <%--                            </script>--%>
+                    <%--                        </div>--%>
+                    <%--                    </div>--%>
 
-                <div class="col-md-4">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                        <label for="destinationProvince">Nơi đến</label>
-                        <select class="form-control" id="destinationProvince" name="departureProvince">
-                            <c:forEach var="province" items="${provinces}">
-                                <option value="${province.id}">${province.name}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <%--Thời gian đi--%>
-                <div class="col-md-4">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                        <label for="duration">Thời gian đi</label>
-                        <select class="form-control" type="checkbox" id="duration" name="duration">
-                            <c:forEach var="duration" items="${durations}">
-                                <option value="${duration.id}">${duration}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
+                    <%--                    &lt;%&ndash;Nơi đến&ndash;%&gt;--%>
+                    <%--                    <div class="col-md-2">--%>
+                    <%--                        <div class="form-floating mt-2 px-lg-2 py-lg-2">--%>
+                    <%--                            <label for="selectDestinationProvince">Nơi đến</label>--%>
+                    <%--                            <select class="form-control" id="selectDestinationProvince" name="destinationProvince">--%>
+                    <%--                                <c:forEach var="province" items="${provinces}">--%>
+                    <%--                                    <option value="${province.id}">${province.name}</option>--%>
+                    <%--                                </c:forEach>--%>
+                    <%--                            </select>--%>
+                    <%--                        </div>--%>
+                    <%--                    </div>--%>
 
-                <%-- Khoảng giá--%>
-                <div class="row col-12">
-                    <div class="col-lg-6">
+                    <%--Thời gian đi--%>
+                    <div class="col-md-2">
                         <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                            <label for="fromPrice">Khoảng giá: từ <span id="inputFromPrice"></span> đến <span
-                                    id="inputToPrice"></span>
-                            </label>
+                            <label for="selectDuration">Thời gian đi</label>
+                            <select class="form-control" type="checkbox" id="selectDuration" name="durationId">
+                                <c:forEach var="duration" items="${durations}">
+                                    <option value="${duration.id}">${duration}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
-                    <%--                    <div class="col-md-6 col-lg-4 pt-0">--%>
-                    <%--                        <div class="form-floating mt-2"><input class="form-control slider p-0" type="range"--%>
-                    <%--                                                               name="fromPrice" id="fromPrice">--%>
 
-                    <%--                        </div>--%>
-                    <%--                    </div>--%>
-                    <div class="col-md-12 col-lg-6 d-flex">
-                        <input class="form-control custom-range p-0" type="range" name="fromPrice"
-                               id="fromPrice">
-                        <input class="form-control custom-range  p-0" type="range" name="toPrice" id="toPrice">
-
-                    </div>
-                    <%--                    <div class="col-md-6 col-lg-4 pt-0">--%>
-                    <%--                        <div class="form-floating mt-2">--%>
-                    <%--                            <input class="form-control slider p-0" type="range" name="toPrice" id="toPrice">--%>
+                    <%--                    &lt;%&ndash; Khoảng giá&ndash;%&gt;--%>
+                    <%--                    <div class="col-md-2">--%>
+                    <%--                        <div class="form-floating mt-2 px-lg-2 py-lg-2">--%>
+                    <%--                            <label for="selectRangePrice">Khoảng giá</label>--%>
+                    <%--                            <select class="form-control" type="checkbox" id="selectRangePrice" name="rangePrice">--%>
+                    <%--                                <option value="1">Dưới 2 triệu</option>--%>
+                    <%--                                <option value="2">Từ 2-4 triệu</option>--%>
+                    <%--                                <option value="3">Từ 4-6 triệu</option>--%>
+                    <%--                                <option value="4">Từ 6-10 triệu</option>--%>
+                    <%--                                <option value="5">Trên 10 triệu</option>--%>
+                    <%--                            </select>--%>
                     <%--                        </div>--%>
                     <%--                    </div>--%>
 
-                </div>
-                <div class="col-md-4 col-sm-12 m-auto">
-                    <div class="form-floating mt-3 px-lg-2 py-lg-2">
-                        <button class="btn btn-primary btn-block" type="submit">
-                            Tìm kiếm
-                        </button>
+                    <div class="col-md-2 col-sm-12 m-auto">
+                        <div class="form-floating mt-3 px-lg-2 py-lg-2">
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Tìm kiếm
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                const numberFormat = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'});
-                var sliderFromPrice = document.getElementById("fromPrice");
-                var sliderToPrice = document.getElementById("toPrice");
-                var outputFromPrice = document.getElementById("inputFromPrice");
-                var outputToPrice = document.getElementById("inputToPrice");
-                var min = 1000000;
-                var max = 10000000;
-                var step = 1000;
-
-                sliderFromPrice.step = sliderToPrice.step = step;
-                sliderFromPrice.min = sliderToPrice.min = min;
-                sliderFromPrice.max = sliderToPrice.max = max;
-                sliderFromPrice.value = 1000000;
-                sliderToPrice.value = 2000000;
-
-                outputFromPrice.innerHTML = numberFormat.format(sliderFromPrice.value);
-                outputToPrice.innerHTML = numberFormat.format(sliderToPrice.value);
-
-                sliderFromPrice.oninput = function () {
-                    outputFromPrice.innerHTML = numberFormat.format(this.value);
-                    if (sliderToPrice.value < this.value) {
-                        sliderToPrice.value = this.value;
-                        outputToPrice.innerHTML = numberFormat.format(sliderToPrice.value);
-                    }
-                }
-
-                sliderToPrice.oninput = function () {
-                    outputToPrice.innerText = numberFormat.format(this.value);
-                    if (sliderFromPrice.value > this.value) {
-                        sliderFromPrice.value = this.value;
-                        outputFromPrice.innerHTML = numberFormat.format(sliderFromPrice.value);
-                    }
-                }
-            </script>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-        <c:forEach var="tour" items="${tours}">
-            <div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="" alt="...">
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">${tour.name}</h5>
-                            <!-- Product price-->
-                            <h5 class="text-danger"><fmt:formatNumber value="${tour.price}" type="number"
-                                                                      pattern="###,###,###"/> VNĐ</h5>
-                            <h6>${tour.description}</h6>
-
+    <%--Danh sách chuyến du lịch--%>
+    <div class="px-4 px-lg-5">
+        <h3 class="mb-3">${categoryName}</h3>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <jsp:useBean id="toursByKeyword" scope="request" type="java.util.List"/>
+            <c:forEach var="tour" items="${toursByCategoryId}">
+                <div class="col mb-5">
+                    <div class="card w-100 h-100">
+                        <img class="card-img-top" src="${tour.image}" alt="${tour.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${tour.name}</h5>
+                            <p class="card-text">${tour.description}</p>
                         </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <a class="btn btn-outline-dark mt-auto" href="<c:url value="/tour/${tour.id}"/>">Chi
-                                                                                                             tiết</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">${tour.trip}</li>
+                            <li class="list-group-item">${tour.duration}</li>
+                            <li class="list-group-item text-danger">
+                                <i class="fa-solid fa-wallet"></i>
+                                <fmt:formatNumber value="${tour.price}" type="number" pattern="###,###,###"/> VNĐ
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="<c:url value="/tour/${tour.id}"/>"
+                               class="btn btn-outline-primary justify-content-center">Chi tiết</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </div>
     </div>
 </div>

@@ -110,7 +110,7 @@ public class Trip implements Serializable {
 
     @Override
     public String toString() {
-        return departureProvince.toString();
+        return this.getDepartureProvince().getName();
     }
     
 }

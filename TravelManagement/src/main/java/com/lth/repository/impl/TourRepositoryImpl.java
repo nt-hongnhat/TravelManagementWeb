@@ -23,7 +23,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -55,44 +54,48 @@ public class TourRepositoryImpl implements TourRepository {
 
         if (params != null) {
             List<Predicate> predicates = new ArrayList<>();
-            if (params.containsKey("categoryId") == true) {
+            if (params.containsKey("categoryId")) {
                 Predicate predicate = builder.equal(root.get("category").get("id").as(String.class), params.get("categoryId"));
                 predicates.add(predicate);
             }
-
-            //Tra cứu tour du lịch theo giá: từ giá ... đến giá ...
-            if (params.containsKey("fromPrice") == true) {
-                Predicate predicate = builder.gt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
-                predicates.add(predicate);
-            }
-            if (params.containsKey("toPrice") == true) {
-                Predicate predicate = builder.lt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
-                predicates.add(predicate);
-            }
-
+//
+//            //Tra cứu tour du lịch theo giá: từ giá ... đến giá ...
+//            if (params.containsKey("fromPrice") == true) {
+//                Predicate predicate = builder.gt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
+//                predicates.add(predicate);
+//            }
+//            if (params.containsKey("toPrice") == true) {
+//                Predicate predicate = builder.lt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
+//                predicates.add(predicate);
+//            }
+//
             //Tra cứu theo thời gian đi
             if (params.containsKey("durationId") == true) {
-                Predicate predicate = builder.equal(root.get("duration").get("id"), params.get("durationId"));
+                Predicate predicate = builder.equal(root.get("duration").get("id").as(Integer.class), Integer.parseInt(params.get("durationId")));
                 predicates.add(predicate);
             }
-
+//
+//            //Tra cứu theo ngày khởi hành
 //            if (params.containsKey("departureDate") == true) {
 //                Predicate predicate = builder.equal(root.get("departure").as(Date.class), java.sql.Date.valueOf(params.get("departureDate")));
 //                predicates.add(predicate);
 //            }
+//
+//            //Tra cứu theo chuyến đi: tỉnh bắt đầu, tỉnh kết thúc
+//            if (params.containsKey("departureProvince") == true) {
+//                Predicate predicate = builder.equal(root.get("departureProvince").get("name").as(String.class), params.get("departureProvince"));
+//                predicates.add(predicate);
+//            }
+//
+//            //Tra cứu theo nơi đến: tỉnh thành phố
+//            if (params.containsKey("destinationProvince") == true) {
+//                Predicate predicate = builder.equal(root.get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("destinationProvince")));
+//                predicates.add(predicate);
+//            }
 
-            //Tra cứu theo chuyến đi: tỉnh bắt đầu, tỉnh kết thúc
-            if (params.containsKey("departureProvince") == true) {
-                Predicate predicate = builder.equal(root.get("departureProvince").get("name").as(String.class), params.get("departureProvince"));
-                predicates.add(predicate);
-            }
-
-            if (params.containsKey("destinationProvince") == true) {
-                Predicate predicate = builder.equal(root.get("destinationProvince").get("name").as(String.class), params.get("destinationProvince"));
-                predicates.add(predicate);
-            }
             criteriaQuery = criteriaQuery.where(predicates.toArray(new Predicate[]{}));
         }
+
         criteriaQuery = criteriaQuery.orderBy(builder.desc(root.get("id")));
 
         Query query = session.createQuery(criteriaQuery);
@@ -119,7 +122,6 @@ public class TourRepositoryImpl implements TourRepository {
         } catch (Exception ex) {
             System.err.println("ADD TOUR ERROR!" + ex.getMessage());
             ex.printStackTrace();
-            System.err.println(ex);
         }
 
         return false;
@@ -167,6 +169,21 @@ public class TourRepositoryImpl implements TourRepository {
         Query query = session.createQuery(criteriaQuery);
 
         return (Tour) query.getSingleResult();
+    }
+
+    @Override
+    public List<Tour> findAll(int page) {
+        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
+        Root<Tour> root = criteriaQuery.from(Tour.class);
+        criteriaQuery.select(root);
+        criteriaQuery.orderBy(builder.desc(root.get("id")));
+        Query query = session.createQuery(criteriaQuery);
+        query.setMaxResults(pageNumberOfTour);
+        query.setFirstResult((page - 1) * pageNumberOfTour);
+        return query.getResultList();
     }
 
 }
