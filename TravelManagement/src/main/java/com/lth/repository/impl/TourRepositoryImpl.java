@@ -5,10 +5,7 @@
  */
 package com.lth.repository.impl;
 
-import com.lth.pojos.Category;
 import com.lth.pojos.Tour;
-import com.lth.pojos.TourDeparture;
-import com.lth.pojos.Trip;
 import com.lth.repository.TourRepository;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +20,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -44,56 +43,65 @@ public class TourRepositoryImpl implements TourRepository {
         int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         Session session = this.sessionFactory.getObject().getCurrentSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Object[]> criteriaQuery = builder.createQuery(Object[].class);
+        CriteriaQuery<Tour> criteriaQuery = builder.createQuery(Tour.class);
         Root<Tour> root = criteriaQuery.from(Tour.class);
-        Root<TourDeparture> tourDepartureRoot = criteriaQuery.from(TourDeparture.class);
-        Root<Category> categoryRoot = criteriaQuery.from(Category.class);
-        Root<Trip> tripRoot = criteriaQuery.from(Trip.class);
-
-        criteriaQuery.multiselect(root, categoryRoot, tourDepartureRoot, tripRoot);
+        criteriaQuery.select(root);
 
         if (params != null) {
             List<Predicate> predicates = new ArrayList<>();
             if (params.containsKey("categoryId")) {
-                Predicate predicate = builder.equal(root.get("category").get("id").as(String.class), params.get("categoryId"));
+                Predicate predicate = builder.equal(root.get("category").get("id").as(Integer.class), Integer.parseInt(params.get("categoryId")));
                 predicates.add(predicate);
             }
-//
-//            //Tra cứu tour du lịch theo giá: từ giá ... đến giá ...
-//            if (params.containsKey("fromPrice") == true) {
-//                Predicate predicate = builder.gt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
-//                predicates.add(predicate);
-//            }
-//            if (params.containsKey("toPrice") == true) {
-//                Predicate predicate = builder.lt(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(Long.parseLong(params.get("fromPrice"))));
-//                predicates.add(predicate);
-//            }
-//
+
             //Tra cứu theo thời gian đi
             if (params.containsKey("durationId") == true) {
                 Predicate predicate = builder.equal(root.get("duration").get("id").as(Integer.class), Integer.parseInt(params.get("durationId")));
                 predicates.add(predicate);
             }
+
+            //Tra cứu theo khoảng giá
+            if (params.containsKey("rangePrice") == true) {
+                Predicate predicate = null;
+                switch (params.get("rangePrice")) {
+                    case "1":
+                        predicate = builder.lessThan(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(2000000));
+                        break;
+                    case "2":
+                        predicate = builder.between(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(2000000), BigDecimal.valueOf(4000000));
+                        break;
+                    case "3":
+                        predicate = builder.between(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(4000000), BigDecimal.valueOf(6000000));
+                        break;
+                    case "4":
+                        predicate = builder.between(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(6000000), BigDecimal.valueOf(10000000));
+                        break;
+                    case "5":
+                        predicate = builder.greaterThan(root.get("price").as(BigDecimal.class), BigDecimal.valueOf(10000000));
+                        break;
+                }
+                predicates.add(predicate);
+            }
 //
 //            //Tra cứu theo ngày khởi hành
-//            if (params.containsKey("departureDate") == true) {
-//                Predicate predicate = builder.equal(root.get("departure").as(Date.class), java.sql.Date.valueOf(params.get("departureDate")));
-//                predicates.add(predicate);
-//            }
-//
-//            //Tra cứu theo chuyến đi: tỉnh bắt đầu, tỉnh kết thúc
-//            if (params.containsKey("departureProvince") == true) {
-//                Predicate predicate = builder.equal(root.get("departureProvince").get("name").as(String.class), params.get("departureProvince"));
-//                predicates.add(predicate);
-//            }
-//
-//            //Tra cứu theo nơi đến: tỉnh thành phố
-//            if (params.containsKey("destinationProvince") == true) {
-//                Predicate predicate = builder.equal(root.get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("destinationProvince")));
-//                predicates.add(predicate);
-//            }
+            if (params.containsKey("departureDate") == true) {
+                Predicate predicate = builder.(root.get("departure").as(Date.class), java.sql.Date.valueOf(params.get("departureDate")));
+                predicates.add(predicate);
+            }
 
-            criteriaQuery = criteriaQuery.where(predicates.toArray(new Predicate[]{}));
+            //Tra cứu theo chuyến đi: tỉnh bắt đầu, tỉnh kết thúc
+//            if (params.containsKey("departureProvince") == true) {
+//                Predicate predicate = builder.equal(root.get("trip").get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("departureProvince")));
+//                predicates.add(predicate);
+//            }
+//
+            //Tra cứu theo nơi đến: tỉnh thành phố
+            if (params.containsKey("destinationProvince") == true) {
+                Predicate predicate = builder.equal(root.get("trip").get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("destinationProvince")));
+                predicates.add(predicate);
+            }
+
+            criteriaQuery = criteriaQuery.where(builder.and(predicates.toArray(new Predicate[]{})));
         }
 
         criteriaQuery = criteriaQuery.orderBy(builder.desc(root.get("id")));

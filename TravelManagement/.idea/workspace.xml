@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TourRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/pojos/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/TourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/TourService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/service/impl/TourServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/user_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/templates/user_template.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +205,7 @@
       <workItem from="1651395874099" duration="21491000" />
       <workItem from="1651497939763" duration="1209000" />
       <workItem from="1651499762943" duration="29629000" />
-      <workItem from="1651646344632" duration="10066000" />
+      <workItem from="1651646344632" duration="19732000" />
     </task>
     <servers />
   </component>

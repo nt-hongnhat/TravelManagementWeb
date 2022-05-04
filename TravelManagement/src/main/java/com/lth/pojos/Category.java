@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -22,13 +23,13 @@ public class Category implements Serializable {
 	private String name;
 
 	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
-	private Collection<Tour> tours;
+	private List<Tour> tours;
 
-	public Collection<Tour> getTours() {
+	public List<Tour> getTours() {
 		return tours;
 	}
 
-	public void setTours(Collection<Tour> tours) {
+	public void setTours(List<Tour> tours) {
 		this.tours = tours;
 	}
 

@@ -84,17 +84,12 @@ public class TourController {
 
     @GetMapping("/tours/{categoryId}")
     public String toursSearch(Model model, @PathVariable("categoryId") int categoryId, @RequestParam(required = false) Map<String, String> params) {
-//
-//        String departureDate = params.get("departureDate");
-//        String departureProvince = params.getOrDefault("departureProvince", "");
-//        String destinationProvince = params.getOrDefault("destinationProvince", "");
         Category category = this.categoryService.getCategoryByID(categoryId);
-        params.put("categoryId", String.valueOf(categoryId));
-        model.addAttribute("toursByCategoryId", category.getTours());
-        model.addAttribute("toursByKeyword", this.tourService.getTours(params,1));
-
         model.addAttribute("categoryName", category.getName());
-
+        if (params != null) {
+            params.put("categoryId", String.valueOf(categoryId));
+            model.addAttribute("toursList", this.tourService.getTours(params, 1));
+        } else model.addAttribute("toursList", category.getTours());
         return "user.index.tour";
     }
 }

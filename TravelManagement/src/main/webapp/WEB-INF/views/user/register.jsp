@@ -16,10 +16,6 @@
 </c:if>
 
 <c:url value="/register" var="action"/>
-<<<<<<< HEAD
-=======
-
->>>>>>> 7198885909cc7c98b99a5a0c1227b2cfcf76bb02
 <div class="row justify-content-center">
     <div class="col-lg-7">
         <div class="card shadow-lg border-0 rounded-lg mt-5">

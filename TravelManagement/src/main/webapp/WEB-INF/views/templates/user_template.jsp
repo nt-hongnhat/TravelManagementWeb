@@ -30,7 +30,7 @@
 <%--HEADER--%>
 <tiles:insertAttribute name="header"/>
 <%--CONTENT--%>
-<section class="container-fluid">
+<section class="container">
     <tiles:insertAttribute name="content"/>
 </section>
 <%--FOOTER--%>
