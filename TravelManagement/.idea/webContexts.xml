@@ -3,9 +3,9 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/403.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/tour" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/tour" />
+        <entry key="file://$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/layout/base.jsp" value="file://$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/layout" />
+        <entry key="file://$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" value="file://$PROJECT_DIR$/TravelManagement/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" value="file://$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour" />
       </map>
     </option>
   </component>

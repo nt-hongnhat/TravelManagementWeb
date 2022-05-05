@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="b15c4f72-a520-4d4d-8609-4a086f244dac" name="TravelManagement" url="jdbc:mysql://localhost/travelwebdb?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+      <data-source id="d5ad314c-d516-4699-8a53-6cec8d305db1" name="TravelDB" url="jdbc:mysql://localhost/traveldb?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>
