@@ -6,6 +6,7 @@
 package com.lth.repository.impl;
 
 import com.lth.pojos.Tour;
+import com.lth.pojos.TourDeparture;
 import com.lth.repository.TourRepository;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -84,10 +82,12 @@ public class TourRepositoryImpl implements TourRepository {
             }
 //
 //            //Tra cứu theo ngày khởi hành
-            if (params.containsKey("departureDate") == true) {
-                Predicate predicate = builder.(root.get("departure").as(Date.class), java.sql.Date.valueOf(params.get("departureDate")));
-                predicates.add(predicate);
-            }
+//            if (params.containsKey("departureDate") == true) {
+//                Date date= Date.valueOf(params.get("departureDate"));
+//                TourDe
+//                Predicate predicate =builder.;
+////                predicates.add(predicate);
+//            }
 
             //Tra cứu theo chuyến đi: tỉnh bắt đầu, tỉnh kết thúc
 //            if (params.containsKey("departureProvince") == true) {
