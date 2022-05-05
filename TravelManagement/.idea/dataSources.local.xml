@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-213.7172.25">
+<<<<<<< HEAD
     <data-source name="User Data Source" uuid="0bdd6729-44e2-476a-972b-03d7cab914a0">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="UNKNOWN" exact-version="0" />
       <secret-storage>master_key</secret-storage>
       <schema-mapping />
     </data-source>
     <data-source name="traveldb@localhost" uuid="a3d40a88-88ba-40ac-a7f6-e8d15ec86d24">
+=======
+    <data-source name="traveldb@localhost" uuid="42f4b6c6-9123-4f51-8ca5-ee41e21dd2e3">
+>>>>>>> 2c6a10bd7cd60fa9b03eb33829135d8675adb70f
       <database-info product="MySQL" version="8.0.28" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.28" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
