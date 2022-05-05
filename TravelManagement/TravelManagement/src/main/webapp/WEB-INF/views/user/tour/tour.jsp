@@ -7,8 +7,9 @@
 <%--Form tìm kiếm--%>
 <div class="row justify-content-center">
     <div class="col-lg-12">
-        <form method="get" action="${action}">
+        <form method="get" action="${action}" id="formSearch">
             <div class="row my-3">
+
                 <%--Ngày khởi hành--%>
                 <%--                <div class="col-md-2">--%>
                 <%--                    <div class="form-floating mt-2 px-lg-2 py-lg-2">--%>
@@ -24,10 +25,10 @@
                 <%--                </div>--%>
 
                 <%--Nơi đến--%>
-                <div class="col-md-2">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
+                <div class="col-lg-3 col-md-6 col-sm-12 m-auto">
+                    <div class="form-floating mt-3 px-lg-2 py-lg-2">
                         <select class="custom-select" id="selectDestinationProvince"
-                                name="destinationProvince">
+                                name="destinationProvince" autocomplete="on">
                             <option selected value="0">Chọn nơi đến</option>
                             <c:forEach var="province" items="${provinces}">
                                 <option value="${province.id}">${province.name}</option>
@@ -37,11 +38,11 @@
                 </div>
 
                 <%--Thời gian đi--%>
-                <div class="col-md-2">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                        <label for="selectDuration">Thời gian đi</label>
-                        <select class="form-control" type="checkbox" id="selectDuration" name="durationId">
-                            <option selected value="0">Khoảng giá</option>
+                <div class="col-lg-3 col-md-6 col-sm-12 m-auto">
+                    <div class="form-floating mt-3 px-lg-2 py-lg-2">
+                        <select class="custom-select" type="checkbox" id="selectDuration" name="durationId"
+                                autocomplete="off">
+                            <option selected value="0">Chọn thời gian đi</option>
                             <c:forEach var="duration" items="${durations}">
                                 <option value="${duration.id}">${duration}</option>
                             </c:forEach>
@@ -50,10 +51,11 @@
                 </div>
 
                 <%-- Khoảng giá--%>
-                <div class="col-md-2">
-                    <div class="form-floating mt-2 px-lg-2 py-lg-2">
-                        <select class="form-control" type="checkbox" id="selectRangePrice" name="rangePrice">
-                            <option selected value="0">Khoảng giá</option>
+                <div class="col-lg-3 col-md-6 col-sm-12 m-auto">
+                    <div class="form-floating mt-3 px-lg-2 py-lg-2">
+                        <select class="custom-select" type="checkbox" id="selectRangePrice" name="rangePrice"
+                                autocomplete="on">
+                            <option selected value="0">Chọn khoảng giá</option>
                             <option value="1">Dưới 2 triệu</option>
                             <option value="2">Từ 2-4 triệu</option>
                             <option value="3">Từ 4-6 triệu</option>
@@ -63,21 +65,14 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 col-sm-12 m-auto">
+                <div class="col-lg-3 col-md-6 col-sm-12 m-auto">
                     <div class="form-floating mt-3 px-lg-2 py-lg-2">
                         <button id="btnSearch" class="btn btn-primary btn-block" type="submit">Tìm kiếm</button>
+
                     </div>
-                    <script>
-                        var selectDestination = document.getElementById("selectDestinationProvince");
-                        var buttonSearch = document.getElementById("btnSearch");
-                        buttonSearch.onclick = function () {
-                            selectDestination.oninput = function () {
-                                selectDestination.autofocus = true;
-                            }
-                        }
-                    </script>
                 </div>
             </div>
+
         </form>
     </div>
 </div>

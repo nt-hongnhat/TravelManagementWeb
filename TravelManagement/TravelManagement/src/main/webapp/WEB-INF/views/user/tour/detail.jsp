@@ -70,8 +70,8 @@
                     <div class="col-md-3">Khởi hành</div>
                     <div class="col-md-9">
                         <c:forEach items="${tourDepartures}" var="tourDeparture" varStatus="status">
-                            <fmt:formatDate type = "both"
-                                            dateStyle = "short" timeStyle = "short" value = "${tourDeparture.departure}" />
+                            <fmt:formatDate type="both"
+                                            dateStyle="short" timeStyle="short" value="${tourDeparture.departure}"/>
                             ${not status.last ? ';' : '.'}
                         </c:forEach>
                     </div>
@@ -84,9 +84,10 @@
                         Giá từ <strong style="font-size: 1.3rem">${tour.price}</strong>
                     </div>
                     <div class="card-body">
-                        <form:form cssClass="admin-form" method="get" action="" modelAttribute="booking" >
+                        <form:form cssClass="admin-form" method="get" action="" modelAttribute="booking">
                             <div class="form-group">
-                                <input value="<fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${minDate}" />" readonly style="width: 100%; padding: .5rem; margin-top: 1rem">
+                                <input value="<fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${minDate}" />"
+                                       readonly style="width: 100%; padding: .5rem; margin-top: 1rem">
                             </div>
 
                             <div class="form-group">
@@ -102,7 +103,8 @@
                 <h5> Lịch trình</h5>
                 <c:forEach items="${tourSchedules}" var="tourSchedule">
                     <p>
-                        <button class="btn btn-primary col-md-12 btn-tourSchedule" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class="btn btn-primary col-md-12 btn-tourSchedule" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 ${tourSchedule.name}
                         </button>
                     </p>
@@ -114,5 +116,23 @@
                 </c:forEach>
             </div>
         </div>
+    </section>
+    <section id="feedback">
+        <form>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <div>
+                <button class="btn btn-danger" type="submit">Thêm bình luận</button>
+            </div>
+        </form>
+        <c:forEach var="feedback" items="${feedbacks}">
+            <div class="row pt-3">
+                <div class="col-4">${feedback.createdDate}</div>
+                <div class="col-8">${feedback.comment}</div>
+            </div>
+        </c:forEach>
+
     </section>
 </div>
