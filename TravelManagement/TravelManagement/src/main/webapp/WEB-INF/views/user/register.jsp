@@ -16,7 +16,6 @@
 </c:if>
 
 <c:url value="/register" var="action"/>
-
 <div class="row justify-content-center">
     <div class="col-lg-7">
         <div class="card shadow-lg border-0 rounded-lg mt-5">

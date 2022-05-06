@@ -120,8 +120,9 @@ header.container-fluid {
     width      : 100%;
     object-fit : cover;
 }
+
 body {
-    position: relative;
+    position : relative;
 }
 
 footer {
@@ -141,7 +142,7 @@ section.container-fluid {
     /*background-color : #343a40;*/
     /*background-image : url("http://localhost:8080/TravelManagement/resources/images/bg-main-page.jpg");*/
     /*background-size  : cover;*/
-    height: fit-content;
+    height : fit-content;
 }
 
 div.col-lg-5 div.card {
@@ -149,56 +150,91 @@ div.col-lg-5 div.card {
 }
 
 i {
-    display: inline-block;
-    margin-right: 3pt;
+    display      : inline-block;
+    margin-right : 3pt;
 }
 
 .text-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: inherit;
+    overflow      : hidden;
+    white-space   : nowrap;
+    text-overflow : ellipsis;
+    width         : inherit;
 }
 
-.fa-star{
-    color: orange;
+.fa-star {
+    color : orange;
 }
 
 div.collapse {
-    height: auto;
+    height : auto;
 }
+
 .btn-tourSchedule {
-    text-align: left;
+    text-align : left;
 }
 
 
 .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 1vh;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    -webkit-appearance : none;
+    width              : 100%;
+    height             : 1vh;
+    background         : #d3d3d3;
+    outline            : none;
+    opacity            : 0.7;
+    -webkit-transition : .2s;
+    transition         : opacity .2s;
 }
+
 .slider:hover {
-    opacity: 1;
+    opacity : 1;
 }
 
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 2vw;
-    height: 2vh;
-    background: #04AA6D;
-    cursor: pointer;
+    -webkit-appearance : none;
+    appearance         : none;
+    width              : 2vw;
+    height             : 2vh;
+    background         : #04AA6D;
+    cursor             : pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 2vw;
-    height: 2vh;
-    background: #04AA6D;
-    cursor: pointer;
+    width      : 2vw;
+    height     : 2vh;
+    background : #04AA6D;
+    cursor     : pointer;
+}
+
+
+/*Star rating*/
+input.star { display : none; }
+
+label.star {
+    float      : right;
+    padding    : 10px;
+    font-size  : 24px;
+    color      : #444;
+    transition : all .2s;
+    cursor     : pointer;
+}
+
+input.star:checked ~ label.star:before {
+    content    : '\f005';
+    color      : #FD4;
+    transition : all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+    color       : yellow;
+    text-shadow : 0 0 20px #191c1f;
+}
+
+input.star-1:checked ~ label.star:before { color : #F62; }
+
+label.star:hover { transform : rotate(-15deg) scale(1.2); }
+
+label.star:before {
+    content     : '\f006';
+    font-family : FontAwesome;
 }

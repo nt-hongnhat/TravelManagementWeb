@@ -2,11 +2,14 @@ package com.lth.pojos;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @Entity
+@XmlRootElement
 @Table(name = "booking_detail")
 public class BookingDetail implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -40,8 +43,10 @@ public class BookingDetail implements Serializable {
     @Column(name = "total_price")
     private long totalPrice;
 
-    @OneToOne(mappedBy = "bookingDetail")
-    private Booking booking;
+
+    public BookingDetail() {
+        super();
+    }
 
     public Integer getId() {
         return id;
@@ -59,12 +64,37 @@ public class BookingDetail implements Serializable {
         this.isPayment = isPayment;
     }
 
-    public Booking getBooking() {
-        return booking;
+    public Boolean getPayment() {
+        return isPayment;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
+    public void setPayment(Boolean payment) {
+        isPayment = payment;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 
     public long getTotalPrice() {
