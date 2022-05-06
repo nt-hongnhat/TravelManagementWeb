@@ -56,7 +56,7 @@ public class Tour implements Serializable {
     @JoinColumn(name = "trip_id", referencedColumnName = "id")
     @ManyToOne
     private Trip trip;
-    @OneToMany(mappedBy = "tour")
+    @OneToMany(mappedBy = "tour", fetch = FetchType.EAGER)
     private Collection<Feedback> feedbackCollection;
 
     @ManyToOne

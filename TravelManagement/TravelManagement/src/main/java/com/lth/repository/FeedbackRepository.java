@@ -7,4 +7,5 @@ import java.util.List;
 public interface FeedbackRepository {
     Object[] getRatingByTourId(int tourId);
     List<Feedback> getFeedbacks(int tourId);
+    Feedback addFeedback(Feedback feedback);
 }

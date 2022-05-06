@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/APICommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/FeedbackRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/FeedbackRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/FeedbackRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/FeedbackService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/FeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/FeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/user/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/user/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +42,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -76,11 +91,12 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -148,7 +164,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="" />
+      <changelist id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="" />
       <created>1648794653881</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -194,6 +210,12 @@
       <workItem from="1651499762943" duration="29629000" />
       <workItem from="1651646344632" duration="19767000" />
       <workItem from="1651680517843" duration="4747000" />
+      <workItem from="1651768024644" duration="4932000" />
+      <workItem from="1651817155865" duration="538000" />
+      <workItem from="1651817737078" duration="356000" />
+      <workItem from="1651820299007" duration="57000" />
+      <workItem from="1651820380050" duration="7906000" />
+      <workItem from="1651834256772" duration="14249000" />
     </task>
     <servers />
   </component>

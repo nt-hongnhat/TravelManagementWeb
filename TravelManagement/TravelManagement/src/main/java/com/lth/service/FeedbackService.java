@@ -9,4 +9,6 @@ public interface FeedbackService {
 
     List<Feedback> getFeedbacks(int tourId);
 
+    Feedback addFeedback(int rating, String comment, int tourId, int userId);
+
 }

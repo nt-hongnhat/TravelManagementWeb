@@ -66,6 +66,7 @@ public class TourController {
         modelMap.put("tourDepartures", tourDepartures);
         modelMap.put("booking", new Booking());
         modelMap.put("feedbacks", feedbacks);
+        modelMap.put("feedback", new Feedback());
 
         Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
         modelMap.put("minDate", minDate);

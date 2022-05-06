@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<c:url value="/resources/main.js"/>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
 </head>
 <body>
 <%--NAVIGATION--%>
@@ -30,7 +31,7 @@
 <%--HEADER--%>
 <tiles:insertAttribute name="header"/>
 <%--CONTENT--%>
-<section class="container">
+<section class="container py-3 my-auto">
     <tiles:insertAttribute name="content"/>
 </section>
 <%--FOOTER--%>

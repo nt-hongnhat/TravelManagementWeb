@@ -49,8 +49,21 @@ public class FeedbackRepositoryImpl implements FeedbackRepository {
         criteriaQuery.select(root);
         Predicate predicate = builder.equal(root.get("tour").get("id").as(Long.class), tourId);
         criteriaQuery.where(predicate);
+        criteriaQuery.orderBy(builder.asc(root.get("id")));
         Query query = session.createQuery(criteriaQuery);
-
         return query.getResultList();
+    }
+
+    @Override
+    public Feedback addFeedback(Feedback feedback) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            session.save(feedback);
+            return feedback;
+        } catch (Exception exception) {
+            System.err.println("ADD FEEDBACK ERROR!" + exception.getMessage());
+            exception.printStackTrace();
+        }
+        return null;
     }
 }
