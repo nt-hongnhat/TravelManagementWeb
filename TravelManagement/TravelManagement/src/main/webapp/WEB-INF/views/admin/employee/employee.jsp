@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Dashboard</h1>
+        <h1 class="mt-4">Dashboard ${message}</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Dashboard</li>
         </ol>
@@ -33,12 +33,12 @@
                         <th></th>
                         <th>Tài khoản</th>
                         <th>Mật khẩu</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Số CMND</th>
                         <th>Họ và tên</th>
                         <th>Giới tính</th>
                         <th>Ngày sinh</th>
-                        <th>Ngày sinh</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th>
                         <th>Ảnh</th>
                         <th>Ngày tạo</th>
                         <th>Ngày chỉnh sửa</th>
@@ -61,12 +61,15 @@
                                 </a>
                             </td>
                             <td>${employeeItem.username}</td>
-                            <td>${employeeItem.password}</td>
+                            <td style="max-width: 10rem; overflow: scroll">${employeeItem.password}</td>
                             <td>${employeeItem.email}</td>
-                            <td>${employeeItem.avatar}</td>
+                            <td>${employeeItem.userInfoId.phone}</td>
+                            <td>${employeeItem.userInfoId.citizenship}</td>
+                            <td>${employeeItem.firstName.concat(" ").concat(employeeItem.lastName)}</td>
+                            <td>${employeeItem.userInfoId.gender}</td>
+                            <td>${employeeItem.userInfoId.dayOfBirth}</td>
+                            <td style="max-width: 10rem; overflow: scroll">${employeeItem.avatar}</td>
                             <td>${employeeItem.createdDate}</td>
-                            <td>${employeeItem.updatedDate}</td>
-                            <td>${employeeItem.firstname + employeeItem.lastName}</td>
                             <td>${employeeItem.updatedDate}</td>
                         </tr>
                     </c:forEach>

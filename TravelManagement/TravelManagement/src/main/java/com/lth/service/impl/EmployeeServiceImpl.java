@@ -40,6 +40,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public boolean updateEmployee(User user) {
+        String password = user.getPassword();
+        user.setPassword(this.bCryptPasswordEncoder.encode(password));
         return employeeRepository.updateEmployee(user);
     }
 

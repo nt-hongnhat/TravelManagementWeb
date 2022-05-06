@@ -117,6 +117,7 @@ public class Tour implements Serializable {
     }
 
     public Tour() {
+        this.id = 0;
     }
 
     public Tour(Integer id) {

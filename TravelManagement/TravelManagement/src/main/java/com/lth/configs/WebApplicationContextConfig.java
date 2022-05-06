@@ -7,11 +7,15 @@ package com.lth.configs;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -20,6 +24,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.springframework.core.env.Environment;
+
+import java.util.Properties;
 
 /**
  *
@@ -33,7 +40,11 @@ import org.springframework.web.servlet.view.JstlView;
     "com.lth.repository",
     "com.lth.service"
 })
+@PropertySource("classpath:mail.properties")
 public class WebApplicationContextConfig implements WebMvcConfigurer {
+    @Autowired
+    private Environment env;
+
     @Override
     public void configureDefaultServletHandling(
         DefaultServletHandlerConfigurer configurer) {
@@ -91,4 +102,5 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
                 .addResourceLocations("/resources/images/");
 
     }
+    
 }

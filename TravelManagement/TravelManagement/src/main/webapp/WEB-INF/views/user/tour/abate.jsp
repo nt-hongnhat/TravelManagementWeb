@@ -85,7 +85,7 @@
         <div class="col-12">
             <br>
             <h3 class="text-center text-uppercase">thông tin liên hệ</h3>
-            <form:form method="post" action="${pageContext.request.contextPath}/tour/abate/announceSuccess" modelAttribute="booking">
+            <form:form method="post" action="${pageContext.request.contextPath}/booking/save" modelAttribute="booking">
                 <form:hidden path="tour.id" value="${tour.id}"/>
 
                 <form:hidden path="departureDate" value="${minDate}" />
