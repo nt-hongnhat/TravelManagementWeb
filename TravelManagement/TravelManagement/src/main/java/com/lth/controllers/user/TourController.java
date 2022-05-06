@@ -2,9 +2,11 @@ package com.lth.controllers.user;
 
 import com.lth.pojos.*;
 import com.lth.service.*;
+import com.lth.utils.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,14 +15,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 @Controller
-@PropertySource("classpath:pagination.properties")
+@PropertySource({"classpath:pagination.properties", "classpath:mail.properties"})
 @RequestMapping("")
 public class TourController {
     @Autowired
@@ -39,6 +43,9 @@ public class TourController {
     BookingService bookingService;
     @Autowired
     UserService userService;
+    Properties properties = new Properties();
+    @Autowired
+    private Environment env;
     @Autowired
     private CategoryService categoryService;
 
@@ -95,10 +102,16 @@ public class TourController {
         return "user.index.abate";
     }
 
-    @PostMapping("/tour/abate/announceSuccess")
-    public String annouce(ModelMap modelMap, @Valid @ModelAttribute("booking") Booking booking,
-                          BindingResult bindingResult, @RequestParam("abateType") String abateType,
-                          Authentication authentication) {
+
+    @GetMapping("/tour/abate/announce")
+    public String annouce() {
+        return "user.index.success";
+    }
+
+    @PostMapping("/booking/save")
+    public String addBooking(ModelMap modelMap, @Valid @ModelAttribute("booking") Booking booking,
+                             BindingResult bindingResult, @RequestParam("abateType") String abateType,
+                             Authentication authentication) throws MessagingException {
 
         List<Surcharge> surcharges = surchangeService.getSurchange();
         Tour tour = tourService.findTourById(booking.getTour().getId());
@@ -114,7 +127,6 @@ public class TourController {
             modelMap.put("message", "Đặt tour thất bại");
             return "user.index.abate";
         }
-
 
         long price = tour.getPrice();
         long adultPrice = (long) Math.round(price / 1000) * 1000
@@ -135,8 +147,13 @@ public class TourController {
                 booking.getBookingDetail().setIsPayment(false);
                 booking.getBookingDetail().setTotalPrice(adultPrice + ageGroup511Price + ageGroup25Price * ageGroup02Price);
                 if (booking.getId() == null) {
-                    if (bookingService.addBooking(booking) == true)
+                    if (bookingService.addBooking(booking) == true) {
+                        MailUtils mailUtils = new MailUtils(env, properties);
+                        mailUtils.sendMail("1951052054@ou.edu.vn",
+                                "TravelMore - Tour", "Đặt tour thành công");
                         message = "Đặt tour thành công";
+
+                    }
                 } else
                     message = "Đặt tour thất bại";
                 break;

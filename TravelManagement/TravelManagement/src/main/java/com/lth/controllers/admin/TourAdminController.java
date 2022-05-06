@@ -1,7 +1,7 @@
 package com.lth.controllers.admin;
 
-import com.lth.pojos.Tour;
-import com.lth.service.TourService;
+import com.lth.pojos.*;
+import com.lth.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
     @Controller
@@ -17,6 +18,14 @@ import java.util.Map;
 public class TourAdminController {
     @Autowired
     private TourService tourService;
+        @Autowired
+        private CategoryService categoryService;
+        @Autowired
+        private DurationService durationService;
+        @Autowired
+        private TripService tripService;
+        @Autowired
+        private LocationProvinceService locationProvinceService;
     @Autowired
     private Environment env;
 
@@ -37,46 +46,58 @@ public class TourAdminController {
 
     @RequestMapping(value ="/tour/form", method = RequestMethod.GET)
     public String formTour(ModelMap modelMap) {
+        List<Category> categories = categoryService.getCategories();
+        List<Duration> durations = durationService.getDurations(0);
+        List<Trip> trips = tripService.getTrips();
+        List<Province> provinces = locationProvinceService.getProvince();
         modelMap.put("tour", new Tour());
+        modelMap.put("categories", categories);
+        modelMap.put("durations", durations);
+        modelMap.put("provinces", provinces);
         modelMap.put("valueButton", "Lưu");
         return "admin.index.tour.form";
     }
 
     @PostMapping ("/tour/save")
     public String saveTour(ModelMap modelMap, @ModelAttribute(value = "tour") Tour tour) {
-        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
+//        Trip trip = new Trip();
+//        Category category = categoryService.getCategoryByID(tour.getCategory().getId());
+//        Duration duration = durationService.getDurationByID(tour.getDuration().getId());
+//
+//        if(tripService.checkTripIsNotExist(tour.getTrip()))
+//            tripService.addTrip(tour.getTrip());
+//
+//        trip = tripService.findTrip(tour.getTrip());
+
         if(tour.getId() == 0) {
+//            tour.setTrip(trip);
+//            tour.setDuration(duration);
+//            tour.setCategory(category);
             tourService.addTour(tour);
         } else {
             tourService.updateTour(tour);
         }
-        modelMap.put("tours",
-                this.tourService.getTours(null, 1));
-        modelMap.put("numberOfTourPaginationItem",
-                this.tourService.countTour() / pageNumberOfTour);
 
-        return "admin.index.tour";
+        return "redirect:/admin/tour";
     }
 
     @RequestMapping (value ="/tour/edit/{tourId}", method = RequestMethod.GET)
     public String editTour(ModelMap modelMap, @PathVariable("tourId") int tourId) {
         Tour tour = tourService.findTourById(tourId);
         modelMap.put("valueButton", "Sửa");
+        modelMap.put("isUpdate", true);
         modelMap.put("tour", tour);
         return "admin.index.tour.form";
     }
 
     @RequestMapping (value ="/tour/delete/{tourId}", method = RequestMethod.GET)
     public String deleteTour(ModelMap modelMap, @PathVariable("tourId") int tourId) {
-        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         Tour tour = tourService.findTourById(tourId);
+
         if (tour != null) {
             tourService.deleteTour(tour);
         }
-        modelMap.put("tours",
-                this.tourService.getTours(null, 1));
-        modelMap.put("numberOfTourPaginationItem",
-                this.tourService.countTour() / pageNumberOfTour);
-        return "admin.index.tour";
+
+        return "redirect:/admin/tour";
     }
 }

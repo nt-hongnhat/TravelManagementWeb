@@ -58,9 +58,9 @@
                             <td>${tourItem.name}</td>
                             <td>${tourItem.price}</td>
                             <td>${tourItem.description}</td>
-                            <td>${tourItem.trip}</td>
-                            <td>${tourItem.duration}</td>
-                            <td>${tourItem.category}</td>
+                            <td>${tourItem.trip.id}</td>
+                            <td>${tourItem.duration.id}</td>
+                            <td>${tourItem.category.id}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

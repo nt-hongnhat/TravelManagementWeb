@@ -64,13 +64,9 @@ public class User implements Serializable {
     @Size(max = 100)
     @Column(name = "avatar")
     private String avatar;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "updated_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
@@ -94,7 +90,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private Collection<Feedback> feedbackCollection;
     @JoinColumn(name = "user_info_id", referencedColumnName = "id")
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private UserInfo userInfoId;
 
     @Transient
@@ -125,6 +121,7 @@ public class User implements Serializable {
     }
 
     public User() {
+        this.id = 0;
         this.userInfoId = new UserInfo();
     }
 
