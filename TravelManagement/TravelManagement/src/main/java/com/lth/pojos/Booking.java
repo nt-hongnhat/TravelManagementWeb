@@ -53,7 +53,7 @@ public class Booking implements Serializable {
     private BookingDetail bookingDetail;
 
     public Booking() {
-        super();
+        this.id = 0;
     }
 
     public Integer getId() {
@@ -136,26 +136,6 @@ public class Booking implements Serializable {
         this.note = note;
     }
 
-<<<<<<< HEAD
-    public Booking() {
-        this.id = 0;
-=======
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public BookingDetail getBookingDetail() {
-        return bookingDetail;
-    }
-
-    public void setBookingDetail(BookingDetail bookingDetail) {
-        this.bookingDetail = bookingDetail;
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
-    }
 
     @Override
     public int hashCode() {
@@ -180,5 +160,13 @@ public class Booking implements Serializable {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
+    }
+
+    public BookingDetail getBookingDetail() {
+        return bookingDetail;
+    }
+
+    public void setBookingDetail(BookingDetail bookingDetail) {
+        this.bookingDetail = bookingDetail;
     }
 }

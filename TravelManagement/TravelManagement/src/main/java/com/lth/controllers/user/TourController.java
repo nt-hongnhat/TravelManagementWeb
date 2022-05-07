@@ -103,16 +103,10 @@ public class TourController {
         return "user.index.abate";
     }
 
-<<<<<<< HEAD
     @GetMapping("/tour/abate/announce/{id}")
     public String annouce(ModelMap modelMap, @PathVariable("id") int id) {
         modelMap.put("message", "Đặt tour thành công");
         modelMap.put("bookingId", id);
-=======
-
-    @GetMapping("/tour/abate/announce")
-    public String annouce() {
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
         return "user.index.success";
     }
 
@@ -156,25 +150,14 @@ public class TourController {
                 booking.getBookingDetail().setTotalPrice(adultPrice + ageGroup511Price + ageGroup25Price * ageGroup02Price);
                 if (booking.getId() == 0) {
                     if (bookingService.addBooking(booking) == true) {
-<<<<<<< HEAD
-//                        MailUtils mailUtils = new MailUtils(env, properties);
-//                        mailUtils.sendMail("1951052054hieu@ou.edu.vn",
-//                                "TravelMore - Tour", "Đặt tour thành công");
-//
+                        MailUtils mailUtils = new MailUtils(env, properties);
+                        mailUtils.sendMail("1951052054hieu@ou.edu.vn",
+                                "TravelMore - Tour", "Đặt tour thành công");
+
                     }
                 }
                 else
                     System.err.println("Đặt tour thất bại");
-=======
-                        MailUtils mailUtils = new MailUtils(env, properties);
-                        mailUtils.sendMail("1951052054@ou.edu.vn",
-                                "TravelMore - Tour", "Đặt tour thành công");
-                        message = "Đặt tour thành công";
-
-                    }
-                } else
-                    message = "Đặt tour thất bại";
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
                 break;
             case "radioMomo":
                 break;

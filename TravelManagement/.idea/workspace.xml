@@ -5,94 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_5_0_b01.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/ChartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/StatsRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/StatsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/StatsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/chartNumberOfTour/chart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/chartRevenue/chart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/js/admin/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TravelManagement_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/TravelManagement_war_exploded.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" beforeDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/WebApplicationContextConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/WebApplicationContextConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/TourAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/TourAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" afterDir="false" />
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Trip.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/User.java" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/LocationProvinceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/LocationProvinceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourDepartureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourDepartureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/BookingRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/BookingRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/LocationProvinceRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/LocationProvinceRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourDepartureRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourDepartureRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/LocationProvinceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/LocationProvinceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourDepartureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourDepartureService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TripService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/LocationProvinceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/LocationProvinceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourDepartureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourDepartureServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TripServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/utils/MailUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/utils/MailUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/mail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/resources/mail.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_admin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/news.jsp" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/FeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/FeedbackRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TripRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/EmployeeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/EmployeeRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/FeedbackRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/FeedbackRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/FeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/FeedbackServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/FeedbackServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/employee.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/employee.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/form.jsp" afterDir="false" />
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/admin/sidenav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/admin/sidenav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/success.jsp" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/user/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/user/styles.css" afterDir="false" />
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< HEAD
         <option value="JavaScript File" />
-=======
-        <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="spring-beans.schema" />
-        <option value="Jsp File" />
-        <option value="Enum" />
->>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
         <option value="Interface" />
         <option value="Class" />
         <option value="Jsp File" />
@@ -200,17 +113,15 @@
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/TravelManagement" />
       <option name="docBase" value="$PROJECT_DIR$/TravelManagement/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
+      <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.60" />
+          <option name="name" value="Apache Tomcat/9.0.62" />
           <option name="number" value="0" />
-          <option name="path" value="E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\apache-tomcat-9.0.60\apache-tomcat-9.0.60" />
-          <option name="version" value="9.0.60.0" />
+          <option name="path" value="D:\JavaProject\apache-tomcat-9.0.62" />
+          <option name="version" value="9.0.62.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
@@ -305,6 +216,7 @@
       <workItem from="1651881882810" duration="29459000" />
       <workItem from="1651924328565" duration="1701000" />
       <workItem from="1651926084515" duration="9272000" />
+      <workItem from="1651940994761" duration="449000" />
     </task>
     <servers />
   </component>
