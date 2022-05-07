@@ -34,9 +34,10 @@
                         <th>Tên</th>
                         <th>Giá</th>
                         <th>Mô tả</th>
-                        <th>Mã chuyến</th>
-                        <th>Mã thời điểm</th>
-                        <th>Mã thể loại</th>
+                        <th>Khởi hành</th>
+                        <th>Kết thúc</th>
+                        <th>Khoảng thời gian</th>
+                        <th>Danh mục</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -58,9 +59,10 @@
                             <td>${tourItem.name}</td>
                             <td>${tourItem.price}</td>
                             <td>${tourItem.description}</td>
-                            <td>${tourItem.trip.id}</td>
-                            <td>${tourItem.duration.id}</td>
-                            <td>${tourItem.category.id}</td>
+                            <td>${tourItem.departureProvince}</td>
+                            <td>${tourItem.destinationProvince}</td>
+                            <td>${tourItem.duration}</td>
+                            <td>${tourItem.category}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

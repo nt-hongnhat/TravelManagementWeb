@@ -29,6 +29,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body class="sb-nav-fixed">
 <%--NAVIGATION--%>
@@ -54,6 +56,7 @@
 <script src="assets/demo/chart-bar-demo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="<c:url value="/resources/js/admin/datatables-simple-demo.js"/>"></script>
+<script src="<c:url value="/resources/js/admin/chart.js" />"></script>
 </body>
 </html>
 

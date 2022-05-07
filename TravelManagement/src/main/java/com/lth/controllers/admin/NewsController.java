@@ -2,6 +2,7 @@ package com.lth.controllers.admin;
 
 import com.lth.pojos.News;
 import com.lth.service.NewsService;
+import com.lth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -17,6 +18,8 @@ import java.util.Map;
 public class NewsController {
     @Autowired
     private NewsService newsService;
+    @Autowired
+    private UserService userService;
     @Autowired
     private Environment env;
 
@@ -37,6 +40,7 @@ public class NewsController {
 
     @RequestMapping(value ="/news/form", method = RequestMethod.GET)
     public String formNewsP(ModelMap modelMap) {
+        modelMap.put("user", userService.getUser(""));
         modelMap.put("pieceOfNews", new News(0));
         modelMap.put("valueButton", "Lưu");
         return "admin.index.news.form";
@@ -44,40 +48,33 @@ public class NewsController {
 
     @RequestMapping(value = "/news/save", method =  RequestMethod.POST)
     public String saveNewsP(ModelMap modelMap, @ModelAttribute(value = "pieceOfNews") News news) {
-        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
 
         if(news.getId() == 0) {
             newsService.addNews(news);
         } else {
             newsService.updateNews(news);
         }
-        modelMap.put("news",
-                this.newsService.getNews("", 1));
-        modelMap.put("numberOfTourPaginationItem",
-                this.newsService.countNews() / pageNumberOfTour);
 
-        return "admin.index.news";
+        return "redirect:/admin/news";
     }
 
     @RequestMapping (value ="/news/edit/{newsId}", method = RequestMethod.GET)
     public String editNews(ModelMap modelMap, @PathVariable("newsId") int newsId) {
         News news = newsService.findNewsById(newsId);
+        modelMap.put("user", userService.getUser(""));
         modelMap.put("valueButton", "Sửa");
+        modelMap.put("isUpdate", true);
         modelMap.put("pieceOfNews", news);
         return "admin.index.news.form";
     }
 
     @RequestMapping (value ="/news/delete/{newsId}", method = RequestMethod.GET)
     public String deleteNews(ModelMap modelMap, @PathVariable("newsId") int newsId) {
-        int pageNumberOfTour = Integer.parseInt(env.getProperty("pagination.numberOfTour"));
         News news = newsService.findNewsById(newsId);
         if (news != null) {
             newsService.deleteNews(news);
         }
-        modelMap.put("news",
-                this.newsService.getNews("", 1));
-        modelMap.put("numberOfTourPaginationItem",
-                this.newsService.countNews() / pageNumberOfTour);
-        return "admin.index.news";
+
+        return "redirect:/admin/news";
     }
 }

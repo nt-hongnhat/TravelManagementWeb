@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
@@ -301,6 +302,17 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" afterDir="false" />
+=======
+    <list default="true" id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" afterDir="false" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,12 +322,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="spring-beans.schema" />
-        <option value="Jsp File" />
-        <option value="Enum" />
+        <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -406,18 +416,23 @@
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/TravelManagement" />
+<<<<<<< HEAD
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions">
         <map />
       </option>
+=======
+      <option name="docBase" value="$PROJECT_DIR$/TravelManagement/src/main/webapp" />
+      <option name="envOptions" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/9.0.60" />
+          <option name="name" value="Apache Tomcat/9.0.62" />
           <option name="number" value="0" />
-          <option name="path" value="E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\apache-tomcat-9.0.60\apache-tomcat-9.0.60" />
-          <option name="version" value="9.0.60.0" />
+          <option name="path" value="D:\JavaProject\apache-tomcat-9.0.62" />
+          <option name="version" value="9.0.62.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
@@ -493,8 +508,31 @@
       <workItem from="1651395874099" duration="21491000" />
       <workItem from="1651497939763" duration="1209000" />
       <workItem from="1651499762943" duration="29629000" />
+<<<<<<< HEAD
       <workItem from="1651646344632" duration="10066000" />
       <workItem from="1651893263035" duration="62000" />
+=======
+      <workItem from="1651646344632" duration="19767000" />
+      <workItem from="1651680517843" duration="4747000" />
+      <workItem from="1651768024644" duration="4932000" />
+      <workItem from="1651817155865" duration="538000" />
+      <workItem from="1651817737078" duration="356000" />
+      <workItem from="1651820299007" duration="57000" />
+      <workItem from="1651820380050" duration="7906000" />
+      <workItem from="1651834256772" duration="14249000" />
+      <workItem from="1651657575256" duration="9706000" />
+      <workItem from="1651672603872" duration="11670000" />
+      <workItem from="1651722514330" duration="9559000" />
+      <workItem from="1651736033602" duration="4548000" />
+      <workItem from="1651755616655" duration="22694000" />
+      <workItem from="1651811664266" duration="4225000" />
+      <workItem from="1651821139831" duration="15155000" />
+      <workItem from="1651846285010" duration="15535000" />
+      <workItem from="1651881882810" duration="29459000" />
+      <workItem from="1651924328565" duration="1701000" />
+      <workItem from="1651926084515" duration="9272000" />
+      <workItem from="1651940994761" duration="449000" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
     </task>
     <servers />
   </component>

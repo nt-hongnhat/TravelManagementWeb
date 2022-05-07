@@ -20,7 +20,7 @@
                     </p>
                     <div class="card-text text-white text-center bg-primary" style="padding: 1rem">
                         Mã đặt tour của Quý khách là:<br>
-                        <h4 style="margin: 0; margin-top: .5rem; padding: 0">${booking.id}</h4>
+                        <h4 style="margin: 0; margin-top: .5rem; padding: 0">${bookingId}</h4>
                     </div>
                     <div class="card-text text-center" style="font-size: small; margin-top: 1rem">
                         Nhân viên của chúng tôi liên hệ với Quý khách trong thời gian sớm nhất,<br>

@@ -17,4 +17,9 @@ public class LocationProvinceServiceImpl implements LocationProvinceService {
     public List<Province> getProvince() {
         return locationProvinceRepository.getProvince();
     }
+
+    @Override
+    public Province findProvinceById(long provinceId) {
+        return locationProvinceRepository.findProvinceById(provinceId);
+    }
 }
