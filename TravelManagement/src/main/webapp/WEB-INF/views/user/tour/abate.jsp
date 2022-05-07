@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row" style="margin-top: 3rem">
         <div class="col-md-5">
-            <img class="card-img-" left src="..." alt="Card image cap">
+            <img class="card-img-left" src="" alt="Card image cap">
         </div>
         <div class="col-md-7">
             <div class="card" >
