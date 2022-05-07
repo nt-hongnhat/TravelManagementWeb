@@ -1,8 +1,5 @@
 package com.lth.utils;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.core.env.Environment;
 
 import javax.mail.*;

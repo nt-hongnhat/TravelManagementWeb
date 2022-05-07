@@ -1,7 +1,5 @@
 package com.lth.pojos;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
@@ -32,6 +30,9 @@ public class Booking implements Serializable {
     @Column(name = "departure_date", nullable = false)
     private Date departureDate;
 
+    @Column(name = "departure_location_id")
+    private Integer departureLocationId;
+
     @Column(name = "customer_name", nullable = false, length = 45)
     private String customerName;
 
@@ -51,6 +52,9 @@ public class Booking implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private BookingDetail bookingDetail;
 
+    public Booking() {
+        super();
+    }
 
     public Integer getId() {
         return id;
@@ -76,29 +80,6 @@ public class Booking implements Serializable {
         this.user = user;
     }
 
-    public Date getDepartureDate() {
-        return departureDate;
-    }
-
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public BookingDetail getBookingDetail() {
-        return bookingDetail;
-    }
-
-    public void setBookingDetail(BookingDetail bookingDetail) {
-        this.bookingDetail = bookingDetail;
-    }
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -107,12 +88,20 @@ public class Booking implements Serializable {
         this.createdDate = createdDate;
     }
 
-    public String getCustomerPhone() {
-        return customerPhone;
+    public Date getDepartureDate() {
+        return departureDate;
     }
 
-    public void setCustomerPhone(String customerPhone) {
-        this.customerPhone = customerPhone;
+    public void setDepartureDate(Date departureDate) {
+        this.departureDate = departureDate;
+    }
+
+    public Integer getDepartureLocationId() {
+        return departureLocationId;
+    }
+
+    public void setDepartureLocationId(Integer departureLocationId) {
+        this.departureLocationId = departureLocationId;
     }
 
     public String getCustomerName() {
@@ -121,6 +110,14 @@ public class Booking implements Serializable {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
     public String getAddress() {
@@ -139,8 +136,25 @@ public class Booking implements Serializable {
         this.note = note;
     }
 
+<<<<<<< HEAD
     public Booking() {
         this.id = 0;
+=======
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public BookingDetail getBookingDetail() {
+        return bookingDetail;
+    }
+
+    public void setBookingDetail(BookingDetail bookingDetail) {
+        this.bookingDetail = bookingDetail;
+>>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
     }
 
     @Override
@@ -167,6 +181,4 @@ public class Booking implements Serializable {
     protected void finalize() throws Throwable {
         super.finalize();
     }
-
-
 }

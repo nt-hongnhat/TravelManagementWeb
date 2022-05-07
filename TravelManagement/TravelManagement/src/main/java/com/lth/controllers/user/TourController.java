@@ -8,8 +8,8 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -21,14 +21,13 @@ import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 @Controller
 @PropertySource({"classpath:pagination.properties", "classpath:mail.properties"})
 @RequestMapping("")
 public class TourController {
-    @Autowired
-    private Environment env;
     @Autowired
     TourService tourService;
     @Autowired
@@ -45,8 +44,11 @@ public class TourController {
     BookingService bookingService;
     @Autowired
     UserService userService;
-
     Properties properties = new Properties();
+    @Autowired
+    private Environment env;
+    @Autowired
+    private CategoryService categoryService;
 
     @InitBinder("booking")
     public void initBinder(WebDataBinder binder) {
@@ -57,28 +59,30 @@ public class TourController {
     }
 
 
-    @GetMapping ("/tour/{id}")
+    @GetMapping("/tour/{id}")
     public String tourDetail(ModelMap modelMap, @PathVariable("id") int id) {
         Tour tour = tourService.findTourById(id);
         List<TourPlace> tourPlace = tourPlaceService.findTourPlaceByTourId(id);
         Object[] rating = feedbackService.getRatingByTourId(id);
         List<TourSchedule> tourSchedules = tourScheduleService.findTourScheduleByTourId(id);
         List<TourDeparture> tourDepartures = tourDepartureService.findTourDepartureByTourId(id);
+        List<Feedback> feedbacks = feedbackService.getFeedbacks(id);
 
         modelMap.put("tour", tour);
         modelMap.put("tourPlace", tourPlace);
         modelMap.put("tourSchedules", tourSchedules);
         modelMap.put("tourDepartures", tourDepartures);
         modelMap.put("booking", new Booking());
+        modelMap.put("feedbacks", feedbacks);
+        modelMap.put("feedback", new Feedback());
 
         Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
         modelMap.put("minDate", minDate);
-        if(rating == null) {
+        if (rating == null) {
             rating[0] = 0;
             rating[1] = 5;
             modelMap.put("rating", rating);
-        }
-        else
+        } else
             modelMap.put("rating", rating);
 
         return "user.index.tourdetail";
@@ -99,17 +103,23 @@ public class TourController {
         return "user.index.abate";
     }
 
+<<<<<<< HEAD
     @GetMapping("/tour/abate/announce/{id}")
     public String annouce(ModelMap modelMap, @PathVariable("id") int id) {
         modelMap.put("message", "Đặt tour thành công");
         modelMap.put("bookingId", id);
+=======
+
+    @GetMapping("/tour/abate/announce")
+    public String annouce() {
+>>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
         return "user.index.success";
     }
 
     @PostMapping("/booking/save")
     public String addBooking(ModelMap modelMap, @Valid @ModelAttribute("booking") Booking booking,
-                           BindingResult bindingResult, @RequestParam("abateType") String abateType,
-                           Authentication authentication) throws MessagingException {
+                             BindingResult bindingResult, @RequestParam("abateType") String abateType,
+                             Authentication authentication) throws MessagingException {
 
         List<Surcharge> surcharges = surchangeService.getSurchange();
         Tour tour = tourService.findTourById(booking.getTour().getId());
@@ -146,6 +156,7 @@ public class TourController {
                 booking.getBookingDetail().setTotalPrice(adultPrice + ageGroup511Price + ageGroup25Price * ageGroup02Price);
                 if (booking.getId() == 0) {
                     if (bookingService.addBooking(booking) == true) {
+<<<<<<< HEAD
 //                        MailUtils mailUtils = new MailUtils(env, properties);
 //                        mailUtils.sendMail("1951052054hieu@ou.edu.vn",
 //                                "TravelMore - Tour", "Đặt tour thành công");
@@ -154,6 +165,16 @@ public class TourController {
                 }
                 else
                     System.err.println("Đặt tour thất bại");
+=======
+                        MailUtils mailUtils = new MailUtils(env, properties);
+                        mailUtils.sendMail("1951052054@ou.edu.vn",
+                                "TravelMore - Tour", "Đặt tour thành công");
+                        message = "Đặt tour thành công";
+
+                    }
+                } else
+                    message = "Đặt tour thất bại";
+>>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
                 break;
             case "radioMomo":
                 break;
@@ -166,5 +187,16 @@ public class TourController {
         }
 
         return "redirect:/tour/abate/announce/" + booking.getId();
+    }
+
+    @GetMapping("/tours/{categoryId}")
+    public String toursSearch(Model model, @PathVariable("categoryId") int categoryId, @RequestParam(required = false) Map<String, String> params) {
+        Category category = this.categoryService.getCategoryByID(categoryId);
+        model.addAttribute("categoryName", category.getName());
+        if (params != null) {
+            params.put("categoryId", String.valueOf(categoryId));
+            model.addAttribute("toursList", this.tourService.getTours(params, 1));
+        } else model.addAttribute("toursList", category.getTours());
+        return "user.index.tour";
     }
 }

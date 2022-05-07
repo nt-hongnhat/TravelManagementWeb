@@ -54,11 +54,16 @@ public class Tour implements Serializable {
     private Duration duration;
     @JoinColumn(name = "departure_province_id", referencedColumnName = "id")
     @ManyToOne
+<<<<<<< HEAD
     private Province departureProvince;
     @JoinColumn(name = "destination_province_id", referencedColumnName = "id")
     @ManyToOne
     private Province destinationProvince;
     @OneToMany(mappedBy = "tour")
+=======
+    private Trip trip;
+    @OneToMany(mappedBy = "tour", fetch = FetchType.EAGER)
+>>>>>>> ca5d29635dae59574763ffc404b9ac5982ce7397
     private Collection<Feedback> feedbackCollection;
 
     @ManyToOne
