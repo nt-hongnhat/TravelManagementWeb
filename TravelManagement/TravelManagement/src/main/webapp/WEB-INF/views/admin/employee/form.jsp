@@ -9,10 +9,9 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="ser" uri="http://www.springframework.org/security/tags" %>
 
 <c:url value="/admin/employee/save" var="action"/>
-
-
 
 <div class="container">
     <c:if test="${message != null}">
@@ -24,7 +23,9 @@
             </button>
         </div>
     </c:if>
-    <form:form cssClass="admin-form" method="post" action="${action}" modelAttribute="employee" enctype="multipart/form-data">
+    <%--@elvariable id="employee" type="com.lth.pojos.User"--%>
+    <form:form cssClass="admin-form" method="post" action="${action}" modelAttribute="employee"
+               enctype="multipart/form-data">
         <form:hidden path="id" value="${employee.id}"/>
         <div class="form-group">
             <label for="username" class="control-label">Tài khoản &nbsp</label>
@@ -38,22 +39,22 @@
 
         <div class="form-group">
             <label for="password" class="control-label">Mật khẩu &nbsp</label>
-            <form:input class="form-control" id="password" path="password" required="required"/>
+            <form:input type="password" class="form-control" id="password" path="password" required="required"/>
         </div>
 
         <div class="form-group">
             <label for="email" class="control-label">Email &nbsp</label>
-            <form:input class="form-control" id="email" path="email" required="required"/>
+            <form:input type="email" class="form-control" id="email" path="email" required="required"/>
         </div>
 
         <div class="form-group">
             <label for="phone" class="control-label">Số điện thoại &nbsp</label>
-            <form:input class="form-control" id="phone" path="userInfoId.phone"/>
+            <form:input type="phone" class="form-control" id="phone" path="userInfoId.phone"/>
         </div>
 
         <div class="form-group">
             <label for="citizenship" class="control-label">Số CMND &nbsp</label>
-            <form:input class="form-control" id="citizenship" path="userInfoId.citizenship"/>
+            <form:input type="number" class="form-control" id="citizenship" path="userInfoId.citizenship"/>
         </div>
 
         <div class="row">
@@ -86,27 +87,27 @@
             </div>
         </div>
 
-<%--        <div class="form-group">--%>
-<%--            <label for="dayOfBirth" class="control-label">Ngày sinh &nbsp</label>--%>
-<%--            <form:input type="date" class="form-control"--%>
-<%--                   placeholder="Chọn..." id="dayOfBirth"--%>
-<%--                          path="userInfoId.dayOfBirth"/>--%>
-<%--        </div>--%>
+        <%--        <div class="form-group">--%>
+        <%--            <label for="dayOfBirth" class="control-label">Ngày sinh &nbsp</label>--%>
+        <%--            <form:input type="date" class="form-control"--%>
+        <%--                   placeholder="Chọn..." id="dayOfBirth"--%>
+        <%--                          path="userInfoId.dayOfBirth"/>--%>
+        <%--        </div>--%>
 
         <div class="form-group">
             <label for="avatar" class="control-label">Đường dẫn hình ảnh &nbsp</label>
-            <form:input class="form-control" id="avatar" path="avatar"/>
+            <form:input type="file" accept=".jpg, .png" class="form-control custom-file" id="avatar" path="avatar"/>
         </div>
 
         <ser:authorize access="hasRole('ADMIN')">
-        <div class="form-group">
-            <label for="userrole" class="control-label">Loại tài khoản &nbsp</label>
-            <form:select class="form-control" id="userrole" path="userRole">
-                <form:option value="EMPLOYEE" label="Nhân viên" selected="selected"/>
-                <form:option value="CUSTOMER" label="Khách hàng"/>
-                <form:option value="ADMIN" label="Quản trị viên"/>
-            </form:select>
-        </div>
+            <div class="form-group">
+                <label for="userrole" class="control-label">Loại tài khoản &nbsp</label>
+                <form:select class="form-control custom-select" id="userrole" path="userRole">
+                    <form:option value="EMPLOYEE" label="Nhân viên" selected="selected"/>
+                    <form:option value="CUSTOMER" label="Khách hàng"/>
+                    <form:option value="ADMIN" label="Quản trị viên"/>
+                </form:select>
+            </div>
         </ser:authorize>
 
         <div class="form-group">

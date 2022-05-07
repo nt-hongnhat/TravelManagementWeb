@@ -1,6 +1,5 @@
 package com.lth.controllers.admin;
 
-import com.lth.pojos.Tour;
 import com.lth.pojos.User;
 import com.lth.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.NoResultException;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
