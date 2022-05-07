@@ -40,9 +40,9 @@ public class Province implements Serializable {
     @OneToMany(mappedBy = "province")
     private Collection<Ward> wardCollection;
     @OneToMany(mappedBy = "departureProvince")
-    private Collection<Tour> tripCollection;
+    private Collection<Tour> tourCollection;
     @OneToMany(mappedBy = "destinationProvince")
-    private Collection<Tour> tripCollection1;
+    private Collection<Tour> tourCollection1;
     @OneToMany(mappedBy = "province")
     private Collection<District> districtCollection;
     @OneToMany(mappedBy = "province")
@@ -87,20 +87,20 @@ public class Province implements Serializable {
 
     @XmlTransient
     public Collection<Tour> getTripCollection() {
-        return tripCollection;
+        return tourCollection;
     }
 
     public void setTripCollection(Collection<Tour> tripCollection) {
-        this.tripCollection = tripCollection;
+        this.tourCollection = tripCollection;
     }
 
     @XmlTransient
     public Collection<Tour> getTripCollection1() {
-        return tripCollection1;
+        return tourCollection1;
     }
 
     public void setTripCollection1(Collection<Tour> tripCollection1) {
-        this.tripCollection1 = tripCollection1;
+        this.tourCollection1 = tripCollection1;
     }
 
     @XmlTransient

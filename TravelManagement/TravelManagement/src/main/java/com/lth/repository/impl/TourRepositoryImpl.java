@@ -93,7 +93,7 @@ public class TourRepositoryImpl implements TourRepository {
 //
             //Tra cứu theo nơi đến: tỉnh thành phố
             if (params.containsKey("destinationProvince") == true) {
-                Predicate predicate = builder.equal(root.get("trip").get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("destinationProvince")));
+                Predicate predicate = builder.equal(root.get("destinationProvince").get("id").as(Integer.class), Integer.parseInt(params.get("destinationProvince")));
                 predicates.add(predicate);
             }
 
@@ -140,7 +140,6 @@ public class TourRepositoryImpl implements TourRepository {
             System.err.println("UPDATE TOUR ERROR!" + ex.getMessage());
             ex.printStackTrace();
         }
-
         return false;
     }
 

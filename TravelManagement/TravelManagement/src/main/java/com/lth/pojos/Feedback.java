@@ -113,22 +113,6 @@ public class Feedback implements Serializable {
         this.updatedDate = updatedDate;
     }
 
-    public Tour getTourId() {
-        return tour;
-    }
-
-    public void setTourId(Tour tourId) {
-        this.tour = tourId;
-    }
-
-    public User getUserId() {
-        return user;
-    }
-
-    public void setUserId(User userId) {
-        this.user = userId;
-    }
-
     @Override
     public int hashCode() {
         return super.hashCode();

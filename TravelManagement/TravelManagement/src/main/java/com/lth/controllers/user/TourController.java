@@ -66,18 +66,19 @@ public class TourController {
         Object[] rating = feedbackService.getRatingByTourId(id);
         List<TourSchedule> tourSchedules = tourScheduleService.findTourScheduleByTourId(id);
         List<TourDeparture> tourDepartures = tourDepartureService.findTourDepartureByTourId(id);
-        List<Feedback> feedbacks = feedbackService.getFeedbacks(id);
+//        List<Feedback> feedbacks = feedbackService.getFeedbacks(id);
 
         modelMap.put("tour", tour);
         modelMap.put("tourPlace", tourPlace);
         modelMap.put("tourSchedules", tourSchedules);
         modelMap.put("tourDepartures", tourDepartures);
         modelMap.put("booking", new Booking());
-        modelMap.put("feedbacks", feedbacks);
+//        modelMap.put("feedbacks", feedbacks);
         modelMap.put("feedback", new Feedback());
 
         Date minDate = tourDepartures.stream().map(u -> u.getDeparture()).min(Date::compareTo).get();
         modelMap.put("minDate", minDate);
+
         if (rating == null) {
             rating[0] = 0;
             rating[1] = 5;

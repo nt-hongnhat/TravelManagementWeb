@@ -38,7 +38,7 @@
                     </div>
                     <div class="row" style="margin-top: .5rem">
                         <div class="col-md-4 font-weight-light">Nơi khởi hành</div>
-                        <div class="col-md-8">${tour.trip}</div>
+                        <div class="col-md-8">${tour.departureProvince}</div>
                     </div>
                     <div class="row" style="margin-top: .5rem">
                         <div class="col-md-4 font-weight-light">Số chỗ còn nhận</div>
