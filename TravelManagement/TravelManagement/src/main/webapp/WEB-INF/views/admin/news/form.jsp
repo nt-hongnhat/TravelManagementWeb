@@ -31,7 +31,11 @@
 
         <div class="form-group">
             <label for="userid" class="control-label">Người đăng &nbsp</label>
-            <form:input class="form-control" id="userid" path="userId"/>
+            <form:select class="form-control" id="userid" path="userId.id">
+                <c:forEach items="${user}" var="userItem">
+                    <form:option value="${userItem.id}" label="${userItem.username}"/>
+                </c:forEach>
+            </form:select>
         </div>
 
 

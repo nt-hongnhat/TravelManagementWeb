@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface LocationProvinceService {
     List<Province> getProvince();
+    Province findProvinceById(long provinceId);
 }

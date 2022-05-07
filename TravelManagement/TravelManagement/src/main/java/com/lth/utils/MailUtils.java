@@ -22,9 +22,10 @@ public class MailUtils {
         this.properties = properties;
         this.properties.put("mail.smtp.auth", env.getProperty("mail.smtp.auth"));
         this.properties.put("mail.smtp.starttls.enable", env.getProperty("mail.smtp.starttls.enable"));
+        this.properties.put("mail.debug", env.getProperty("mail.debug"));
         this.properties.put("mail.smtp.host", env.getProperty("mail.smtp.host"));
         this.properties.put("mail.smtp.port", env.getProperty("mail.smtp.port"));
-        this.properties.put("mail.smtp.ssl.trust", env.getProperty("mail.smtp.ssl.trust"));
+//        this.properties.put("mail.smtp.ssl.trust", env.getProperty("mail.smtp.ssl.trust"));
         this.properties.put("mail.transport.protocol", env.getProperty("mail.transport.protocol"));
         this.properties.put("mail.username", env.getProperty("mail.username"));
         this.properties.put("mail.password", env.getProperty("mail.password"));
@@ -50,11 +51,10 @@ public class MailUtils {
         multipart.addBodyPart(mimeBodyPart);
         message.setContent(multipart);
 
-        try (Transport transport = session.getTransport(properties.getProperty("mail.transport.protocol"))) {
-            transport.connect(properties.getProperty("mail.smtp.host"),
-                    properties.getProperty("mail.username"),
-                    properties.getProperty("mail.password"));
+        try {
             Transport.send(message, message.getAllRecipients());
+        } catch (Exception exception) {
+            System.err.println(" ERROR!" + exception.getMessage());
         }
     }
 }

@@ -23,8 +23,6 @@ public class TourAdminController {
         @Autowired
         private DurationService durationService;
         @Autowired
-        private TripService tripService;
-        @Autowired
         private LocationProvinceService locationProvinceService;
     @Autowired
     private Environment env;
@@ -48,7 +46,6 @@ public class TourAdminController {
     public String formTour(ModelMap modelMap) {
         List<Category> categories = categoryService.getCategories();
         List<Duration> durations = durationService.getDurations(0);
-        List<Trip> trips = tripService.getTrips();
         List<Province> provinces = locationProvinceService.getProvince();
         modelMap.put("tour", new Tour());
         modelMap.put("categories", categories);
@@ -60,19 +57,8 @@ public class TourAdminController {
 
     @PostMapping ("/tour/save")
     public String saveTour(ModelMap modelMap, @ModelAttribute(value = "tour") Tour tour) {
-//        Trip trip = new Trip();
-//        Category category = categoryService.getCategoryByID(tour.getCategory().getId());
-//        Duration duration = durationService.getDurationByID(tour.getDuration().getId());
-//
-//        if(tripService.checkTripIsNotExist(tour.getTrip()))
-//            tripService.addTrip(tour.getTrip());
-//
-//        trip = tripService.findTrip(tour.getTrip());
 
         if(tour.getId() == 0) {
-//            tour.setTrip(trip);
-//            tour.setDuration(duration);
-//            tour.setCategory(category);
             tourService.addTour(tour);
         } else {
             tourService.updateTour(tour);
@@ -85,7 +71,6 @@ public class TourAdminController {
     public String editTour(ModelMap modelMap, @PathVariable("tourId") int tourId) {
         Tour tour = tourService.findTourById(tourId);
         modelMap.put("valueButton", "Sửa");
-        modelMap.put("isUpdate", true);
         modelMap.put("tour", tour);
         return "admin.index.tour.form";
     }

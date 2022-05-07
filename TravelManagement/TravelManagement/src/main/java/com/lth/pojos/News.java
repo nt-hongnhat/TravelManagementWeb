@@ -73,6 +73,7 @@ public class News implements Serializable {
     private Collection<Reaction> reactionCollection;
 
     public News() {
+        this.id = 0;
     }
 
     public News(Integer id) {

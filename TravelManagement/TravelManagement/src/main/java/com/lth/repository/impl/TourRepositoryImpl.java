@@ -5,10 +5,7 @@
  */
 package com.lth.repository.impl;
 
-import com.lth.pojos.Category;
 import com.lth.pojos.Tour;
-import com.lth.pojos.TourDeparture;
-import com.lth.pojos.Trip;
 import com.lth.repository.TourRepository;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;

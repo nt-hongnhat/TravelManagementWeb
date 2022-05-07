@@ -38,7 +38,6 @@
                             <p class="card-text">${tour.description}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">${tour.trip}</li>
                             <li class="list-group-item">${tour.duration}</li>
                             <li class="list-group-item text-danger">
                                 <i class="fa-solid fa-wallet"></i>

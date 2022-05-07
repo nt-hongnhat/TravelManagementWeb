@@ -26,7 +26,7 @@
 
     <div class="form-group">
       <label for="price" class="control-label">Giá &nbsp</label>
-      <form:input class="form-control" id="price" path="price" required="required"/>
+      <form:input class="form-control" id="price" path="price" required="required" />
     </div>
 
     <div class="form-group">
@@ -36,7 +36,7 @@
 
     <div class="form-group">
       <label for="limitCustomer" class="control-label">Số khách hàng tối đa  &nbsp</label>
-      <form:input class="form-control" id="limitCustomer" path="limitCustomer"/>
+      <form:input class="form-control" id="limitCustomer" path="limitCustomer" required="required"/>
     </div>
 
     <div class="form-group">
@@ -44,34 +44,34 @@
       <form:input class="form-control" id="description" path="description"/>
     </div>
 
-<%--    <div class="bg-light row card-body" style="border: 1px solid #999999; border-radius: 1rem">--%>
-<%--      <label for="tripid" class="control-label"><h5>Hành trình &nbsp</h5></label>--%>
-<%--      <div class="form-group col-md-6">--%>
-<%--        <label for="category" class="control-label">Bắt đầu từ</label>--%>
-<%--        <form:select class="form-control" id="duration" path="trip.departureProvince">--%>
-<%--          <c:forEach items="${provinces}" var="province">--%>
-<%--            <form:option value="${province.id}" label="${province.name}"/>--%>
-<%--          </c:forEach>--%>
-<%--        </form:select>--%>
-<%--      </div>--%>
-<%--      <div class="form-group col-md-6">--%>
-<%--        <label for="category" class="control-label">Kết thúc</label>--%>
-<%--        <form:select class="form-control" id="duration" path="trip.destinationProvince">--%>
-<%--          <c:forEach items="${provinces}" var="province">--%>
-<%--            <form:option value="${province.id}" label="${province.name}"/>--%>
-<%--          </c:forEach>--%>
-<%--        </form:select>--%>
-<%--      </div>--%>
-<%--    </div>--%>
+    <div class="bg-light row card-body" style="border: 1px solid #999999; border-radius: 1rem">
+      <label class="control-label"><h5>Hành trình &nbsp</h5></label>
+      <div class="form-group col-md-6">
+        <label for="departureProvince" class="control-label">Bắt đầu từ</label>
+        <form:select class="form-control" id="departureProvince" path="departureProvince.id">
+          <c:forEach items="${provinces}" var="province">
+            <form:option value="${province.id}" label="${province.name}"/>
+          </c:forEach>
+        </form:select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="destinationProvince" class="control-label">Kết thúc</label>
+        <form:select class="form-control" id="destinationProvince" path="destinationProvince.id">
+          <c:forEach items="${provinces}" var="province">
+            <form:option value="${province.id}" label="${province.name}"/>
+          </c:forEach>
+        </form:select>
+      </div>
+    </div>
 
-<%--    <div class="form-group">--%>
-<%--      <label for="durationid" class="control-label">Thời điểm &nbsp</label>--%>
-<%--      <form:select class="form-control" id="duration" path="duration.id">--%>
-<%--        <c:forEach items="${durations}" var="duration">--%>
-<%--          <form:option value="${duration.id}" label="${duration}"/>--%>
-<%--        </c:forEach>--%>
-<%--      </form:select>--%>
-<%--    </div>--%>
+    <div class="form-group">
+      <label for="duration" class="control-label">Thời điểm &nbsp</label>
+      <form:select class="form-control" id="duration" path="duration.id">
+        <c:forEach items="${durations}" var="duration">
+          <form:option value="${duration.id}" label="${duration}"/>
+        </c:forEach>
+      </form:select>
+    </div>
 
     <div class="form-group">
       <label for="category" class="control-label">Thể loại &nbsp</label>

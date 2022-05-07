@@ -22,7 +22,6 @@ import java.util.Set;
         @NamedQuery(name = "Tour.findByPrice", query = "SELECT t FROM Tour t WHERE t.price = :price"),
         @NamedQuery(name = "Tour.findByDescription", query = "SELECT t FROM Tour t WHERE t.description = :description"),
         @NamedQuery(name = "Tour.findByTourDepartures_Departure", query = "select t from Tour t inner join t.tourDepartures tourDepartures where tourDepartures.departure = :departure"),
-        @NamedQuery(name = "Tour.findByParams", query = "select t from Tour t inner join t.tourDepartures tourDepartures where t.trip.departureProvince.name = :name1 and t.trip.destinationProvince.name = :name2 and tourDepartures.departure = :departure and t.category.id = :id")
 })
 public class Tour implements Serializable {
 
@@ -53,9 +52,12 @@ public class Tour implements Serializable {
     @JoinColumn(name = "duration_id", referencedColumnName = "id")
     @ManyToOne
     private Duration duration;
-    @JoinColumn(name = "trip_id", referencedColumnName = "id")
+    @JoinColumn(name = "departure_province_id", referencedColumnName = "id")
     @ManyToOne
-    private Trip trip;
+    private Province departureProvince;
+    @JoinColumn(name = "destination_province_id", referencedColumnName = "id")
+    @ManyToOne
+    private Province destinationProvince;
     @OneToMany(mappedBy = "tour")
     private Collection<Feedback> feedbackCollection;
 
@@ -188,14 +190,6 @@ public class Tour implements Serializable {
         this.duration = durationId;
     }
 
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip tripId) {
-        this.trip = tripId;
-    }
-
     public Collection<Feedback> getFeedbackCollection() {
         return feedbackCollection;
     }
@@ -229,4 +223,19 @@ public class Tour implements Serializable {
         return "com.lth.pojos.Tour[ id=" + id + " ]";
     }
 
+    public Province getDepartureProvince() {
+        return departureProvince;
+    }
+
+    public void setDepartureProvince(Province departureProvince) {
+        this.departureProvince = departureProvince;
+    }
+
+    public Province getDestinationProvince() {
+        return destinationProvince;
+    }
+
+    public void setDestinationProvince(Province destinationProvince) {
+        this.destinationProvince = destinationProvince;
+    }
 }

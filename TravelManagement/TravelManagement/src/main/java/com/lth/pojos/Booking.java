@@ -140,7 +140,7 @@ public class Booking implements Serializable {
     }
 
     public Booking() {
-        super();
+        this.id = 0;
     }
 
     @Override

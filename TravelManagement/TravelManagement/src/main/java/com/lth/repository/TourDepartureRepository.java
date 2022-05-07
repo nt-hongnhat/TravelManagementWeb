@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface TourDepartureRepository {
     List<TourDeparture> findTourDepartureByTourId (long tourId);
+    List<Integer> getYear();
 }

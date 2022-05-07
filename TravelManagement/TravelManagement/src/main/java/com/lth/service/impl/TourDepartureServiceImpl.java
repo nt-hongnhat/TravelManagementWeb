@@ -18,4 +18,9 @@ public class TourDepartureServiceImpl implements TourDepartureService {
     public List<TourDeparture> findTourDepartureByTourId(long tourId) {
         return tourDepartureRepository.findTourDepartureByTourId(tourId);
     }
+
+    @Override
+    public List<Integer> getYear() {
+        return tourDepartureRepository.getYear();
+    }
 }

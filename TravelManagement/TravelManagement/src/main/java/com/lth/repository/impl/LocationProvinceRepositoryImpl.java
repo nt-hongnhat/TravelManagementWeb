@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -32,5 +33,23 @@ public class LocationProvinceRepositoryImpl implements LocationProvinceRepositor
         Query query = session.createQuery(criteriaQuery);
 
         return query.getResultList();
+    }
+
+    @Override
+    public Province findProvinceById(long provinceId) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Province> criteriaQuery = builder.createQuery(Province.class);
+        Root<Province> root = criteriaQuery.from(Province.class);
+        criteriaQuery = criteriaQuery.select(root);
+
+        if (provinceId != -1) {
+            Predicate predicate = builder.equal(root.get("id").as(Long.class), provinceId);
+            criteriaQuery.where(predicate);
+        }
+
+        Query query = session.createQuery(criteriaQuery);
+
+        return (Province) query.getSingleResult();
     }
 }

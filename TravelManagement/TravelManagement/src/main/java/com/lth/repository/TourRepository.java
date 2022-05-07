@@ -6,9 +6,7 @@
 package com.lth.repository;
 
 import com.lth.pojos.Tour;
-import com.lth.pojos.Trip;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 

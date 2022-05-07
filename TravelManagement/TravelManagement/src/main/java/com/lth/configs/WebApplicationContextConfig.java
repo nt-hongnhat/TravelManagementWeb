@@ -102,5 +102,5 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
                 .addResourceLocations("/resources/images/");
 
     }
-    
+
 }

@@ -53,6 +53,17 @@
         <put-attribute name="content" value="/WEB-INF/views/admin/news/form.jsp"/>
     </definition>
 
+    <!--CHART-->
+    <definition name="admin.chart.numberOfTour" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/chartNumberOfTour/chart.jsp"/>
+    </definition>
+
+    <definition name="admin.chart.revenue" extends="baseLayoutAdmin">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="content" value="/WEB-INF/views/admin/chartRevenue/chart.jsp"/>
+    </definition>
+
     <!--403-->
     <definition name="403" extends="baseLayout">
         <put-attribute name="title" value="403"/>

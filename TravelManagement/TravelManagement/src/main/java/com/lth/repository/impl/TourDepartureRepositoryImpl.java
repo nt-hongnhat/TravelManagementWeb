@@ -2,6 +2,7 @@ package com.lth.repository.impl;
 
 import com.lth.pojos.TourDeparture;
 import com.lth.repository.TourDepartureRepository;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -37,6 +38,16 @@ public class TourDepartureRepositoryImpl implements TourDepartureRepository {
 
         Query query = session.createQuery(criteriaQuery);
 
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Integer> getYear() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Query query = session.createQuery( "SELECT DISTINCT YEAR(td.departure) AS year "
+                + "FROM TourDeparture td "
+                + "GROUP BY year "
+                + "ORDER BY year ASC");
         return query.getResultList();
     }
 }

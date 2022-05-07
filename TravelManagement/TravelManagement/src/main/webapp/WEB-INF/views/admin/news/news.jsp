@@ -47,12 +47,12 @@
                         <tr>
                             <td>
                                 <a class="btn btn-default"
-                                   href="${pageContext.request.contextPath}/admin/new/edit/${newItem.id}">
+                                   href="${pageContext.request.contextPath}/admin/news/edit/${newItem.id}">
                                     <span class="fa fa-pencil glyphicon glyphicon-pencil"></span>
                                 </a>
                                 <a class="btn btn-default"
                                    onclick="return confirm('Bạn có chắc bạn muốn xóa hồ sơ này không?');"
-                                   href="${pageContext.request.contextPath}/admin/new/delete/${newItem.id}">
+                                   href="${pageContext.request.contextPath}/admin/news/delete/${newItem.id}">
                                     <span class="fa fa-trash glyphicon glyphicon-trash"></span>
                                 </a>
                             </td>

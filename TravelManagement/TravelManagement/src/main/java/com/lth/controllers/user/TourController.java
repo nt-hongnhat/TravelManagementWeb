@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.mail.MessagingException;
 import javax.validation.Valid;
@@ -98,8 +99,10 @@ public class TourController {
         return "user.index.abate";
     }
 
-    @GetMapping("/tour/abate/announce")
-    public String annouce() {
+    @GetMapping("/tour/abate/announce/{id}")
+    public String annouce(ModelMap modelMap, @PathVariable("id") int id) {
+        modelMap.put("message", "Đặt tour thành công");
+        modelMap.put("bookingId", id);
         return "user.index.success";
     }
 
@@ -141,16 +144,16 @@ public class TourController {
                 booking.setUser(user);
                 booking.getBookingDetail().setIsPayment(false);
                 booking.getBookingDetail().setTotalPrice(adultPrice + ageGroup511Price + ageGroup25Price * ageGroup02Price);
-                if (booking.getId() == null) {
+                if (booking.getId() == 0) {
                     if (bookingService.addBooking(booking) == true) {
-                        MailUtils mailUtils = new MailUtils(env, properties);
-                        mailUtils.sendMail("1951052054@ou.edu.vn",
-                                "TravelMore - Tour", "Đặt tour thành công");
-                        message = "Đặt tour thành công";
+//                        MailUtils mailUtils = new MailUtils(env, properties);
+//                        mailUtils.sendMail("1951052054hieu@ou.edu.vn",
+//                                "TravelMore - Tour", "Đặt tour thành công");
+//
                     }
                 }
                 else
-                    message = "Đặt tour thất bại";
+                    System.err.println("Đặt tour thất bại");
                 break;
             case "radioMomo":
                 break;
@@ -158,11 +161,10 @@ public class TourController {
                 break;
             case "radioVnpay":
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + abateType);
         }
 
-        modelMap.put("booking", booking);
-        modelMap.put("message", message);
-
-        return "user.index.success";
+        return "redirect:/tour/abate/announce/" + booking.getId();
     }
 }

@@ -285,7 +285,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "com.lth.pojos.User[ id=" + id + " ]";
+        return this.username;
     }
 
     public String getConfirmPassword() {
