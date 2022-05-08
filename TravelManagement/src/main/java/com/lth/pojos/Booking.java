@@ -20,7 +20,7 @@ public class Booking implements Serializable {
     @JoinColumn(name = "tour_id")
     private Tour tour;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -168,5 +168,13 @@ public class Booking implements Serializable {
 
     public void setBookingDetail(BookingDetail bookingDetail) {
         this.bookingDetail = bookingDetail;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

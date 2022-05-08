@@ -51,7 +51,7 @@
                     <hr>
                     <div class="row ">
                         <div class="col-md-4">Xuất phát</div>
-                        <div class="col-md-8">${tour.trip}</div>
+                        <div class="col-md-8">${tour.departureProvince}</div>
                     </div>
                 </div>
             </div>

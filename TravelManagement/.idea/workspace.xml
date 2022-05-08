@@ -304,15 +304,26 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" afterDir="false" />
 =======
     <list default="true" id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" afterDir="false" />
 >>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
+=======
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourDeparture.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourDeparture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" afterDir="false" />
+>>>>>>> fce7af3e219b78587cd188e9fcf7f9b1e9270ebe
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -531,8 +542,12 @@
       <workItem from="1651881882810" duration="29459000" />
       <workItem from="1651924328565" duration="1701000" />
       <workItem from="1651926084515" duration="9272000" />
+<<<<<<< HEAD
       <workItem from="1651940994761" duration="449000" />
 >>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
+=======
+      <workItem from="1651940994761" duration="7236000" />
+>>>>>>> fce7af3e219b78587cd188e9fcf7f9b1e9270ebe
     </task>
     <servers />
   </component>

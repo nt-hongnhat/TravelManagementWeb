@@ -12,7 +12,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="TravelManagement" options="-endorseddirs &quot;E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\BAI-TAP-LON\BAI TAP\TravelManagement\TravelManagement\target/endorsed&quot;" />
+=======
+      <module name="TravelManagement" options="-endorseddirs D:\JavaProject\TravelManagement\TravelManagement\TravelManagement\target/endorsed" />
+>>>>>>> fce7af3e219b78587cd188e9fcf7f9b1e9270ebe
     </option>
   </component>
 </project>
