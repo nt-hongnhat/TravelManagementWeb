@@ -4,6 +4,305 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/POJOGeneratorSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TravelManagement.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TravelManagement_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TravelManagement_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/69b29bdd-d628-4902-bc03-d90a2aa9702c/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy-datasource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy-datasource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_core_1_31_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_http44_1_31_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_taglib_1_31_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_12_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_12_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_12_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spullara_mustache_java_compiler_0_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_12_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_api_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jboss_javassist_3_7_ga.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_2_7_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_api_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_autotag_core_runtime_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_compat_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_core_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_el_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_extras_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_freemarker_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_jsp_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_mvel_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_ognl_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_api_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_freemarker_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_jsp_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_mustache_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_servlet_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_servlet_wildcard_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_request_velocity_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_servlet_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_template_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tiles_tiles_velocity_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_tools_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_jakarta_persistence_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_javax_persistence_2_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_jpql_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_modelgen_processor_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_moxy_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_7_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_4_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_3_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mvel_mvel2_2_0_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_acl_5_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_3_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_3_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_5_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_3_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_16.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__oro_oro_2_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/JPAMappingSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources/a3d40a88-88ba-40ac-a7f6-e8d15ec86d24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources/a3d40a88-88ba-40ac-a7f6-e8d15ec86d24/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources/a3d40a88-88ba-40ac-a7f6-e8d15ec86d24/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources/a3d40a88-88ba-40ac-a7f6-e8d15ec86d24/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dataSources/a3d40a88-88ba-40ac-a7f6-e8d15ec86d24/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/jpa-buddy-datasource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/.jpb/jpb-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/DispatcherServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/HibernateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/SecurityWebApplicationInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/SpringSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/TillesConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/configs/WebApplicationContextConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/EmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/NewsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/admin/TourAdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/APICommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/BookingDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/District.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Duration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Location.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/News.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Place.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Reaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Surcharge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourDeparture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourPlace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourSchedule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Trip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Ward.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/BookingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/CategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/DurationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/FeedbackRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/LocationProvinceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/NewsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/ProvinceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/SurchangeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourDepartureRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourPlaceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TourScheduleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/BookingRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/CategoryRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/DurationRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/EmployeeRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/FeedbackRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/LocationProvinceRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/NewsRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/ProvinceRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/SurchangeRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourDepartureRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourPlaceRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourScheduleRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/UserRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/BookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/DurationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/FeedbackService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/LocationProvinceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/NewsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/ProvinceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/SurchangeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourDepartureService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourPlaceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourScheduleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TourService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/TripService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/BookingServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/CategoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/DurationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/FeedbackServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/LocationProvinceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/NewsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/ProvinceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/SurchangeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourDepartureServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourPlaceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourScheduleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TourServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/TripServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/utils/MailUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/mail.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/momo.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/pagination.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/applicaitonContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_admin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/tiles/tiles_user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/employee.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/employee/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/news/news.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/form.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/admin/tour/tour.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/admin/navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/admin/sidenav.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/user/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/user/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/layout/user/navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/admin_template.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/templates/user_template.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/403.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/hotel.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/tour.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/admin/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/css/user/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/images/PowerfulReasons_hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/images/bg-main-page.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/images/flower-1853920_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/js/admin/datatables-simple-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/js/admin/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/TripRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lth/repository/impl/TripRepositoryImpl.java" afterDir="false" />
+=======
     <list default="true" id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
@@ -12,12 +311,19 @@
       <change beforePath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/TravelManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/controllers/user/TourController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Booking.java" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Tour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/StatRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/resources/database.properties" afterDir="false" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
+=======
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Feedback.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/Province.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourDeparture.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/pojos/TourDeparture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/java/com/lth/repository/impl/TourRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/abate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/TravelManagement/src/main/webapp/WEB-INF/views/user/tour/detail.jsp" afterDir="false" />
+>>>>>>> fce7af3e219b78587cd188e9fcf7f9b1e9270ebe
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +370,14 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="28h8eRK0Oykvri1PKRAhZqoUh1V" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="27BXre6sekfntEKwkc9Tk8FAdwm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -80,23 +393,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TravelManagement/src/main/webapp/resources/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.poratu.idea.plugins.tomcat.setting.TomcatSettingConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JavaProject\TravelManagement\TravelManagement\TravelManagement\src\main\webapp\resources\images" />
-      <recent name="D:\JavaProject\TravelManagement\TravelManagement\TravelManagement\src\main\java\com\lth\service\impl" />
-      <recent name="D:\JavaProject\TravelManagement\TravelManagement\TravelManagement\src\main\java\com\lth\service" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\js\admin" />
+      <recent name="D:\JavaProject\TravelManagement\TravelManagement\src\main\webapp\resources\css\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\BAI-TAP-LON\TravelManagement\TravelManagement\src\main\webapp\WEB-INF\views\user\tour" />
@@ -117,8 +427,15 @@
     <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/TravelManagement" />
+<<<<<<< HEAD
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+=======
       <option name="docBase" value="$PROJECT_DIR$/TravelManagement/src/main/webapp" />
       <option name="envOptions" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
@@ -158,7 +475,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcda187e-9760-45ea-b882-0d006e00bcca" name="Changes" comment="" />
+      <changelist id="9e2faaa4-5400-4587-97f5-4c39e28efcab" name="Changes" comment="" />
       <created>1648794653881</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -202,6 +519,10 @@
       <workItem from="1651395874099" duration="21491000" />
       <workItem from="1651497939763" duration="1209000" />
       <workItem from="1651499762943" duration="29629000" />
+<<<<<<< HEAD
+      <workItem from="1651646344632" duration="10066000" />
+      <workItem from="1651893263035" duration="62000" />
+=======
       <workItem from="1651646344632" duration="19767000" />
       <workItem from="1651680517843" duration="4747000" />
       <workItem from="1651768024644" duration="4932000" />
@@ -221,7 +542,12 @@
       <workItem from="1651881882810" duration="29459000" />
       <workItem from="1651924328565" duration="1701000" />
       <workItem from="1651926084515" duration="9272000" />
+<<<<<<< HEAD
+      <workItem from="1651940994761" duration="449000" />
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
+=======
       <workItem from="1651940994761" duration="7236000" />
+>>>>>>> fce7af3e219b78587cd188e9fcf7f9b1e9270ebe
     </task>
     <servers />
   </component>

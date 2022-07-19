@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-213.7172.25">
+<<<<<<< HEAD
+    <data-source name="User Data Source" uuid="0bdd6729-44e2-476a-972b-03d7cab914a0">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="UNKNOWN" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <schema-mapping />
+    </data-source>
+    <data-source name="traveldb@localhost" uuid="a3d40a88-88ba-40ac-a7f6-e8d15ec86d24">
+      <database-info product="MySQL" version="8.0.28" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.28" exact-driver-version="8.0">
+=======
+    <data-source name="traveldb@localhost" uuid="69b29bdd-d628-4902-bc03-d90a2aa9702c">
+      <database-info product="MySQL" version="8.0.22" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.22" exact-driver-version="8.0">
+>>>>>>> 32ebfd81332f4897fa59a39560db7419b3f3f019
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

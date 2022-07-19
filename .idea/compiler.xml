@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TravelManagement" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -14,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="TravelManagement" options="-endorseddirs &quot;E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\BAI-TAP-LON\New folder\TravelManagement\TravelManagement\target/endorsed&quot;" />
+      <module name="TravelManagement" options="-endorseddirs &quot;E:\DOCUMENT\TAI-LIEU-CNTT-KHOA-19\212\LAP-TRINH-JAVA\BAI-TAP-LON\BAI TAP\TravelManagement\TravelManagement\target/endorsed&quot;" />
     </option>
   </component>
 </project>

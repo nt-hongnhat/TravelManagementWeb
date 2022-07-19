@@ -16,10 +16,5 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
-    <remote-repository>
-      <option name="id" value="1dc6b496-fd2d-4390-a0a4-1e83cb36d432" />
-      <option name="name" value="1dc6b496-fd2d-4390-a0a4-1e83cb36d432" />
-      <option name="url" value="https://repo.maven.apache.org/maven2" />
-    </remote-repository>
   </component>
 </project>

@@ -1,5 +1,11 @@
 package com.lth.repository;
 
-public interface BookingRepository {
+import com.lth.pojos.Booking;
 
+import java.util.List;
+
+public interface BookingRepository {
+    boolean addBooking(Booking booking);
+
+    List<Integer> getYear();
 }
